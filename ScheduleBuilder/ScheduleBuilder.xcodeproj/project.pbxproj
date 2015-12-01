@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D6F1C0E329600115D84 /* Scheduler.swift */; };
+		01BD3D781C0E329700115D84 /* profs.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D701C0E329600115D84 /* profs.json */; };
+		01BD3D791C0E329700115D84 /* Prof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D711C0E329600115D84 /* Prof.swift */; };
+		01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D721C0E329600115D84 /* Offering.swift */; };
+		01BD3D7B1C0E329700115D84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D731C0E329600115D84 /* Data.swift */; };
+		01BD3D7C1C0E329700115D84 /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D741C0E329600115D84 /* courses.json */; };
+		01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D751C0E329600115D84 /* courseOfferings2.json */; };
+		01BD3D7E1C0E329700115D84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D761C0E329700115D84 /* Course.swift */; };
 		987E02B21C0C59A300766128 /* CourseCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */; };
 		987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B31C0C5B0B00766128 /* CourseCell.swift */; };
 		987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */; };
@@ -38,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01BD3D6F1C0E329600115D84 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		01BD3D701C0E329600115D84 /* profs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profs.json; sourceTree = "<group>"; };
+		01BD3D711C0E329600115D84 /* Prof.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prof.swift; sourceTree = "<group>"; };
+		01BD3D721C0E329600115D84 /* Offering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offering.swift; sourceTree = "<group>"; };
+		01BD3D731C0E329600115D84 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		01BD3D741C0E329600115D84 /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
+		01BD3D751C0E329600115D84 /* courseOfferings2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings2.json; sourceTree = "<group>"; };
+		01BD3D761C0E329700115D84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesCell.swift; path = Controllers/CourseCategoriesCell.swift; sourceTree = "<group>"; };
 		987E02B31C0C5B0B00766128 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCell.swift; path = Controllers/CourseCell.swift; sourceTree = "<group>"; };
 		987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesController.swift; path = Controllers/CourseCategoriesController.swift; sourceTree = "<group>"; };
@@ -105,6 +121,14 @@
 		D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
+				01BD3D701C0E329600115D84 /* profs.json */,
+				01BD3D711C0E329600115D84 /* Prof.swift */,
+				01BD3D721C0E329600115D84 /* Offering.swift */,
+				01BD3D731C0E329600115D84 /* Data.swift */,
+				01BD3D741C0E329600115D84 /* courses.json */,
+				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
+				01BD3D761C0E329700115D84 /* Course.swift */,
 				D9235A801BE3C6D5007173C9 /* AppDelegate.swift */,
 				D9235A821BE3C6D5007173C9 /* ViewController.swift */,
 				D9235A841BE3C6D5007173C9 /* Main.storyboard */,
@@ -241,8 +265,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BD3D781C0E329700115D84 /* profs.json in Resources */,
+				01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */,
 				D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */,
 				D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */,
+				01BD3D7C1C0E329700115D84 /* courses.json in Resources */,
 				D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +296,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */,
+				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
+				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
+				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,
+				01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */,
 				987E02B21C0C59A300766128 /* CourseCategoriesCell.swift in Sources */,
 				D9235A831BE3C6D5007173C9 /* ViewController.swift in Sources */,
+				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
 				D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */,
 				D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,

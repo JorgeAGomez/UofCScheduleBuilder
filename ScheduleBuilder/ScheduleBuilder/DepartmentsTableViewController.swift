@@ -64,7 +64,7 @@ class DepartmentsTableViewController: UITableViewController, UISearchResultsUpda
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using segue.destinationViewController. 
         // Pass the selected object to the new view controller.
         if segue.identifier == "DepartmentSelection"{
             let courseViewController = segue.destinationViewController as! DeptartmentTableViewController

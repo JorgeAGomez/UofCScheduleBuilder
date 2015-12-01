@@ -57,7 +57,7 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("courseCell", forIndexPath: indexPath) as! CourseTableViewCell
         
-        // Configure the cell...
+        // Configure the cell... 
         
         cell.textLabel?.text =  filteredCourses[indexPath.row].courseNumber + "   " + filteredCourses[indexPath.row].title
         return cell

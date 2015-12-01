@@ -8,9 +8,11 @@
 
 import UIKit
 
-class DepartmentsTableViewController: UITableViewController {
+class DepartmentsTableViewController: UITableViewController, UISearchResultsUpdating {
 
-    var departments = [String]()
+    var allDepartments = [String]()
+    var filteredDepartments = [String]()
+    var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,16 @@ class DepartmentsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        departments = GlobalVariables.data.departments
+        allDepartments = GlobalVariables.data.departments
+        filteredDepartments = allDepartments
+        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        self.definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +49,7 @@ class DepartmentsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return departments.count
+        return filteredDepartments.count
     }
 
     
@@ -47,7 +58,7 @@ class DepartmentsTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.textLabel?.text = departments[indexPath.row]
+        cell.textLabel?.text = filteredDepartments[indexPath.row]
 
         return cell
     }
@@ -60,12 +71,35 @@ class DepartmentsTableViewController: UITableViewController {
             
             if let selectedDepartmentCell = sender as? DepartmentTableViewCell{
                 let indexPath = tableView.indexPathForCell(selectedDepartmentCell)!
-                let selectedDepartment = departments[indexPath.row]
+                let selectedDepartment = filteredDepartments[indexPath.row]
                 courseViewController.department = selectedDepartment
             }
             
-            
         }
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        // if search bar is active, filter results based on search bar text
+        if(self.resultSearchController.active){
+            let searchBarStr = searchController.searchBar.text!.lowercaseString
+            
+            if(searchBarStr == ""){
+                filteredDepartments = allDepartments
+            }
+            else{
+                filteredDepartments = allDepartments.filter({$0.lowercaseString.containsString(searchBarStr) == true })
+            }
+        }
+            //otherwise, put back all departments
+        else{
+            filteredDepartments = allDepartments
+        }
+        
+        self.tableView.reloadData()
+    }
+        
+        
         
        /* if segue.identifier == "ShowDetail" {
             let mealDetailViewController = segue.destinationViewController as! MealViewController
@@ -80,7 +114,7 @@ class DepartmentsTableViewController: UITableViewController {
         else if segue.identifier == "AddItem" {
             print("Adding new meal.")
         }*/
-    }
+
 
 
     /*

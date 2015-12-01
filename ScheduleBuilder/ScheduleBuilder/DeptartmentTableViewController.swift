@@ -8,10 +8,12 @@
 
 import UIKit
 
-class DeptartmentTableViewController: UITableViewController {
+class DeptartmentTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var department = ""
-    var courses = [Course]()
+    var allCourses = [Course]()
+    var filteredCourses = [Course]()
+    var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,16 @@ class DeptartmentTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.courses = GlobalVariables.data.getAllCoursesFromDepartment(department)
+        self.allCourses = GlobalVariables.data.getAllCoursesFromDepartment(department)
+        self.filteredCourses = self.allCourses
+        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        self.definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +51,7 @@ class DeptartmentTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return courses.count
+        return filteredCourses.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,11 +59,32 @@ class DeptartmentTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.textLabel?.text =  courses[indexPath.row].courseNumber + "   " + courses[indexPath.row].title
+        cell.textLabel?.text =  filteredCourses[indexPath.row].courseNumber + "   " + filteredCourses[indexPath.row].title
         return cell
     }
     
-    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        // if search bar is active, filter results based on search bar text
+        if(self.resultSearchController.active){
+            let searchBarStr = searchController.searchBar.text!.lowercaseString
+            
+            if( searchBarStr == ""){
+                filteredCourses = allCourses
+            }
+            else{
+                filteredCourses = allCourses.filter({$0.courseNumber.lowercaseString.containsString(searchBarStr) == true ||
+                    $0.title.lowercaseString.containsString(searchBarStr) == true })
+            }
+            
+        }
+            //otherwise, put back all departments
+        else{
+            filteredCourses = allCourses
+        }
+        
+        self.tableView.reloadData()
+    }
     
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

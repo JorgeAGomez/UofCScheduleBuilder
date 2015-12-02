@@ -30,7 +30,6 @@ class CourseViewController: UIViewController {
         coursePrereqLabel.text = "Prerequisites: " + course.prereqs
         ScrollView.contentSize.height = StackView.frame.height
         
-        
         if(course.favourited == true){
             favouriteImage.image = UIImage(named: "fullHeart")
         }
@@ -46,6 +45,7 @@ class CourseViewController: UIViewController {
         setupOfferingDetails()
     }
     
+    
     func setupOfferingDetails()
     {
         if(course.offering != nil)
@@ -60,6 +60,7 @@ class CourseViewController: UIViewController {
                     for prof in p.profs{
                         let r = String(prof.rating)
                         txt += prof.fullname + " (" + r + ") \n"
+                        txt += "RMP : https://www.ratemyprofessor.com" + prof.href + "\n"
                     }
                 }
                 

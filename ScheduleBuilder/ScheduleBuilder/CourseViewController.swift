@@ -15,8 +15,8 @@ class CourseViewController: UIViewController {
     @IBOutlet weak var StackView: UIStackView!
     @IBOutlet weak var courseDescriptionLabel: UITextView!
     @IBOutlet weak var coursePrereqLabel: UITextView!
+    @IBOutlet weak var offeringDetails: UITextView!
     var course : Course = Course()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,41 @@ class CourseViewController: UIViewController {
         coursePrereqLabel.text = "Prerequisites: " + course.prereqs
         ScrollView.contentSize.height = StackView.frame.height
         
-        
+        setupOfferingDetails()
+    }
+    
+    func setupOfferingDetails()
+    {
+        if(course.offering != nil)
+        {
+            var txt = ""
+            for p in (course.offering?.periodics)!
+            {
+                txt += p.type + "\n"
+                
+                if(p.profs.count > 0)
+                {
+                    for prof in p.profs{
+                        let r = String(prof.rating)
+                        txt += prof.fullname + " (" + r + ") \n"
+                    }
+                }
+                
+                for t in p.times{
+                    txt += t.day + " " + t.fromTimeText + " - " + t.toTimeText + "\n"
+                }
+                
+                txt += "\n"
+            }
+            
+            txt = String(txt.characters.dropLast())
+            txt = String(txt.characters.dropLast())
+            
+            offeringDetails.text = txt
+        }
+        else{
+            offeringDetails.text = "Not offered this semester"
+        }
     }
 
     override func didReceiveMemoryWarning() {

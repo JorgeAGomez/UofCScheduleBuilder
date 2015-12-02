@@ -11,21 +11,37 @@ import UIKit
 class CourseViewController: UIViewController {
 
     
+    @IBOutlet weak var courseTitle: UITextField!
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var StackView: UIStackView!
     @IBOutlet weak var courseDescriptionLabel: UITextView!
     @IBOutlet weak var coursePrereqLabel: UITextView!
     @IBOutlet weak var offeringDetails: UITextView!
+    @IBOutlet weak var favouriteImage: UIImageView!
     var course : Course = Course()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
+        courseTitle.text = course.title
         self.title = course.courseCode + " " + course.courseNumber;
         courseDescriptionLabel.text = course.description
         coursePrereqLabel.text = "Prerequisites: " + course.prereqs
         ScrollView.contentSize.height = StackView.frame.height
+        
+        
+        if(course.favourited == true){
+            favouriteImage.image = UIImage(named: "fullHeart")
+        }
+        else{
+            favouriteImage.image = UIImage(named: "emptyHeart")
+        }
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("favouriteTapped:"))
+        favouriteImage.userInteractionEnabled = true
+        favouriteImage.addGestureRecognizer(tapGestureRecognizer)
+        
         
         setupOfferingDetails()
     }
@@ -62,6 +78,19 @@ class CourseViewController: UIViewController {
         else{
             offeringDetails.text = "Not offered this semester"
         }
+    }
+    
+    func favouriteTapped(img: AnyObject)
+    {
+        if(course.favourited == false){
+            course.favourited = true
+            favouriteImage.image = UIImage(named: "fullHeart")
+        }
+        else{
+            course.favourited = false
+            favouriteImage.image = UIImage(named: "emptyHeart")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

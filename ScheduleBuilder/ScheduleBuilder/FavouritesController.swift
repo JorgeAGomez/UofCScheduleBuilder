@@ -21,6 +21,8 @@ class FavouritesController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
+    
         self.favourites = GlobalVariables.data.getFavourites()
     }
 
@@ -33,17 +35,17 @@ class FavouritesController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return favourites.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("favouritesCell", forIndexPath: indexPath) as! FavouritesTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("favouriteCell", forIndexPath: indexPath) as! FavouritesTableCell
 
         // Configure the cell...
         cell.textLabel?.text =  favourites[indexPath.row].courseNumber + "   " + favourites[indexPath.row].title

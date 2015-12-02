@@ -24,11 +24,15 @@ class CourseViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        courseTitle.text = course.title
+        courseTitle.text = " " + course.title
         self.title = course.courseCode + " " + course.courseNumber;
+        
         courseDescriptionLabel.text = course.description
         coursePrereqLabel.text = "Prerequisites: " + course.prereqs
-        ScrollView.contentSize.height = StackView.frame.height
+        
+     
+        
+        
         
         if(course.favourited == true){
             favouriteImage.image = UIImage(named: "fullHeart")
@@ -36,6 +40,12 @@ class CourseViewController: UIViewController {
         else{
             favouriteImage.image = UIImage(named: "emptyHeart")
         }
+        
+        
+        favouriteImage.image = favouriteImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        favouriteImage.tintColor = UIColor.redColor()
+
+        
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("favouriteTapped:"))
         favouriteImage.userInteractionEnabled = true
@@ -91,6 +101,11 @@ class CourseViewController: UIViewController {
             course.favourited = false
             favouriteImage.image = UIImage(named: "emptyHeart")
         }
+        
+        
+        favouriteImage.image = favouriteImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        favouriteImage.tintColor = UIColor.redColor()
+        
         
     }
 

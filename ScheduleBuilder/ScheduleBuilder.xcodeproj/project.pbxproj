@@ -303,7 +303,7 @@
 				TargetAttributes = {
 					D9235A7C1BE3C6D5007173C9 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = ZHT8R5R7B4;
+						DevelopmentTeam = 2E5V8X4LY8;
 					};
 					D9235A931BE3C6D5007173C9 = {
 						CreatedOnToolsVersion = 7.1;
@@ -538,7 +538,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScheduleBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilder2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -552,7 +552,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScheduleBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilder2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

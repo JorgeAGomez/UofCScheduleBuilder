@@ -17,9 +17,14 @@ class SchedulesTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        // use dynamic cells
+        //tableView.estimatedRowHeight = 200
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         
         // Add some test favoutites
@@ -36,16 +41,14 @@ class SchedulesTableViewController: UITableViewController {
         GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("SENG", courseNumber: "521")!)
         
         GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("SENG", courseNumber: "511")!)
-
+        
         
         let favouriteCourses = GlobalVariables.data.getFavourites()
         
         var favoriteOfferings: [Offering] = []
         
         for favorite in favouriteCourses{
-            if (favorite.offering != nil){
-                favoriteOfferings.append(favorite.offering!)
-            }
+            favoriteOfferings.append(favorite.offering!)
         }
         
         let scheduler = Scheduler(offerings: favoriteOfferings)
@@ -68,7 +71,7 @@ class SchedulesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return schedules.count
     }
 
     
@@ -76,14 +79,16 @@ class SchedulesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
         
         
-        //let schedule = schedules[indexPath.row]
+        // Pick a particular schedule
+        let schedule = schedules[indexPath.row]
         
-        //schedule.courses
+        // Send that schedule's courses to the schedule view
+        cell.scheduleView.events = schedule.events
         
+        // Draw the schedule view
         cell.scheduleView.drawRect(CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height))
-
-        // Configure the cell...
-
+        
+        
         return cell
     }
     

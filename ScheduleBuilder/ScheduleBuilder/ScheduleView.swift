@@ -11,20 +11,76 @@ import UIKit
 class ScheduleView: UIView {
 
     
+    let uofcColor = UIColor(hue: 353/360, saturation: 0.66, brightness: 0.88, alpha: 1.00)
+    let tranparentWhite = UIColor(hue: 0, saturation: 0.1, brightness: 1.00, alpha: 1.00)
+    
     let days = 5
-    let hours = 4
+    var hours = 0
     let name = "New Schedule"
     let dept = "CPSC"
     let num = 599
     
-    //var courses: [Course] = []
+    var events: [ScheduleEvent] = []
+    
+    var scheduleHours = CGFloat(0)
+    
+    var subtitle = ""
+    
+    var timetable: [[Int]] = []
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // SetupColors
-        let uofcColor = UIColor(hue: 353/360, saturation: 1, brightness: 0.88, alpha: 0.66)
-        let tranparentWhite = UIColor(hue: 0, saturation: 0, brightness: 1, alpha: 0.66)
+        
+        // Firgure out schedule Start and Stop time
+        
+        var scheduleStartTime = 23.75
+        var scheduleEndTime = 0.0
+        
+        var scheduleStartText = "00 AM"
+        var scheduleEndText = "00 PM"
+        
+        var courseCodes: [String] = []
+        
+        for event in events{
+            let eventTimes = event.times
+            
+            if(!courseCodes.contains(event.offering.courseCode + " " + event.offering.courseNumber)){
+                
+                courseCodes.append(event.offering.courseCode + " " + event.offering.courseNumber)
+                
+                if(subtitle == ""){
+                    subtitle += event.offering.courseCode + " " + event.offering.courseNumber
+                }
+                    
+                else{
+                    subtitle += ", " + event.offering.courseCode + " " + event.offering.courseNumber
+                }
+            }
+            
+            
+            for time in eventTimes{
+                if (time.fromTime < scheduleStartTime){
+                    scheduleStartTime = time.fromTime
+                    scheduleStartText = time.fromTimeText
+                }
+                
+                if (time.toTime > scheduleEndTime){
+                    scheduleEndTime = time.toTime
+                    scheduleEndText = time.toTimeText
+                }
+            }
+        }
+        
+        ceil(CGFloat(scheduleStartTime-1))
+        
+        scheduleHours = ceil(CGFloat(scheduleEndTime)) - ceil(CGFloat(scheduleStartTime-1))
+        
+        
+        hours = Int(scheduleHours)
+        
+        
+        
         
         // Create Rounded Background Box
         let backgroundBox = UIBezierPath(roundedRect: CGRectMake(0, 0, self.frame.width, self.frame.height), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(8, 8))
@@ -33,54 +89,23 @@ class ScheduleView: UIView {
         uofcColor.setFill()
         backgroundBox.fill()
         
-        // Set Date Format
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "h a"
-        
-        // Create New Start Time Objects
-        let startTimeCalendar = NSCalendar.currentCalendar()
-        let startTimeComps = NSDateComponents()
-        
-        // Set Actual Course Start Time
-        startTimeComps.weekday = 2
-        startTimeComps.hour = 11
-        startTimeComps.minute = 0
-        
-        // Create Start Time
-        let startTime = startTimeCalendar.dateFromComponents(startTimeComps)
         
         // Add Start Label to view
-        var startLabel = UILabel(frame: CGRectMake(10, 10, self.frame.width - 15, 120))
+        var startLabel = UILabel(frame: CGRectMake(10, 60, 40, 15))
+        startLabel.backgroundColor = uofcColor
         startLabel.textAlignment = NSTextAlignment.Left
         startLabel.font = startLabel.font.fontWithSize(12)
-        startLabel.text = formatter.stringFromDate(startTime!)
+        startLabel.text = scheduleStartText
         startLabel.textColor = UIColor.whiteColor()
         self.addSubview(startLabel)
         
-        // Create New End Time Objects
-        let endTimeCalendar = NSCalendar.currentCalendar()
-        let endTimeComps = NSDateComponents()
-        
-        // Set Actual Course End Time
-        endTimeComps.weekday = 2
-        endTimeComps.hour = 13
-        endTimeComps.minute = 50
-        
-        // Round the End Time Up
-        if(endTimeComps.minute != 0){
-            endTimeComps.minute = 0
-            endTimeComps.hour = endTimeComps.hour + 1
-        }
-        
-        // Create End Time
-        let endTime = startTimeCalendar.dateFromComponents(endTimeComps)
-        
         // Add End Label to view
-        var endLabel = UILabel(frame: CGRectMake(10, 100, self.frame.width - 15, 120))
+        var endLabel = UILabel(frame: CGRectMake(10, 160, 40, 15))
+        endLabel.backgroundColor = uofcColor
         endLabel.textAlignment = NSTextAlignment.Left
         endLabel.font = endLabel.font.fontWithSize(12)
         endLabel.textColor = UIColor.whiteColor()
-        endLabel.text = formatter.stringFromDate(endTime!)
+        endLabel.text = scheduleEndText
         self.addSubview(endLabel)
         
         // Set Schedule Title
@@ -94,49 +119,87 @@ class ScheduleView: UIView {
         // Set Schedule Subtitle
         var subtitleLabel = UILabel(frame: CGRectMake(10, 30, self.frame.width - 15, 30))
         subtitleLabel.textAlignment = NSTextAlignment.Left
-        subtitleLabel.font = subtitleLabel.font.fontWithSize(16)
+        subtitleLabel.font = subtitleLabel.font.fontWithSize(14)
         subtitleLabel.textColor = UIColor.whiteColor()
-        subtitleLabel.text = dept + " " + String(num)
+        subtitleLabel.text = subtitle
         self.addSubview(subtitleLabel)
         
-        // Add Courses to Visualization
+        
+        
         let baseX = 55
         let baseY = 65
+        
         let width = 55
-        let height = 20
+        let height = (Int(frame.height) - baseY)/(hours + 1)
         
         let spaceX = 5
-        let spaceY = 5
+        let spaceY = height/8
         
         
-        //Int(round(endTime!.timeIntervalSinceDate(startTime!)))
-        
-        for day in 0..<days {
-            for hour in 0..<hours{
+        // Create Rounded Boxes
+        var dayNum = 0
+        for event in events{
+            for time in event.times{
                 
-                // Create Rounded Background Box
-                var courseBox = UIBezierPath(roundedRect: CGRectMake(CGFloat(baseX) + CGFloat((width+spaceX)*(day)), CGFloat(baseY) + CGFloat((height+spaceY)*(hour)), CGFloat(width), CGFloat(height)), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(5, 5))
+                // Get day number
+                switch time.day {
+                    
+                case "Mon":
+                    dayNum = 0
+                    break
+                case "Tue":
+                    dayNum = 1
+                    break
+                case "Wed":
+                    dayNum = 2
+                    break
+                case "Thu":
+                    dayNum = 3
+                    break
+                case "Fri":
+                    dayNum = 4
+                    break
+                case "Sat":
+                    dayNum = 5
+                    break
+                case "Sun":
+                    dayNum = 6
+                    break
+                default:
+                    dayNum = 7
+                    break
+                    
+                }
                 
-                // Set Background Box Color & Draw
-                tranparentWhite.setFill()
-                courseBox.fill()
-                
-                // Set Course Number Label Inside of each Box
-                var subtitleLabel = UILabel(frame:  CGRectMake(CGFloat(baseX) + CGFloat((width+spaceX)*(day)), CGFloat(baseY) + CGFloat((height+spaceY)*(hour)), CGFloat(width), CGFloat(height)))
-                subtitleLabel.textAlignment = NSTextAlignment.Center
-                subtitleLabel.font = subtitleLabel.font.fontWithSize(12)
-                subtitleLabel.textColor = uofcColor
-                subtitleLabel.text = String(num)
-                self.addSubview(subtitleLabel)
-                
-                
+                // exclude weekends for now...
+                if(dayNum < 5){
+                    
+                    // calculate size
+                    var beginBoxX = CGFloat(baseX) + CGFloat(dayNum * (width + spaceX))
+                    var beginBoxY = CGFloat(baseY) + CGFloat(time.fromTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY))
+                    
+                    var widthBox = CGFloat(width)
+                    var heightBox = CGFloat(baseY) + CGFloat(time.toTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY)) - beginBoxY
+                    
+                    var courseBox = UIBezierPath(roundedRect: CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(3, 3))
+                    
+                    // draw box
+                    tranparentWhite.setFill()
+                    courseBox.fill()
+                    
+                    
+                    // Set Course Number Label Inside of each Box
+                    var subtitleLabel = UILabel(frame:  CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox))
+                    subtitleLabel.textAlignment = NSTextAlignment.Center
+                    subtitleLabel.font = subtitleLabel.font.fontWithSize(12)
+                    subtitleLabel.textColor = uofcColor
+                    subtitleLabel.text = event.offering.courseNumber
+                    self.addSubview(subtitleLabel)
+                    
+                    
+                }
             }
-            
-            
         }
-        
-        
-        
         
         
     }

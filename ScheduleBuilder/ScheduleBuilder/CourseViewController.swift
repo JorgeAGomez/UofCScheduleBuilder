@@ -60,7 +60,7 @@ class CourseViewController: UIViewController {
                     for prof in p.profs{
                         let r = String(prof.rating)
                         txt += prof.fullname + " (" + r + ") \n"
-                        txt += "RMP : https://www.ratemyprofessor.com" + prof.href + "\n"
+                        txt += "RMP : www.ratemyprofessors.com" + prof.href + "\n"
                     }
                 }
                 

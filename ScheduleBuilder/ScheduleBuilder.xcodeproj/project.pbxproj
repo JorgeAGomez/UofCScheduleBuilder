@@ -25,6 +25,9 @@
 		987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */; };
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
+		D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */; };
+		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
+		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
 		D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A801BE3C6D5007173C9 /* AppDelegate.swift */; };
 		D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A841BE3C6D5007173C9 /* Main.storyboard */; };
 		D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */; };
@@ -75,6 +78,9 @@
 		987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesController.swift; path = Controllers/CourseCategoriesController.swift; sourceTree = "<group>"; };
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
+		D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewController.swift; sourceTree = "<group>"; };
+		D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		D9235A7D1BE3C6D5007173C9 /* ScheduleBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9235A801BE3C6D5007173C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9235A851BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +126,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9057CB21C0EC2230036D5D3 /* SchedulesTab */ = {
+			isa = PBXGroup;
+			children = (
+				D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */,
+				D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */,
+				D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */,
+			);
+			name = SchedulesTab;
+			sourceTree = "<group>";
+		};
+		D9057CB31C0EC2550036D5D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				01BD3D731C0E329600115D84 /* Data.swift */,
+				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
+				01BD3D711C0E329600115D84 /* Prof.swift */,
+				01BD3D721C0E329600115D84 /* Offering.swift */,
+				01BD3D761C0E329700115D84 /* Course.swift */,
+				01BD3D741C0E329600115D84 /* courses.json */,
+				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
+				01BD3D701C0E329600115D84 /* profs.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D9057CB41C0EC2D30036D5D3 /* FavouritesTab */ = {
+			isa = PBXGroup;
+			children = (
+				98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */,
+				98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */,
+			);
+			name = FavouritesTab;
+			sourceTree = "<group>";
+		};
+		D9057CB51C0EC3030036D5D3 /* CoursesTab */ = {
+			isa = PBXGroup;
+			children = (
+				01BD3D811C0EA8F600115D84 /* CourseViewController.swift */,
+				01BD3D841C0EA8F600115D84 /* CoursePageView.swift */,
+				D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */,
+				987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */,
+				987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */,
+				987E02B31C0C5B0B00766128 /* CourseCell.swift */,
+				D9EC79F61C0E442C00A0FEF9 /* DeptartmentTableViewController.swift */,
+				D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */,
+				D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */,
+				01BD3D891C0EB48500115D84 /* LectureView.swift */,
+				01BD3D831C0EA8F600115D84 /* LineView.swift */,
+				01BD3D821C0EA8F600115D84 /* TutorialView.swift */,
+			);
+			name = CoursesTab;
+			sourceTree = "<group>";
+		};
 		D9235A741BE3C6D5007173C9 = {
 			isa = PBXGroup;
 			children = (
@@ -143,32 +202,14 @@
 		D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				01BD3D891C0EB48500115D84 /* LectureView.swift */,
-				01BD3D811C0EA8F600115D84 /* CourseViewController.swift */,
-				01BD3D821C0EA8F600115D84 /* TutorialView.swift */,
-				01BD3D831C0EA8F600115D84 /* LineView.swift */,
-				01BD3D841C0EA8F600115D84 /* CoursePageView.swift */,
-				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
-				01BD3D701C0E329600115D84 /* profs.json */,
-				01BD3D711C0E329600115D84 /* Prof.swift */,
-				01BD3D721C0E329600115D84 /* Offering.swift */,
-				01BD3D731C0E329600115D84 /* Data.swift */,
-				01BD3D741C0E329600115D84 /* courses.json */,
-				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
-				01BD3D761C0E329700115D84 /* Course.swift */,
-				D9235A801BE3C6D5007173C9 /* AppDelegate.swift */,
 				D9235A841BE3C6D5007173C9 /* Main.storyboard */,
-				D9EC79F61C0E442C00A0FEF9 /* DeptartmentTableViewController.swift */,
-				98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */,
-				98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */,
-				D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */,
-				D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */,
-				D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */,
-				D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */,
-				987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */,
-				987E02B31C0C5B0B00766128 /* CourseCell.swift */,
-				987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */,
+				D9057CB31C0EC2550036D5D3 /* Data */,
+				D9057CB51C0EC3030036D5D3 /* CoursesTab */,
+				D9057CB21C0EC2230036D5D3 /* SchedulesTab */,
+				D9057CB41C0EC2D30036D5D3 /* FavouritesTab */,
 				D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */,
+				D9235A801BE3C6D5007173C9 /* AppDelegate.swift */,
+				D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */,
 				D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */,
 				D9235A8F1BE3C6D5007173C9 /* Info.plist */,
 				D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */,
@@ -339,9 +380,12 @@
 				D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */,
 				01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */,
 				01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */,
+				D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */,
 				98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */,
+				D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */,
 				987E02B21C0C59A300766128 /* CourseCategoriesCell.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
+				D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */,
 				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
 				01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */,
 				D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */,

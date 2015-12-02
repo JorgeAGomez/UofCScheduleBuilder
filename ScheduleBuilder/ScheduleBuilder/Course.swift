@@ -17,6 +17,7 @@ class Course {
     var prereqs: String = ""        //consent of department
     var description: String = ""    // New areas in Computer Science. This course will...
     var offering : Offering?
+    var favourited: Bool = false
     
     init(){}
     
@@ -29,6 +30,7 @@ class Course {
         self.prereqs = prereqs
         self.description = description
         self.offering = nil
+        
     }
     
     convenience init(dict: NSDictionary)

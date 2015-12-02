@@ -18,6 +18,8 @@
 		987E02B21C0C59A300766128 /* CourseCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */; };
 		987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B31C0C5B0B00766128 /* CourseCell.swift */; };
 		987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */; };
+		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
+		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
 		D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A801BE3C6D5007173C9 /* AppDelegate.swift */; };
 		D9235A831BE3C6D5007173C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A821BE3C6D5007173C9 /* ViewController.swift */; };
 		D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A841BE3C6D5007173C9 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		987E02B11C0C59A300766128 /* CourseCategoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesCell.swift; path = Controllers/CourseCategoriesCell.swift; sourceTree = "<group>"; };
 		987E02B31C0C5B0B00766128 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCell.swift; path = Controllers/CourseCell.swift; sourceTree = "<group>"; };
 		987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesController.swift; path = Controllers/CourseCategoriesController.swift; sourceTree = "<group>"; };
+		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
+		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
 		D9235A7D1BE3C6D5007173C9 /* ScheduleBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9235A801BE3C6D5007173C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9235A821BE3C6D5007173C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				D9235A821BE3C6D5007173C9 /* ViewController.swift */,
 				D9235A841BE3C6D5007173C9 /* Main.storyboard */,
 				D9EC79F61C0E442C00A0FEF9 /* DeptartmentTableViewController.swift */,
+				98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */,
+				98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */,
 				D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */,
 				D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */,
 				D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */,
@@ -316,8 +322,10 @@
 				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
 				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
 				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,
+				98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */,
 				D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */,
 				01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */,
+				98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */,
 				987E02B21C0C59A300766128 /* CourseCategoriesCell.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
 				D9235A831BE3C6D5007173C9 /* ViewController.swift in Sources */,

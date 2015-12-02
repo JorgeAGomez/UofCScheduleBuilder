@@ -160,6 +160,23 @@ class Data {
         arr.append(2)
     }
     
+    func setFavourite(fav: Course){
+        for c in self.courses{
+            if(c.courseCode == fav.courseCode && c.courseNumber == fav.courseNumber)
+            {
+                c.favourited = true;
+            }
+        }
+    }
+    
+    func getFavourites()->[Course]{
+        var fav = [Course]()
+        for c in self.courses where c.favourited == true{
+            fav.append(c)
+        }
+        return fav;
+    }
+
     init()
     {
                 

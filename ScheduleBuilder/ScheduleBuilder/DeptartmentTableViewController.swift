@@ -86,6 +86,21 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
         self.tableView.reloadData()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "courseView"{
+            let courseViewController = segue.destinationViewController as! CourseViewController
+            
+            if let selectedCourseCell = sender as? CourseTableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedCourseCell)!
+                let selectedCourse = filteredCourses[indexPath.row]
+                courseViewController.course = selectedCourse
+            }
+            
+        }
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

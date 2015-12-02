@@ -38,8 +38,6 @@ class SchedulesTableViewController: UITableViewController {
 //        GlobalVariables.data.getCourse("SENG", courseNumber: "521")?.favourited = true
 //        GlobalVariables.data.getCourse("SENG", courseNumber: "511")?.favourited = true
         
-        
-        
         let favouriteCourses = GlobalVariables.data.getFavourites()
         
         var favoriteOfferings: [Offering] = []
@@ -107,6 +105,21 @@ class SchedulesTableViewController: UITableViewController {
         
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "scheduleDetails"{
+            let scheduleDetailsController = segue.destinationViewController as! ScheduleDetailsViewController
+            
+            if let selectedCourseCell = sender as? ScheduleTableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedCourseCell)!
+                let selectedSchedule = schedules[indexPath.row]
+                scheduleDetailsController.schedule = selectedSchedule
+            }
+            
+        }
     }
     
 

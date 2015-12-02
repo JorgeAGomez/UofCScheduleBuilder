@@ -15,11 +15,4 @@ class TabsViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self;
     }
     
-   /* override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        code
-    }*/
-
-    //func tabBarController(tabBarController:UITabBar, didSelectViewController viewController: UIViewController){
-        //self.tableView
-    //}
 }

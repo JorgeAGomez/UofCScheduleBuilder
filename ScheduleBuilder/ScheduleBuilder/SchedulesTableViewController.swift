@@ -43,7 +43,9 @@ class SchedulesTableViewController: UITableViewController {
         var favoriteOfferings: [Offering] = []
         
         for favorite in favouriteCourses{
-            favoriteOfferings.append(favorite.offering!)
+            if (favorite.offering != nil){
+                favoriteOfferings.append(favorite.offering!)
+            }
         }
         
         let scheduler = Scheduler(offerings: favoriteOfferings)

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016335461C0ED351005D2A68 /* fullHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 016335441C0ED351005D2A68 /* fullHeart.png */; };
-		016335471C0ED351005D2A68 /* emptyHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 016335451C0ED351005D2A68 /* emptyHeart.png */; };
 		01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D6F1C0E329600115D84 /* Scheduler.swift */; };
 		01BD3D781C0E329700115D84 /* profs.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D701C0E329600115D84 /* profs.json */; };
 		01BD3D791C0E329700115D84 /* Prof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D711C0E329600115D84 /* Prof.swift */; };
@@ -27,6 +25,7 @@
 		987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */; };
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
+		98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */; };
 		D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */; };
 		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
 		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
@@ -62,8 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016335441C0ED351005D2A68 /* fullHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullHeart.png; sourceTree = "<group>"; };
-		016335451C0ED351005D2A68 /* emptyHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyHeart.png; sourceTree = "<group>"; };
 		01BD3D6F1C0E329600115D84 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		01BD3D701C0E329600115D84 /* profs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profs.json; sourceTree = "<group>"; };
 		01BD3D711C0E329600115D84 /* Prof.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prof.swift; sourceTree = "<group>"; };
@@ -82,6 +79,7 @@
 		987E02B51C0C5BD400766128 /* CourseCategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCategoriesController.swift; path = Controllers/CourseCategoriesController.swift; sourceTree = "<group>"; };
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
+		98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewController.swift; sourceTree = "<group>"; };
 		D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -206,8 +204,6 @@
 		D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				016335441C0ED351005D2A68 /* fullHeart.png */,
-				016335451C0ED351005D2A68 /* emptyHeart.png */,
 				D9235A841BE3C6D5007173C9 /* Main.storyboard */,
 				D9057CB31C0EC2550036D5D3 /* Data */,
 				D9057CB51C0EC3030036D5D3 /* CoursesTab */,
@@ -216,6 +212,7 @@
 				D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */,
 				D9235A801BE3C6D5007173C9 /* AppDelegate.swift */,
 				D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */,
+				98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */,
 				D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */,
 				D9235A8F1BE3C6D5007173C9 /* Info.plist */,
 				D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */,
@@ -347,10 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01BD3D781C0E329700115D84 /* profs.json in Resources */,
-				016335461C0ED351005D2A68 /* fullHeart.png in Resources */,
 				01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */,
 				D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */,
-				016335471C0ED351005D2A68 /* emptyHeart.png in Resources */,
 				D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */,
 				01BD3D7C1C0E329700115D84 /* courses.json in Resources */,
 				D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */,
@@ -380,6 +375,7 @@
 			files = (
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
 				987E02B61C0C5BD400766128 /* CourseCategoriesController.swift in Sources */,
+				98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */,
 				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
 				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
 				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,

@@ -25,6 +25,11 @@ class FavouritesController: UITableViewController {
     
         self.favourites = GlobalVariables.data.getFavourites()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        favourites = GlobalVariables.data.getFavourites()
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,24 +57,20 @@ class FavouritesController: UITableViewController {
         return cell
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "FavouriteSelection"{
-            let courseViewController = segue.destinationViewController as! CourseDetailViewController
+        if segue.identifier == "FavouriteDetailSelection"{
+            let courseViewController = segue.destinationViewController as! CourseViewController
             
-            /*
-            if let selectedFavouritesCell = sender as? FavouritesController{
+            if let selectedFavouritesCell = sender as? FavouritesTableCell{
                 let indexPath = tableView.indexPathForCell(selectedFavouritesCell)!
-                let selectedFavourite = departments[indexPath.row]
-                courseViewController.department = selectedDepartment
-            }*/
+                let selectedFavourite = favourites[indexPath.row]
+                courseViewController.course = selectedFavourite
+            }
        }     
             
-    }*/
-
-
-    
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -20,19 +20,38 @@ class ScheduleView: UIView {
     let dept = "CPSC"
     let num = 599
     
+    var schedule: Schedule? = nil
     var events: [ScheduleEvent] = []
     
     var scheduleHours = CGFloat(0)
     
-    var subtitle = ""
     
-    var timetable: [[Int]] = []
+    func getSubtitle(courses: [Course])->String
+    {
+        var subtitle = ""
+        
+        for c in courses
+        {
+            if(subtitle == "")
+            {
+                subtitle += c.courseCode + " " + c.courseNumber
+            }
+            else
+            {
+                subtitle += ", " + c.courseCode + " " + c.courseNumber
+            }
+        }
+        
+        return subtitle
+    }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        
         // Firgure out schedule Start and Stop time
+        
+        self.subviews.forEach({ $0.removeFromSuperview() })
+        self.setNeedsDisplay()
         
         var scheduleStartTime = 23.75
         var scheduleEndTime = 0.0
@@ -40,23 +59,25 @@ class ScheduleView: UIView {
         var scheduleStartText = "00 AM"
         var scheduleEndText = "00 PM"
         
-        var courseCodes: [String] = []
+//        var courseCodes: [String] = []
+        
+        var subtitle = getSubtitle((schedule?.courses)!)
         
         for event in events{
             let eventTimes = event.times
             
-            if(!courseCodes.contains(event.offering.courseCode + " " + event.offering.courseNumber)){
-                
-                courseCodes.append(event.offering.courseCode + " " + event.offering.courseNumber)
-                
-                if(subtitle == ""){
-                    subtitle += event.offering.courseCode + " " + event.offering.courseNumber
-                }
-                    
-                else{
-                    subtitle += ", " + event.offering.courseCode + " " + event.offering.courseNumber
-                }
-            }
+//            if(!courseCodes.contains(event.offering.courseCode + " " + event.offering.courseNumber)){
+//                
+//                courseCodes.append(event.offering.courseCode + " " + event.offering.courseNumber)
+//                
+//                if(subtitle == ""){
+//                    subtitle += event.offering.courseCode + " " + event.offering.courseNumber
+//                }
+//                    
+//                else{
+//                    subtitle += ", " + event.offering.courseCode + " " + event.offering.courseNumber
+//                }
+//            }
             
             
             for time in eventTimes{
@@ -76,10 +97,7 @@ class ScheduleView: UIView {
         
         scheduleHours = ceil(CGFloat(scheduleEndTime)) - ceil(CGFloat(scheduleStartTime-1))
         
-        
         hours = Int(scheduleHours)
-        
-        
         
         
         // Create Rounded Background Box
@@ -123,7 +141,6 @@ class ScheduleView: UIView {
         subtitleLabel.textColor = UIColor.whiteColor()
         subtitleLabel.text = subtitle
         self.addSubview(subtitleLabel)
-        
         
         
         let baseX = 55

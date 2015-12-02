@@ -33,14 +33,11 @@ class SchedulesTableViewController: UITableViewController {
         
         //courses.append(GlobalVariables.data.getCourse("CPSC", courseNumber: "481")!)
         
+//        GlobalVariables.data.getCourse("CPSC", courseNumber: "481")?.favourited = true
+//        GlobalVariables.data.getCourse("CPSC", courseNumber: "453")?.favourited = true
+//        GlobalVariables.data.getCourse("SENG", courseNumber: "521")?.favourited = true
+//        GlobalVariables.data.getCourse("SENG", courseNumber: "511")?.favourited = true
         
-        GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("CPSC", courseNumber: "481")!)
-        
-        GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("CPSC", courseNumber: "453")!)
-        
-        GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("SENG", courseNumber: "521")!)
-        
-        GlobalVariables.data.setFavourite(GlobalVariables.data.getCourse("SENG", courseNumber: "511")!)
         
         
         let favouriteCourses = GlobalVariables.data.getFavourites()
@@ -48,13 +45,32 @@ class SchedulesTableViewController: UITableViewController {
         var favoriteOfferings: [Offering] = []
         
         for favorite in favouriteCourses{
-            favoriteOfferings.append(favorite.offering!)
+            if(favorite.offering != nil){
+                favoriteOfferings.append(favorite.offering!)
+            }
         }
         
         let scheduler = Scheduler(offerings: favoriteOfferings)
         
         schedules = scheduler.getSchedules()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let favouriteCourses = GlobalVariables.data.getFavourites()
+        
+        var favoriteOfferings: [Offering] = []
+        
+        for favorite in favouriteCourses{
+            if(favorite.offering != nil){
+                favoriteOfferings.append(favorite.offering!)
+            }
+        }
+        
+        let scheduler = Scheduler(offerings: favoriteOfferings)
+        
+        schedules = scheduler.getSchedules()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,11 +94,12 @@ class SchedulesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
         
-        
         // Pick a particular schedule
         let schedule = schedules[indexPath.row]
         
+//        cell.scheduleView = ScheduleView()
         // Send that schedule's courses to the schedule view
+        cell.scheduleView.schedule = schedule
         cell.scheduleView.events = schedule.events
         
         // Draw the schedule view

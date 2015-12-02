@@ -22,7 +22,6 @@ class FavouritesController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         
-    
         self.favourites = GlobalVariables.data.getFavourites()
     }
     

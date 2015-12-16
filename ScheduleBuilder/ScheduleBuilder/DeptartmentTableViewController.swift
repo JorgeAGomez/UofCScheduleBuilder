@@ -25,6 +25,7 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
         self.allCourses = GlobalVariables.data.getAllCoursesFromDepartment(department)
         self.filteredCourses = self.allCourses
         
@@ -96,6 +97,7 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
                 let indexPath = tableView.indexPathForCell(selectedCourseCell)!
                 let selectedCourse = filteredCourses[indexPath.row]
                 courseViewController.course = selectedCourse
+                NSLog(selectedCourse.title)
             }
             
         }

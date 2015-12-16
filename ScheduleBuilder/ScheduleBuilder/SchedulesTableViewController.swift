@@ -29,7 +29,7 @@ class SchedulesTableViewController: UITableViewController {
         
         // Add some test favoutites
         
-        var courses: [Course] = []
+        //var courses: [Course] = []
         
         //courses.append(GlobalVariables.data.getCourse("CPSC", courseNumber: "481")!)
         

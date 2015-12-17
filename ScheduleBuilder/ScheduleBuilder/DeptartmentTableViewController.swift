@@ -33,7 +33,7 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
         self.resultSearchController.searchResultsUpdater = self
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
-        
+        self.resultSearchController.searchBar.tintColor = UIColor.redColor()
         self.tableView.tableHeaderView = self.resultSearchController.searchBar
         self.definesPresentationContext = true
     }

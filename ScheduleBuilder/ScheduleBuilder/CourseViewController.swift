@@ -13,9 +13,6 @@ class CourseViewController: UIViewController {
     
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var StackView: UIStackView!
-    @IBOutlet weak var courseDescriptionLabel: UITextView!
-    @IBOutlet weak var coursePrereqLabel: UITextView!
-    @IBOutlet weak var offeringDetails: UITextView!
     @IBOutlet weak var subtitleToolBar: UIToolbar!
     @IBOutlet weak var subtitleBarItem: UIBarButtonItem!
     
@@ -29,6 +26,8 @@ class CourseViewController: UIViewController {
         
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        
+        
         
         subtitleToolBar.clipsToBounds = true
         
@@ -74,16 +73,16 @@ class CourseViewController: UIViewController {
         let barsubtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: subtitleToolBar.frame.width/1.8, height: 66))
         barsubtitleLabel.numberOfLines = 0
         barsubtitleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        barsubtitleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22.0)
+        barsubtitleLabel.textColor = UIColor.blackColor()
         barsubtitleLabel.text = course.title
-        barsubtitleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20.0)
-        //barsubtitleLabel.textColor = UIColor.blueColor()
         barsubtitleLabel.textAlignment = .Center
         subtitleBarItem.customView = barsubtitleLabel
         
         
         //self.navigationController?.navigationBar.shadowImage = UIImage()
-        courseDescriptionLabel.text = course.description
-        coursePrereqLabel.text = "Prerequisites: " + course.prereqs
+        //courseDescriptionLabel.text = course.description
+        //coursePrereqLabel.text = "Prerequisites: " + course.prereqs
         
      
         
@@ -118,6 +117,146 @@ class CourseViewController: UIViewController {
     
     func setupOfferingDetails()
     {
+        
+        StackView.addArrangedSubview(makeSpace(5))
+        
+        // Add Course Description Label
+        let courseDescriptionLabel = UILabel()
+        courseDescriptionLabel.numberOfLines = 0
+        courseDescriptionLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+        
+        let courseDescriptionStyle = NSMutableParagraphStyle()
+        courseDescriptionStyle.alignment = NSTextAlignment.Justified
+        
+        let courseDescriptionText = NSAttributedString(string: course.description,
+            attributes: [
+                NSParagraphStyleAttributeName: courseDescriptionStyle,
+                NSBaselineOffsetAttributeName: NSNumber(float: 0)
+            ])
+        
+        courseDescriptionLabel.attributedText = courseDescriptionText
+        
+        StackView.addArrangedSubview(courseDescriptionLabel)
+        
+        // Add a Line with Spacing
+        StackView.addArrangedSubview(makeSpace(5))
+        StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
+        StackView.addArrangedSubview(makeSpace(5))
+        
+        // Add Course Prerequisite Label
+        let prereqLabel = UILabel()
+        prereqLabel.numberOfLines = 0
+        prereqLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+
+        let prereqStyle = NSMutableParagraphStyle()
+        prereqStyle.alignment = NSTextAlignment.Justified
+        
+        let prereqText = NSAttributedString(string: "Prerequisites: " + course.prereqs,
+            attributes: [
+                NSParagraphStyleAttributeName: prereqStyle,
+                NSBaselineOffsetAttributeName: NSNumber(float: 0)
+            ])
+        
+        prereqLabel.attributedText = prereqText
+        StackView.addArrangedSubview(prereqLabel)
+        
+        
+        // Add a Line with Spacing
+        StackView.addArrangedSubview(makeSpace(5))
+        StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
+        StackView.addArrangedSubview(makeSpace(5))
+        
+        
+        let textLabel = UITextView()
+        textLabel.widthAnchor.constraintEqualToConstant(self.view.frame.width).active = true
+        textLabel.heightAnchor.constraintEqualToConstant(self.view.frame.height).active = true
+        textLabel.textAlignment = .Left
+        textLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+        textLabel.editable = false
+        textLabel.dataDetectorTypes = UIDataDetectorTypes.Link
+        // If the course is offered this semester
+
+        if(course.offering != nil){
+            
+            //textLabel.numberOfLines = 0
+
+            var txt = ""
+            for p in (course.offering?.periodics)!
+            {
+                txt += p.type + ": "
+                
+                if(p.profs.count > 0)
+                {
+                    for prof in p.profs{
+
+                        let fillStars = String(count: Int(round(prof.rating)),repeatedValue: Character("★"))
+                        let unfillStars = String(count: 5 - Int(round(prof.rating)),repeatedValue: Character("☆"))
+                        
+                        let ratingText = NSAttributedString(string: prof.fullname + " " + fillStars + unfillStars + "\n",
+                            attributes: [
+                                NSLinkAttributeName: "www.ratemyprofessors.com" + prof.href,
+                            ])
+
+                        
+                        
+                        
+                        txt += prof.fullname + " " + fillStars + unfillStars + "\n"
+                        txt += "RMP : www.ratemyprofessors.com" + prof.href + "\n"
+                        
+                        
+                    }
+                }
+                
+                else
+                {
+                        txt += "\n"
+                }
+                
+                
+                
+                if(p.times.count > 0){
+                
+                    for t in p.times{
+                        txt += t.day + ", "
+                    }
+                    txt = String(txt.characters.dropLast())
+                    txt = String(txt.characters.dropLast())
+                    
+                    txt += " " + (p.times.first?.fromTimeText)! + " - " + (p.times.first?.toTimeText)! + "\n"
+                    
+                    txt += "\n"
+                    
+                }
+                
+                
+                
+                
+                
+                
+            }
+            
+            textLabel.text = txt
+            textLabel
+            StackView.addArrangedSubview(textLabel)
+            
+        }
+            
+        // Else the course is not offered this semester
+        else{
+            //textLabel.numberOfLines = 0
+            textLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24.0)
+            textLabel.heightAnchor.constraintEqualToConstant(300).active = true
+            textLabel.textColor = UIColor.lightGrayColor()
+            textLabel.text  = "\n\n\n\nCourse Not Offered this Semester\n\n"
+            textLabel.textAlignment = .Center
+            textLabel.sizeThatFits(textLabel.contentSize)
+            textLabel.scrollEnabled = false
+            StackView.addArrangedSubview(textLabel)
+
+        }
+        
+        
+        /*
         if(course.offering != nil)
         {
             var txt = ""
@@ -151,6 +290,8 @@ class CourseViewController: UIViewController {
         else{
             offeringDetails.text = "Not offered this semester"
         }
+        */
+        
     }
     
     func favouriteTapped(img: AnyObject)
@@ -169,10 +310,24 @@ class CourseViewController: UIViewController {
     }
     
     
-    
-    func setupOfferingList(){
+    func makeSpace(h: CGFloat) -> UIView{
         
+        let space = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: h))
+        let heightConstraint = NSLayoutConstraint(item: space, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: h)
+        space.addConstraint(heightConstraint)
+        
+        return space
     }
+    
+    func makeLine(w: CGFloat, h: CGFloat) -> UIView{
+        
+        let line = LineView(frame: CGRect(x: 0, y: 0, width: w, height: h))
+        let heightConstraint = NSLayoutConstraint(item: line, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: h)
+        line.addConstraint(heightConstraint)
+        
+        return line
+    }
+    
     
 
     override func didReceiveMemoryWarning() {

@@ -29,6 +29,7 @@ class DepartmentsTableViewController: UITableViewController, UISearchResultsUpda
         self.resultSearchController = UISearchController(searchResultsController: nil)
         self.resultSearchController.searchResultsUpdater = self
         self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.tintColor = UIColor.redColor()
         self.resultSearchController.searchBar.sizeToFit()
         
         self.tableView.tableHeaderView = self.resultSearchController.searchBar

@@ -95,7 +95,7 @@ class Data {
                     {
                         if(self.findProfByName(matchedProfText) == nil)
                         {
-                            print("fuck")
+                            print("no prof found")
                         }
                         
                         p.profs.append(self.findProfByName(matchedProfText)!)

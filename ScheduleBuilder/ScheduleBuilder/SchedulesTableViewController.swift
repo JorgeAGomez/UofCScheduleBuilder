@@ -12,6 +12,7 @@ class SchedulesTableViewController: UITableViewController {
 
     var schedules: [Schedule] = []
     
+    @IBOutlet weak var noschedules: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,7 +54,6 @@ class SchedulesTableViewController: UITableViewController {
         schedules = scheduler.getSchedules()
         
     }
-    
     override func viewWillAppear(animated: Bool) {
         let favouriteCourses = GlobalVariables.data.getFavourites()
         
@@ -85,6 +85,14 @@ class SchedulesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (schedules.count == 0){
+            noschedules.hidden = false;
+        }
+        else
+        {
+            noschedules.hidden = true;
+        }
+
         return schedules.count
     }
 

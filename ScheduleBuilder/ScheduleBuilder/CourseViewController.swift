@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CourseViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class CourseViewController: UIViewController {
     @IBOutlet weak var subtitleBarItem: UIBarButtonItem!
     
     var course : Course = Course()
+    var favorite_courses : FavouriteCourses!   // CORE DATA
     
     let faveButton: UIButton = UIButton(type: UIButtonType.Custom)
     var faveImage: UIImage = UIImage(named:"fullHeart.png")!
@@ -27,17 +29,40 @@ class CourseViewController: UIViewController {
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         
+        subtitleToolBar.tintColor = self.navigationController?.navigationBar.tintColor
         
         
-        subtitleToolBar.clipsToBounds = true
+        //stackoverflow.com/questions/26390072/remove-border-in-navigationbar-in-swift
+        for parent in self.navigationController!.navigationBar.subviews {
+            for childView in parent.subviews {
+                if(childView is UIImageView) {
+                    childView.removeFromSuperview()
+                }
+            }
+        }
+        
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(18)]
+        
+        //let bottomShadow = CALayer(layer: <#T##AnyObject#>)
+        //bottomShadow.frame = subtitleToolBar.frame
+        //bottomShadow.backgroundColor = UIColor.redColor().CGColor
+        subtitleToolBar.addSubview(LineView())
+        
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        //self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+
+        
+        //subtitleToolBar.clipsToBounds = true
+        //self.navigationController?.navigationBar.clipsToBounds = true
         
         //subtitleToolBar.setShadowImage(nil, forToolbarPosition: UIBarPosition.TopAttached)
         
         //subtitleToolBar.layer.shadowOffset = CGSizeMake(0, 0)
         
         //subtitleToolBar.barTintColor = UIColor.whiteColor()
-        subtitleBarItem.tintColor = UIColor.blackColor()
-        subtitleToolBar.barPosition
+        //subtitleBarItem.tintColor = UIColor.blackColor()
+        //subtitleToolBar.barPosition
         
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -70,43 +95,14 @@ class CourseViewController: UIViewController {
         
         self.title = course.courseCode + " " + course.courseNumber;
         
-        let barsubtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: subtitleToolBar.frame.width/1.8, height: 66))
+        let barsubtitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: subtitleToolBar.frame.width/2, height: 66))
         barsubtitleLabel.numberOfLines = 0
         barsubtitleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        barsubtitleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 22.0)
+        barsubtitleLabel.font = UIFont.systemFontOfSize(18)
         barsubtitleLabel.textColor = UIColor.blackColor()
         barsubtitleLabel.text = course.title
         barsubtitleLabel.textAlignment = .Center
         subtitleBarItem.customView = barsubtitleLabel
-        
-        
-        //self.navigationController?.navigationBar.shadowImage = UIImage()
-        //courseDescriptionLabel.text = course.description
-        //coursePrereqLabel.text = "Prerequisites: " + course.prereqs
-        
-     
-        
-        /*
-        
-        if(course.favourited == true){
-            favouriteImage.image = UIImage(named: "fullHeart")
-        }
-        else{
-            favouriteImage.image = UIImage(named: "emptyHeart")
-        }
-        
-        
-        favouriteImage.image = favouriteImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        favouriteImage.tintColor = UIColor.redColor()
-
-        */
-        
-        /*
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("favouriteTapped:"))
-        favouriteImage.userInteractionEnabled = true
-        favouriteImage.addGestureRecognizer(tapGestureRecognizer)
-        */
-
         
         setupOfferingDetails()
         
@@ -123,7 +119,7 @@ class CourseViewController: UIViewController {
         // Add Course Description Label
         let courseDescriptionLabel = UILabel()
         courseDescriptionLabel.numberOfLines = 0
-        courseDescriptionLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+        courseDescriptionLabel.font = UIFont.systemFontOfSize(14)
         
         let courseDescriptionStyle = NSMutableParagraphStyle()
         courseDescriptionStyle.alignment = NSTextAlignment.Justified
@@ -146,7 +142,7 @@ class CourseViewController: UIViewController {
         // Add Course Prerequisite Label
         let prereqLabel = UILabel()
         prereqLabel.numberOfLines = 0
-        prereqLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+        prereqLabel.font = UIFont.systemFontOfSize(14)
 
         let prereqStyle = NSMutableParagraphStyle()
         prereqStyle.alignment = NSTextAlignment.Justified
@@ -171,7 +167,7 @@ class CourseViewController: UIViewController {
         textLabel.widthAnchor.constraintEqualToConstant(self.view.frame.width).active = true
         textLabel.heightAnchor.constraintEqualToConstant(self.view.frame.height).active = true
         textLabel.textAlignment = .Left
-        textLabel.font = UIFont(name: "HelveticaNeue", size: 16)
+        textLabel.font = UIFont.systemFontOfSize(14)
         textLabel.editable = false
         textLabel.dataDetectorTypes = UIDataDetectorTypes.Link
         // If the course is offered this semester
@@ -299,6 +295,19 @@ class CourseViewController: UIViewController {
         if(course.favourited == false){
             course.favourited = true
             faveButton.setImage(UIImage(named:"fullHeart.png")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+         if let managedObjectContext = (UIApplication.sharedApplication().delegate as?
+AppDelegate)?.managedObjectContext {
+          favorite_courses = NSEntityDescription.insertNewObjectForEntityForName("Favourite", inManagedObjectContext: managedObjectContext) as! FavouriteCourses
+          favorite_courses.coursename = course.title
+          favorite_courses.coursenumber = course.courseNumber
+          do {
+            try managedObjectContext.save()
+            print("SAVED DATAAAAAAAAA!!!!!!")
+          } catch {
+            print(error)
+            }
+          }
+
 
             
         }

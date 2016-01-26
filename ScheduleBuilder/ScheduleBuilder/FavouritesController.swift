@@ -6,22 +6,39 @@
 //  Copyright © 2015 Alexander Ivanov. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
-class FavouritesController: UITableViewController {
+class FavouritesController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    @IBOutlet weak var nofavs: UILabel!
     var favourites = [Course]()
-
+    var favourite_classes : [FavouriteCourses]!
+    var fetchResultController:NSFetchedResultsController!
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favourites"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
+        //Uncomment next line to add Edit button
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+      
+        let fetchRequest = NSFetchRequest(entityName: "Favourite")
+        let sortDescriptor = NSSortDescriptor(key: "coursename", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            do {
+                try fetchResultController.performFetch()
+                favourites = fetchResultController.fetchedObjects as! [Course]
+            } catch {
+                print(error)
+            }
+        }
         self.favourites = GlobalVariables.data.getFavourites()
     }
     
@@ -34,25 +51,37 @@ class FavouritesController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
-    }
+    }*/
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (favourites.count == 0){
+            nofavs.hidden = false;
+        }
+        else{
+            nofavs.hidden = true;
+        }
+
         return favourites.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("favouriteCell", forIndexPath: indexPath) as! FavouritesTableCell
-
+  
+      
+      //let favourite_course = FavouriteCourses(
         // Configure the cell...
         cell.textLabel?.text =  favourites[indexPath.row].courseNumber + "   " + favourites[indexPath.row].title
+      
+        
         return cell
     }
     

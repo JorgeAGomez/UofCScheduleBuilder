@@ -213,10 +213,6 @@ class Data {
 //        let s = Scheduler(offerings: offerings)
 //        
 //        let ss = s.getSchedules()
-        
-        
-        
-
 
     }
     

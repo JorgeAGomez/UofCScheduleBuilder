@@ -16,6 +16,10 @@ class Offering{
     var periodics = [Periodic]()
     var course : Course
     
+    var section: Int = -1   // TO BE IMPLEMENTED: section number (so a lecture in sec 1 only works with tut in sec 1)
+    var topic: Int = -1    // TO BE IMPLEMENTED: topic number for "Special Topic" courses
+    
+    
     init(title : String, courseCode : String, courseNumber : String, periodicsRaw : [NSDictionary])
     {
         self.title = title

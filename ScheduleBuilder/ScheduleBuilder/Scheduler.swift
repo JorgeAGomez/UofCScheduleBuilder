@@ -164,6 +164,7 @@ class Scheduler{
     func getSchedules() -> [Schedule]
     {
         var schedules = [Schedule]()
+        print(schedules) //**********************
         var offerringCombos = [[ScheduleEvent]]()
         
         for o in offerings{
@@ -179,7 +180,7 @@ class Scheduler{
         for s in schedules {
             if( s.courses.count > highestNumOfCourses) { highestNumOfCourses = s.courses.count}
         }
-        
+      
         return schedules.filter( { $0.courses.count  == highestNumOfCourses})
     }
 }

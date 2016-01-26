@@ -34,6 +34,16 @@ class DepartmentsTableViewController: UITableViewController, UISearchResultsUpda
         
         self.tableView.tableHeaderView = self.resultSearchController.searchBar
         self.definesPresentationContext = true
+        
+        //let navbar = self.navigationController?.navigationBar
+        //let navcolor = navbar!.barTintColor
+        //let navsize = navbar!.frame
+        
+        //navbar?.clipsToBounds
+        //navbar!.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        //navbar!.shadowImage = UIImage()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,7 +109,20 @@ class DepartmentsTableViewController: UITableViewController, UISearchResultsUpda
         
         self.tableView.reloadData()
     }
-        
+    
+    
+    
+    // stackoverflow.com/questions/26542035/create-uiimage-with-solid-color-in-swift
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
         
         
        /* if segue.identifier == "ShowDetail" {

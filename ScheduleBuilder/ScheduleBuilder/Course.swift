@@ -36,11 +36,11 @@ class Course {
     convenience init(dict: NSDictionary)
     {
         self.init( title: dict["title"] as! String,
-        courseCode: dict["departmentCode"] as! String,
-        courseNumber: dict["number"] as! String,
-        department: dict["department"] as! String,
-        prereqs: dict["prereqs"] as! String,
-        description: dict["description"] as! String)
+            courseCode: dict["departmentCode"] as! String,
+            courseNumber: dict["number"] as! String,
+            department: dict["department"] as! String,
+            prereqs: dict["prereqs"] as! String,
+            description: dict["description"] as! String)
     }
     
     

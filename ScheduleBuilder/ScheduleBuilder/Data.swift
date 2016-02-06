@@ -3,7 +3,7 @@
 //  schedulerTest
 //
 //  Created by Fadi Botros on 2015-11-22.
-//  Copyright © 2015 Fadi Botros. All rights reserved.
+//  Copyright © 2015 Fadi "1-2" Botros. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,6 @@ import Foundation
 struct GlobalVariables {
     static var data: Data!
 }
-
 
 class Data {
     

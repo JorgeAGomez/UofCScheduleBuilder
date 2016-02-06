@@ -15,16 +15,26 @@
 		01BD3D7B1C0E329700115D84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D731C0E329600115D84 /* Data.swift */; };
 		01BD3D7C1C0E329700115D84 /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D741C0E329600115D84 /* courses.json */; };
 		01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D751C0E329600115D84 /* courseOfferings2.json */; };
-		01BD3D7E1C0E329700115D84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D761C0E329700115D84 /* Course.swift */; };
+		01BD3D7E1C0E329700115D84 /* Course_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D761C0E329700115D84 /* Course_new.swift */; };
 		01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D811C0EA8F600115D84 /* CourseViewController.swift */; };
 		01BD3D861C0EA8F600115D84 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D821C0EA8F600115D84 /* TutorialView.swift */; };
 		01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D831C0EA8F600115D84 /* LineView.swift */; };
 		01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D841C0EA8F600115D84 /* CoursePageView.swift */; };
 		01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D891C0EB48500115D84 /* LectureView.swift */; };
+		2F716E43990C0F50F6AF16A3 /* Pods_ScheduleBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91909423051356343D967249 /* Pods_ScheduleBuilder.framework */; };
 		987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B31C0C5B0B00766128 /* CourseCell.swift */; };
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
 		98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */; };
+		AC5AF7F31C6668E2008C4D8F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AF7F21C6668E2008C4D8F /* Course.swift */; };
+		ACD9F6031C6191A300C2CB51 /* PEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F6021C6191A300C2CB51 /* PEntity.swift */; };
+		ACD9F6051C61956F00C2CB51 /* Periodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F6041C61956F00C2CB51 /* Periodic.swift */; };
+		ACD9F6071C61AE2300C2CB51 /* ScheduleBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F6061C61AE2300C2CB51 /* ScheduleBuilderUITests.swift */; };
+		ACD9F6091C61BBF200C2CB51 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F6081C61BBF200C2CB51 /* DataHandler.swift */; };
+		ACD9F60B1C6273B100C2CB51 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F60A1C6273B100C2CB51 /* Lecture.swift */; };
+		ACD9F60D1C62749700C2CB51 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F60C1C62749700C2CB51 /* Time.swift */; };
+		ACD9F60F1C627F0200C2CB51 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F60E1C627F0200C2CB51 /* Tutorial.swift */; };
+		ACD9F6111C6295F500C2CB51 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9F6101C6295F500C2CB51 /* Lab.swift */; };
 		D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */; };
 		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
 		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
@@ -34,7 +44,7 @@
 		D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */; };
 		D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */; };
 		D9235A991BE3C6D5007173C9 /* ScheduleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A981BE3C6D5007173C9 /* ScheduleBuilderTests.swift */; };
-		D9235AA41BE3C6D5007173C9 /* ScheduleBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235AA31BE3C6D5007173C9 /* ScheduleBuilderUITests.swift */; };
+		D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */; };
 		D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */; };
 		D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */; };
 		D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */; };
@@ -68,16 +78,28 @@
 		01BD3D731C0E329600115D84 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		01BD3D741C0E329600115D84 /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
 		01BD3D751C0E329600115D84 /* courseOfferings2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings2.json; sourceTree = "<group>"; };
-		01BD3D761C0E329700115D84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		01BD3D761C0E329700115D84 /* Course_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_new.swift; sourceTree = "<group>"; };
 		01BD3D811C0EA8F600115D84 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		01BD3D821C0EA8F600115D84 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		01BD3D831C0EA8F600115D84 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		01BD3D841C0EA8F600115D84 /* CoursePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePageView.swift; sourceTree = "<group>"; };
 		01BD3D891C0EB48500115D84 /* LectureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureView.swift; sourceTree = "<group>"; };
+		91909423051356343D967249 /* Pods_ScheduleBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		919D86FBA2BC7AF285B3CE2D /* Pods-ScheduleBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.release.xcconfig"; sourceTree = "<group>"; };
+		9549B46AF44F78E72A3A3E8F /* Pods-ScheduleBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.debug.xcconfig"; sourceTree = "<group>"; };
 		987E02B31C0C5B0B00766128 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCell.swift; path = Controllers/CourseCell.swift; sourceTree = "<group>"; };
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
 		98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		AC5AF7F21C6668E2008C4D8F /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		ACD9F6021C6191A300C2CB51 /* PEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEntity.swift; sourceTree = "<group>"; };
+		ACD9F6041C61956F00C2CB51 /* Periodic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic.swift; sourceTree = "<group>"; };
+		ACD9F6061C61AE2300C2CB51 /* ScheduleBuilderUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderUITests.swift; sourceTree = "<group>"; };
+		ACD9F6081C61BBF200C2CB51 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		ACD9F60A1C6273B100C2CB51 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		ACD9F60C1C62749700C2CB51 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		ACD9F60E1C627F0200C2CB51 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		ACD9F6101C6295F500C2CB51 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewController.swift; sourceTree = "<group>"; };
 		D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -92,8 +114,8 @@
 		D9235A981BE3C6D5007173C9 /* ScheduleBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderTests.swift; sourceTree = "<group>"; };
 		D9235A9A1BE3C6D5007173C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9235A9F1BE3C6D5007173C9 /* ScheduleBuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleBuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9235AA31BE3C6D5007173C9 /* ScheduleBuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderUITests.swift; sourceTree = "<group>"; };
 		D9235AA51BE3C6D5007173C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = ../WelcomePageViewController.swift; sourceTree = "<group>"; };
 		D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentsTableViewController.swift; sourceTree = "<group>"; };
 		D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F716E43990C0F50F6AF16A3 /* Pods_ScheduleBuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +149,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		543F2588278D1E3FDE5E9083 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91909423051356343D967249 /* Pods_ScheduleBuilder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AEB26D906C1FEF6DE4326B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9549B46AF44F78E72A3A3E8F /* Pods-ScheduleBuilder.debug.xcconfig */,
+				919D86FBA2BC7AF285B3CE2D /* Pods-ScheduleBuilder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D9057CB21C0EC2230036D5D3 /* SchedulesTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,14 +180,22 @@
 		D9057CB31C0EC2550036D5D3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				ACD9F6021C6191A300C2CB51 /* PEntity.swift */,
 				01BD3D731C0E329600115D84 /* Data.swift */,
 				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
 				01BD3D711C0E329600115D84 /* Prof.swift */,
 				01BD3D721C0E329600115D84 /* Offering.swift */,
-				01BD3D761C0E329700115D84 /* Course.swift */,
+				01BD3D761C0E329700115D84 /* Course_new.swift */,
 				01BD3D741C0E329600115D84 /* courses.json */,
 				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
 				01BD3D701C0E329600115D84 /* profs.json */,
+				ACD9F6041C61956F00C2CB51 /* Periodic.swift */,
+				ACD9F6081C61BBF200C2CB51 /* DataHandler.swift */,
+				ACD9F60A1C6273B100C2CB51 /* Lecture.swift */,
+				ACD9F60C1C62749700C2CB51 /* Time.swift */,
+				ACD9F60E1C627F0200C2CB51 /* Tutorial.swift */,
+				ACD9F6101C6295F500C2CB51 /* Lab.swift */,
+				AC5AF7F21C6668E2008C4D8F /* Course.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -185,6 +233,8 @@
 				D9235A971BE3C6D5007173C9 /* ScheduleBuilderTests */,
 				D9235AA21BE3C6D5007173C9 /* ScheduleBuilderUITests */,
 				D9235A7E1BE3C6D5007173C9 /* Products */,
+				6AEB26D906C1FEF6DE4326B4 /* Pods */,
+				543F2588278D1E3FDE5E9083 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +260,7 @@
 				D9235A801BE3C6D5007173C9 /* AppDelegate.swift */,
 				D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */,
 				98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */,
+				D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */,
 				D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */,
 				D9235A8F1BE3C6D5007173C9 /* Info.plist */,
 				D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */,
@@ -229,7 +280,7 @@
 		D9235AA21BE3C6D5007173C9 /* ScheduleBuilderUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D9235AA31BE3C6D5007173C9 /* ScheduleBuilderUITests.swift */,
+				ACD9F6061C61AE2300C2CB51 /* ScheduleBuilderUITests.swift */,
 				D9235AA51BE3C6D5007173C9 /* Info.plist */,
 			);
 			path = ScheduleBuilderUITests;
@@ -242,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9235AA81BE3C6D5007173C9 /* Build configuration list for PBXNativeTarget "ScheduleBuilder" */;
 			buildPhases = (
+				0AF38F361D3CC261037C3715 /* Check Pods Manifest.lock */,
 				D9235A791BE3C6D5007173C9 /* Sources */,
 				D9235A7A1BE3C6D5007173C9 /* Frameworks */,
 				D9235A7B1BE3C6D5007173C9 /* Resources */,
+				1E23CED19F4679FC1E1A9614 /* Embed Pods Frameworks */,
+				E082CDE1EA99EC1FB28361B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,7 +351,7 @@
 		D9235A751BE3C6D5007173C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Alexander Ivanov";
 				TargetAttributes = {
@@ -365,14 +419,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AF38F361D3CC261037C3715 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1E23CED19F4679FC1E1A9614 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E082CDE1EA99EC1FB28361B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9235A791BE3C6D5007173C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD9F60D1C62749700C2CB51 /* Time.swift in Sources */,
+				ACD9F6051C61956F00C2CB51 /* Periodic.swift in Sources */,
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
+				ACD9F6091C61BBF200C2CB51 /* DataHandler.swift in Sources */,
 				98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */,
-				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
+				D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */,
+				01BD3D7E1C0E329700115D84 /* Course_new.swift in Sources */,
 				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
 				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,
 				01BD3D861C0EA8F600115D84 /* TutorialView.swift in Sources */,
@@ -384,15 +490,20 @@
 				98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */,
 				D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
+				ACD9F6031C6191A300C2CB51 /* PEntity.swift in Sources */,
 				D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */,
 				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
 				01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */,
+				AC5AF7F31C6668E2008C4D8F /* Course.swift in Sources */,
 				D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */,
 				01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */,
 				01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */,
+				ACD9F60B1C6273B100C2CB51 /* Lecture.swift in Sources */,
 				0163354D1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift in Sources */,
 				D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */,
 				D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */,
+				ACD9F60F1C627F0200C2CB51 /* Tutorial.swift in Sources */,
+				ACD9F6111C6295F500C2CB51 /* Lab.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,
 				D9EC79F71C0E442C00A0FEF9 /* DeptartmentTableViewController.swift in Sources */,
 			);
@@ -410,7 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9235AA41BE3C6D5007173C9 /* ScheduleBuilderUITests.swift in Sources */,
+				ACD9F6071C61AE2300C2CB51 /* ScheduleBuilderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +643,7 @@
 		};
 		D9235AA91BE3C6D5007173C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9549B46AF44F78E72A3A3E8F /* Pods-ScheduleBuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -546,6 +658,7 @@
 		};
 		D9235AAA1BE3C6D5007173C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 919D86FBA2BC7AF285B3CE2D /* Pods-ScheduleBuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -585,10 +698,12 @@
 		D9235AAF1BE3C6D5007173C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ScheduleBuilderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = ScheduleBuilder;
 				USES_XCTRUNNER = YES;
 			};
@@ -597,6 +712,7 @@
 		D9235AB01BE3C6D5007173C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ScheduleBuilderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC599.ScheduleBuilderUITests;

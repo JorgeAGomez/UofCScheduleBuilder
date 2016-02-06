@@ -29,10 +29,7 @@ class ScheduleBuilderUITests: XCTestCase {
     }
     
     func testExample() {
-        let timeAtPress = NSDate()
         
-        let d = Data()
-        let offr = d.readjson("courseOfferings2", fileType: "json")
     }
     
     

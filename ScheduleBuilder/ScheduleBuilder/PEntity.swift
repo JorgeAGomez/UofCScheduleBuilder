@@ -2,8 +2,18 @@
 //  PEntity.swift
 //  ScheduleBuilder
 //
-//  Created by Nik Ryzhenkov on 2016-02-02.
-//  Copyright © 2016 Alexander Ivanov. All rights reserved.
-//
+//  Protocol == Interface in Java/C#
+//  This is the Protocol that will be implemented by Course.swift, Tutorial.swift,
+//  and Lab.swift
+//  When creating objects of those types use PEntity as type
 
 import Foundation
+
+protocol PEntity
+{
+    var number: Int {get set}
+    var time: [Time] {get set}
+    //var professor: Prof {get set}
+    
+
+}

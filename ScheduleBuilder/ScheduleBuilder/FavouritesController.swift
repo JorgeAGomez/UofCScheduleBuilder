@@ -10,6 +10,7 @@ import UIKit
 
 class FavouritesController: UITableViewController {
 
+    @IBOutlet weak var nofavs: UILabel!
     var favourites = [Course]()
 
     override func viewDidLoad() {
@@ -44,6 +45,13 @@ class FavouritesController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (favourites.count == 0){
+            nofavs.hidden = false;
+        }
+        else{
+            nofavs.hidden = true;
+        }
+
         return favourites.count
     }
 

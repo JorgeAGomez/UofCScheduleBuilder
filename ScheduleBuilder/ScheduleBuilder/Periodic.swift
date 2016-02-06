@@ -3,12 +3,13 @@
 //  ScheduleBuilder
 //
 //  Created by Nik Ryzhenkov on 2016-02-02.
-//  Copyright © 2016 Alexander Ivanov. All rights reserved.
+//  Copyright © 2016 Alexander "Ruthless" Ivanov. All rights preserved.
 //
 
 import Foundation
 
 class Periodic{
+    
     var profsText = [String]()
     var matchedProfsText = [String]()
     var times = [Time]()

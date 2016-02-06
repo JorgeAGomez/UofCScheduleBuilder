@@ -11,9 +11,32 @@ import XCTest
 
 class ScheduleBuilderTests: XCTestCase {
     
+    var data: Data!
+    var dataHandler: DataHandler!
+    var schedules: [Schedule] = []
+    
     override func setUp() {
         super.setUp()
+        
+        //self.data = Data()
+        //self.dataHandler = DataHandler()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    func testOneRename()
+    {
+        // Grabs courses that have been marked by "heart" and uses them to 
+        //I am testing with just one course therefore this is acceptible
+        //let favoriteOfferings: [Offering] = data.offerings
+        
+        
+        //let scheduler = Scheduler(offerings: favoriteOfferings)
+        // Grabs courses that have been marked by "heart" and uses them to build schedule
+        
+        //let schedules = scheduler.getSchedules()
+        
+
+        XCTAssert(true)
     }
     
     override func tearDown() {
@@ -22,8 +45,8 @@ class ScheduleBuilderTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        self.dataHandler = DataHandler()
+        
     }
     
     func testPerformanceExample() {

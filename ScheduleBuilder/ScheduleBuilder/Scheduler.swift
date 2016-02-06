@@ -114,7 +114,9 @@ class Scheduler{
         return true
     }
     
-    func getAllOfferingComboRecrs(offering : Offering,
+    //used in initial seeding
+    func getAllOfferingComboRecrs(
+        offering : Offering,
         types :[String],
         typeIndex : Int,
         var currList : [ScheduleEvent],
@@ -141,7 +143,9 @@ class Scheduler{
 
     }
     
-    func getScheduleComboRecrs( offeringCombos : [[ScheduleEvent]],
+    //used in actual making of the schedules
+    func getScheduleComboRecrs(
+        offeringCombos : [[ScheduleEvent]],
         offrIndex : Int,
         var currList: [ScheduleEvent],
         inout allSchedules : [Schedule])
@@ -151,6 +155,7 @@ class Scheduler{
             allSchedules.append(Schedule(se: currList))
             return
         }
+        
         
         getScheduleComboRecrs(offeringCombos, offrIndex: offrIndex + 1, currList: currList, allSchedules: &allSchedules)
         
@@ -166,7 +171,7 @@ class Scheduler{
         var schedules = [Schedule]()
         var offerringCombos = [[ScheduleEvent]]()
         
-        for o in offerings{
+        for o in self.offerings{
             offerringCombos.appendContentsOf(self.getAllOfferingCombo(o))
         }
         
@@ -180,6 +185,7 @@ class Scheduler{
             if( s.courses.count > highestNumOfCourses) { highestNumOfCourses = s.courses.count}
         }
         
+        //some schedules will have only one course
         return schedules.filter( { $0.courses.count  == highestNumOfCourses})
     }
 }

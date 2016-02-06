@@ -15,8 +15,8 @@ class Prof {
     var fullname = ""       //Yousry Elsabrouty
     var href = ""           ///ShowRatings.jsp?tid=21847
     var profID = -1         //2
-    var rating = -1.0        //4.8
-    var numRatings = 0     //211
+    var rating = -1.0       //4.8
+    var numRatings = 0      //211
     
     init(firstname : String, lastname: String, fullname: String, href: String, profID : Int, rating : Double, numRatings: Int)
     {

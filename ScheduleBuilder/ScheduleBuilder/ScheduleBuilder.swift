@@ -17,7 +17,7 @@ public class ScheduleBuilder
     let NUMBER_OF_SCHEDULES: Int            // CHANGE THIS NUMBER TO ADJUST NUMBER OF VALID SCHEDULES RETURNED
     private var validSchedulesCounter: Int
     
-    var validSchedules: [Periodic_new] = []  // unsurprisingly, this is the aray of valid generated schedules
+    var validSchedules: [[Periodic_new]] = []  // unsurprisingly, this is the aray of valid generated schedules
     
     init()
     {
@@ -67,24 +67,26 @@ public class ScheduleBuilder
         else
         {   if coursesToSchedule.count == indexOfActiveCourse
             {
-                validSchedules += schedule   // class variable
+                validSchedules.append(schedule)   // class variable
             }
-        else{
-                for p in coursesToSchedule[indexOfActiveCourse].splitIntoPeriodics()
-                {
-                    if isTimeConstraintMet(schedule, periodicToAdd: p)
+            else
+            {
+                    for p in coursesToSchedule[indexOfActiveCourse].splitIntoPeriodics()
                     {
-                        var newSched = schedule
-                        newSched.append(p)     //only doing this because of soem weird compiler bug. Honestly cannot figure out what the fuck it is
-                        var new_indexOfActiveCourse = 0
-                        new_indexOfActiveCourse += indexOfActiveCourse+1
-                        andTree(newSched, coursesToSchedule: coursesToSchedule, indexOfActiveCourse: new_indexOfActiveCourse)
+                        if isTimeConstraintMet(schedule, periodicToAdd: p)
+                        {
+                            var newSched = schedule
+                            newSched.append(p)     //only doing this because of soem weird compiler bug. Honestly cannot figure out what the fuck it is
+                            var new_indexOfActiveCourse = indexOfActiveCourse
+                            new_indexOfActiveCourse += 1
+                            andTree(newSched, coursesToSchedule: coursesToSchedule, indexOfActiveCourse: new_indexOfActiveCourse)
+                        }
                     }
-                }
-
             }
         }
     }
+    
+    //TODO: write method to take periodic (complete or icomplete to add to schedule)
     
     // Populates array of courses
     // @PARAMS:

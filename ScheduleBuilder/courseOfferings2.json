@@ -112,6 +112,112 @@
         "courseNumber": "313", 
         "description": "Introduction to Computability", 
         "courseCode": "CPSC"
+    },
+    {
+        "periodics": [
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Lecture", 
+                "times": [
+                    {
+                        "fromTime": "12:00", 
+                        "day": "Mon", 
+                        "toTime": "12:50"
+                    }, 
+                    {
+                        "fromTime": "12:00", 
+                        "day": "Wed", 
+                        "toTime": "12:50"
+                    }, 
+                    {
+                        "fromTime": "12:00", 
+                        "day": "Fri", 
+                        "toTime": "12:50"
+                    }
+                ]
+            }, 
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Lab", 
+                "times": [
+                    {
+                        "fromTime": "13:00", 
+                        "day": "Mon", 
+                        "toTime": "13:50"
+                    }
+                ]
+            }, 
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Lab", 
+                "times": [
+                    {
+                        "fromTime": "10:00", 
+                        "day": "Tue", 
+                        "toTime": "10:50"
+                    }
+                ]
+            }, 
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Lab", 
+                "times": [
+                    {
+                        "fromTime": "10:00", 
+                        "day": "Wed", 
+                        "toTime": "10:50"
+                    }
+                ]
+            }, 
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Lab", 
+                "times": [
+                    {
+                        "fromTime": "10:00", 
+                        "day": "Fri", 
+                        "toTime": "10:50"
+                    }
+                ]
+            }, 
+            {
+                "matchedNames": [
+                    "None"
+                ], 
+                "instructor": [
+                    "Staff"
+                ], 
+                "type": "Tutorial"
+            }
+        ], 
+        "courseNumber": "267", 
+        "description": "University Calculus II", 
+        "courseCode": "MATH"
     }
     
 ]

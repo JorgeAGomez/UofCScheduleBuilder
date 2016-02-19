@@ -46,11 +46,11 @@ class ScheduleBuilderTests: XCTestCase {
     
     func testExample() {
         self.dataHandler = DataHandler()
-        var c = self.dataHandler.courses[0]
         
-        var b = c.splitIntoPeriodics()
+        //var b = c.splitIntoPeriodics()
         var a = ScheduleBuilder()
         a.getValidSchedules(self.dataHandler.courses)
+        let gg = a.validSchedules
         XCTAssert(true)
     }
     

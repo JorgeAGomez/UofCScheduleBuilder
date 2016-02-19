@@ -45,79 +45,65 @@
                         "toTime": "10:50"
                     }
                 ]
-            },
-            {
-                "matchedNames": [
-                    "None"
-                ],
-                "instructor": [
-                    "Staff"
-                ],
-                "type": "Tutorial",
-                "section": 1,
-                "times": [
-                    {
-                        "fromTime": "17:00",
-                        "day": "Mon",
-                        "toTime": "17:50"
-                    }
-                ]
-            },
-            {
-                "matchedNames": [
-                    "None"
-                ],
-                "instructor": [
-                    "Staff"
-                ],
-                "type": "Tutorial",
-                "section": 1,
-                "times": [
-                    {
-                        "fromTime": "12:00",
-                        "day": "Wed",
-                        "toTime": "12:50"
-                    }
-                ]
-            },
-            {
-                "matchedNames": [
-                    "None"
-                ],
-                "instructor": [
-                    "Staff"
-                ],
-                "type": "Tutorial",
-                "section": 1,
-                "times": [
-                    {
-                        "fromTime": "17:00",
-                        "day": "Wed",
-                        "toTime": "17:50"
-                    }
-                ]
-            },
-            {
-                "matchedNames": [
-                    "None"
-                ],
-                "instructor": [
-                    "Staff"
-                ],
-                "type": "Tutorial",
-                "section": 1,
-                "times": [
-                    {
-                        "fromTime": "11:00",
-                        "day": "Thu",
-                        "toTime": "11:50"
-                    }
-                ]
             }
+
         ],
         "courseNumber": "313",
         "description": "Introduction to Computability",
         "courseCode": "CPSC"
-    }
-
+    },
+     {
+     "periodics": [
+                   {
+                   "matchedNames": [
+                                    "None"
+                                    ],
+                   "instructor": [
+                                  "Staff"
+                                  ],
+                   "type": "Lecture",
+                   "section": 1,
+                   "times": [
+                             {
+                             "fromTime": "12:00",
+                             "day": "Mon",
+                             "toTime": "12:50"
+                             },
+                             {
+                             "fromTime": "12:00",
+                             "day": "Wed",
+                             "toTime": "12:50"
+                             },
+                             {
+                             "fromTime": "12:00",
+                             "day": "Fri",
+                             "toTime": "12:50"
+                             }
+                             ]
+                   },
+                   {
+                   "matchedNames": [
+                                    "None"
+                                    ],
+                   "instructor": [
+                                  "Staff"
+                                  ],
+                   "type": "Tutorial",
+                   "section": 1,
+                   "times": [
+                             {
+                             "fromTime": "11:00",
+                             "day": "Tue",
+                             "toTime": "11:50"
+                             }
+                             ]
+                   }
+                   
+                   ],
+     "courseNumber": "999",
+     "description": "Introduction to fuck you",
+     "courseCode": "MATH"
+     }
+    
+ 
 ]

@@ -16,7 +16,7 @@ import Foundation
 //              |
 //               -> [Lab]
 //               -> [Tutorial]
-class Course_new {
+public class Course_new {
     
     var title:        String = ""      // Special Topics in Computer Science
     var courseCode:   String = ""      // CPSC
@@ -43,6 +43,65 @@ class Course_new {
         self.prereqs = prereqs
         self.description = description
         self.lectures = lecture
+    }
+    
+    // Populates array of courses
+    // unwrapsthe course into a list of periodics. Periodic is a combination of One Lecture One tutorial and one Lab,
+    // essentially one schedualable unit.
+    public func splitIntoPeriodics() -> [Periodic_new]
+    {
+        var periodics: [Periodic_new] = []
         
+        for l in lectures
+        {
+            let numOfTuts = l.tutorials!.count
+            let numOfLabs = l.labs!.count
+            
+            if numOfLabs != 0 && numOfTuts != 0
+            {
+                
+                for tut in l.tutorials!
+                {
+                    for lab in l.labs!
+                    {
+                        var times:[[Time]] = [[],[],[]] //LEAVE DECLARATION AS IS otherwise compiler throws some pants on the head retarded error about CPU not supporting operation
+                        times[0] = l.time
+                        times[1] = tut.time
+                        times[2] = lab.time
+                        let periodic = Periodic_new(times: times, courseName: self.courseCode+" "+self.courseNumber, lectureNum: l.number, tutorialNum: tut.number, labNum: lab.number)
+                        periodics.append(periodic)
+                    }
+                }
+            }
+                
+            else if numOfTuts != 0
+            {
+                for tut in l.tutorials!
+                {
+                    var times:[[Time]] = [[],[],[]] //LEAVE DECLARATION AS IS otherwise compiler throws some pants on the head retarded error about CPU not supporting operation
+                    times[0] = l.time
+                    times[1] = tut.time
+                    times[2] = []
+                    let periodic = Periodic_new(times: times, courseName: self.courseCode+" "+self.courseNumber, lectureNum: l.number, tutorialNum: tut.number, labNum: nil)
+                    periodics.append(periodic)
+                }
+            }
+                
+            else if numOfLabs != 0
+            {
+                for lab in l.labs!
+                {
+                    var times:[[Time]] = [[],[],[]] //LEAVE DECLARATION AS IS otherwise compiler throws some pants on the head retarded error about CPU not supporting operation
+                    times[0] = l.time
+                    times[1] = []
+                    times[2] = lab.time
+                    let periodic = Periodic_new(times: times, courseName: self.courseCode+" "+self.courseNumber, lectureNum: l.number, tutorialNum: nil, labNum: lab.number)
+                    periodics.append(periodic)
+                }
+            }
+            
+
+        }
+        return periodics
     }
 }

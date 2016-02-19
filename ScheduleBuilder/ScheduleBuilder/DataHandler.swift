@@ -16,10 +16,26 @@ public struct GlobalVariables2 {
 
 public class DataHandler {
     
-    var courses = [Course_new]()
+    public var courses = [Course_new]()
     var profs = [Prof]()
     var offerings = [Offering]()
     var departments = [String]()
+    
+    
+    
+    
+    init()
+    {
+        
+        //        let timeAtPress = NSDate()
+        //        let profsJSON = readJSON("courseOfferings2", fileType: "json")
+        
+        let crs = readJSON("courseOfferings2", fileType: "json")
+        processCourses(crs)
+        
+        //        let coursesGeneralInfo = readJSON("courses", fileType: "json")
+        
+    }
     
     // Populates array of courses
     // @PARAMS:
@@ -34,7 +50,7 @@ public class DataHandler {
         //anything about JSON is known at all.
         
         
-        var courseName:   String                        //Introduction to Computability
+        var courseName:   String                        // Introduction to Computability
         var courseNumber: String                        // 313
         var courseCode:   String                        // CPSC
         var courseDescription: String = "DESCRIPTION"   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
@@ -123,7 +139,6 @@ public class DataHandler {
                     times.append(Time(dict: actualJSON2))
                 }
                 let lectureSection = 1
-                
                 let (tutorials, labs) = getLabsOrTutsForLectureWithSection(periodics,sectionNumber: 1)
                 lectures.append(Lecture(number: lectureSection, time: times, tutorials: tutorials, labs: labs))
                 
@@ -135,27 +150,13 @@ public class DataHandler {
     }
     
     //What do you think it does?
-    func readJSON (fileName: String, fileType: String) -> JSON{
+    private func readJSON (fileName: String, fileType: String) -> JSON{
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: fileType)
         let jsonData : NSData = try! NSData(contentsOfFile: path! as String, options: NSDataReadingOptions.DataReadingMapped)
         let jsond = JSON(data: jsonData)
         return jsond
     }
 
-
-    
-    init()
-    {
-        
-//        let timeAtPress = NSDate()
-//        let profsJSON = readJSON("courseOfferings2", fileType: "json")
-        
-        let crs = readJSON("courseOfferings2", fileType: "json")
-        processCourses(crs)
-        
-//        let coursesGeneralInfo = readJSON("courses", fileType: "json")
-        
-    }
     
     
 }

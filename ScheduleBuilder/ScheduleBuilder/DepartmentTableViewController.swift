@@ -11,8 +11,8 @@ import UIKit
 class DeptartmentTableViewController: UITableViewController, UISearchResultsUpdating {
 
     var department = ""
-    var allCourses = [Course]()
-    var filteredCourses = [Course]()
+    var allCourses = [Course_new]()
+    var filteredCourses = [Course_new]()
     var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
@@ -26,7 +26,8 @@ class DeptartmentTableViewController: UITableViewController, UISearchResultsUpda
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         
-        self.allCourses = GlobalVariables.data.getAllCoursesFromDepartment(department)
+        self.allCourses = GlobalVariables2.data.getAllCoursesFromDepartment(department)
+        
         self.filteredCourses = self.allCourses
         
         self.resultSearchController = UISearchController(searchResultsController: nil)

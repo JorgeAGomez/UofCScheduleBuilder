@@ -10,6 +10,9 @@ import XCTest
 @testable import ScheduleBuilder
 
 class ScheduleBuilderTests: XCTestCase {
+    var dh: DataHandler!
+    
+    var sched: [Schedule] = []
     
     override func setUp() {
         super.setUp()
@@ -24,6 +27,15 @@ class ScheduleBuilderTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        self.dh = DataHandler()
+        
+        var a = ScheduleBuilder()
+        
+        a.getValidSchedules(self.dh.courses)
+        
+        let gg = a.validSchedules
+        XCTAssert(true)
     }
     
     func testPerformanceExample() {

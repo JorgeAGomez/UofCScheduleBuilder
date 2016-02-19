@@ -12,10 +12,10 @@ import UIKit
 class FavouritesController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var nofavs: UILabel!
-    var favourites = [Course]()
+    var favourites = [Course_new]()
     var favourite_classes : [FavouriteCourses]!
     var fetchResultController:NSFetchedResultsController!
-    
+    var dh = DataHandler()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +34,16 @@ class FavouritesController: UITableViewController, NSFetchedResultsControllerDel
             fetchResultController.delegate = self
             do {
                 try fetchResultController.performFetch()
-                favourites = fetchResultController.fetchedObjects as! [Course]
+                favourites = fetchResultController.fetchedObjects as! [Course_new]
             } catch {
                 print(error)
             }
         }
-        self.favourites = GlobalVariables.data.getFavourites()
+        self.favourites = GlobalVariables2.data.getFavourites()
     }
     
     override func viewWillAppear(animated: Bool) {
-        favourites = GlobalVariables.data.getFavourites()
+        favourites = GlobalVariables2.data.getFavourites()
         tableView.reloadData()
     }
 

@@ -21,6 +21,7 @@
 		01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D831C0EA8F600115D84 /* LineView.swift */; };
 		01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D841C0EA8F600115D84 /* CoursePageView.swift */; };
 		01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D891C0EB48500115D84 /* LectureView.swift */; };
+		68E2F4AD19EEB80E97F91857 /* Pods_ScheduleBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */; };
 		987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B31C0C5B0B00766128 /* CourseCell.swift */; };
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
@@ -34,12 +35,27 @@
 		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
 		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
 		D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A801BE3C6D5007173C9 /* AppDelegate.swift */; };
-		D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A841BE3C6D5007173C9 /* Main.storyboard */; };
+		D9235A861BE3C6D5007173C9 /* other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A841BE3C6D5007173C9 /* other.storyboard */; };
 		D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */; };
 		D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */; };
 		D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */; };
 		D9235A991BE3C6D5007173C9 /* ScheduleBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A981BE3C6D5007173C9 /* ScheduleBuilderTests.swift */; };
 		D9235AA41BE3C6D5007173C9 /* ScheduleBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235AA31BE3C6D5007173C9 /* ScheduleBuilderUITests.swift */; };
+		D960F7951C77A268007B5E74 /* Course_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F78A1C77A268007B5E74 /* Course_new.swift */; };
+		D960F7961C77A268007B5E74 /* courseOfferings2.json in Resources */ = {isa = PBXBuildFile; fileRef = D960F78B1C77A268007B5E74 /* courseOfferings2.json */; };
+		D960F7971C77A268007B5E74 /* courses_new.json in Resources */ = {isa = PBXBuildFile; fileRef = D960F78C1C77A268007B5E74 /* courses_new.json */; };
+		D960F7981C77A268007B5E74 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F78D1C77A268007B5E74 /* DataHandler.swift */; };
+		D960F7991C77A268007B5E74 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F78E1C77A268007B5E74 /* Lab.swift */; };
+		D960F79A1C77A268007B5E74 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F78F1C77A268007B5E74 /* Lecture.swift */; };
+		D960F79C1C77A268007B5E74 /* PEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7911C77A268007B5E74 /* PEntity.swift */; };
+		D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7921C77A268007B5E74 /* Periodic_new.swift */; };
+		D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */; };
+		D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7941C77A268007B5E74 /* Tutorial.swift */; };
+		D9BA66531C77A87100FACBED /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66521C77A87100FACBED /* Time.swift */; };
+		D9BA66551C77A88D00FACBED /* Periodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66541C77A88D00FACBED /* Periodic.swift */; };
+		D9BA66571C77A8F900FACBED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66561C77A8F900FACBED /* Schedule.swift */; };
+		D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BA66581C77AE7200FACBED /* Main.storyboard */; };
+		D9BA665B1C77B33800FACBED /* blah.json in Resources */ = {isa = PBXBuildFile; fileRef = D9BA665A1C77B33800FACBED /* blah.json */; };
 		D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */; };
 		D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */; };
 		D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */; };
@@ -80,10 +96,13 @@
 		01BD3D831C0EA8F600115D84 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		01BD3D841C0EA8F600115D84 /* CoursePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePageView.swift; sourceTree = "<group>"; };
 		01BD3D891C0EB48500115D84 /* LectureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureView.swift; sourceTree = "<group>"; };
+		122A86C1B1B358A6A02B0A2E /* Pods-ScheduleBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.release.xcconfig"; sourceTree = "<group>"; };
+		9556DA509FA8CF720F700725 /* Pods-ScheduleBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.debug.xcconfig"; sourceTree = "<group>"; };
 		987E02B31C0C5B0B00766128 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCell.swift; path = Controllers/CourseCell.swift; sourceTree = "<group>"; };
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
 		98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69879861C519FC700123D1F /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		D69879881C51B7D400123D1F /* SettingUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUpProfileViewController.swift; sourceTree = "<group>"; };
 		D698798B1C52BEA200123D1F /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +113,7 @@
 		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		D9235A7D1BE3C6D5007173C9 /* ScheduleBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9235A801BE3C6D5007173C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9235A851BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9235A851BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/other.storyboard; sourceTree = "<group>"; };
 		D9235A881BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleBuilder.xcdatamodel; sourceTree = "<group>"; };
 		D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9235A8D1BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +124,21 @@
 		D9235A9F1BE3C6D5007173C9 /* ScheduleBuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleBuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9235AA31BE3C6D5007173C9 /* ScheduleBuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderUITests.swift; sourceTree = "<group>"; };
 		D9235AA51BE3C6D5007173C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D960F78A1C77A268007B5E74 /* Course_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course_new.swift; sourceTree = "<group>"; };
+		D960F78B1C77A268007B5E74 /* courseOfferings2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings2.json; sourceTree = "<group>"; };
+		D960F78C1C77A268007B5E74 /* courses_new.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses_new.json; sourceTree = "<group>"; };
+		D960F78D1C77A268007B5E74 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		D960F78E1C77A268007B5E74 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
+		D960F78F1C77A268007B5E74 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		D960F7911C77A268007B5E74 /* PEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEntity.swift; sourceTree = "<group>"; };
+		D960F7921C77A268007B5E74 /* Periodic_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic_new.swift; sourceTree = "<group>"; };
+		D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilder.swift; sourceTree = "<group>"; };
+		D960F7941C77A268007B5E74 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		D9BA66521C77A87100FACBED /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		D9BA66541C77A88D00FACBED /* Periodic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic.swift; sourceTree = "<group>"; };
+		D9BA66561C77A8F900FACBED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		D9BA66581C77AE7200FACBED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D9BA665A1C77B33800FACBED /* blah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blah.json; sourceTree = "<group>"; };
 		D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = ../WelcomePageViewController.swift; sourceTree = "<group>"; };
 		D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentsTableViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68E2F4AD19EEB80E97F91857 /* Pods_ScheduleBuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +173,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C9B0FAD49BE3238430BEB6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2354EB2D03B9191847F0CB2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9556DA509FA8CF720F700725 /* Pods-ScheduleBuilder.debug.xcconfig */,
+				122A86C1B1B358A6A02B0A2E /* Pods-ScheduleBuilder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D69879851C519F9B00123D1F /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,14 +221,28 @@
 		D9057CB31C0EC2550036D5D3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				01BD3D731C0E329600115D84 /* Data.swift */,
-				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
-				01BD3D711C0E329600115D84 /* Prof.swift */,
-				01BD3D721C0E329600115D84 /* Offering.swift */,
+				D960F78A1C77A268007B5E74 /* Course_new.swift */,
 				01BD3D761C0E329700115D84 /* Course.swift */,
+				D960F78B1C77A268007B5E74 /* courseOfferings2.json */,
+				D960F78C1C77A268007B5E74 /* courses_new.json */,
 				01BD3D741C0E329600115D84 /* courses.json */,
-				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
+				01BD3D731C0E329600115D84 /* Data.swift */,
+				D960F78D1C77A268007B5E74 /* DataHandler.swift */,
+				D960F78E1C77A268007B5E74 /* Lab.swift */,
+				D960F78F1C77A268007B5E74 /* Lecture.swift */,
+				D960F7911C77A268007B5E74 /* PEntity.swift */,
+				D9BA66541C77A88D00FACBED /* Periodic.swift */,
+				D960F7921C77A268007B5E74 /* Periodic_new.swift */,
+				01BD3D711C0E329600115D84 /* Prof.swift */,
 				01BD3D701C0E329600115D84 /* profs.json */,
+				D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */,
+				D9BA66561C77A8F900FACBED /* Schedule.swift */,
+				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
+				D9BA66521C77A87100FACBED /* Time.swift */,
+				D960F7941C77A268007B5E74 /* Tutorial.swift */,
+				01BD3D721C0E329600115D84 /* Offering.swift */,
+				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
+				D9BA665A1C77B33800FACBED /* blah.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -216,6 +282,8 @@
 				D9235A971BE3C6D5007173C9 /* ScheduleBuilderTests */,
 				D9235AA21BE3C6D5007173C9 /* ScheduleBuilderUITests */,
 				D9235A7E1BE3C6D5007173C9 /* Products */,
+				2354EB2D03B9191847F0CB2A /* Pods */,
+				0C9B0FAD49BE3238430BEB6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,7 +300,8 @@
 		D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				D9235A841BE3C6D5007173C9 /* Main.storyboard */,
+				D9235A841BE3C6D5007173C9 /* other.storyboard */,
+				D9BA66581C77AE7200FACBED /* Main.storyboard */,
 				D69879851C519F9B00123D1F /* ProfileTab */,
 				D698798A1C52BE7E00123D1F /* FeatureTab */,
 				D9057CB31C0EC2550036D5D3 /* Data */,
@@ -276,9 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9235AA81BE3C6D5007173C9 /* Build configuration list for PBXNativeTarget "ScheduleBuilder" */;
 			buildPhases = (
+				19E4D8CB2BB5C2AB5A17829F /* Check Pods Manifest.lock */,
 				D9235A791BE3C6D5007173C9 /* Sources */,
 				D9235A7A1BE3C6D5007173C9 /* Frameworks */,
 				D9235A7B1BE3C6D5007173C9 /* Resources */,
+				181FB22F2C95954D32C387CD /* Embed Pods Frameworks */,
+				A04DFFF6CB385A676AC5C2AB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,11 +447,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01BD3D781C0E329700115D84 /* profs.json in Resources */,
+				D960F7961C77A268007B5E74 /* courseOfferings2.json in Resources */,
 				01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */,
 				D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */,
+				D9BA665B1C77B33800FACBED /* blah.json in Resources */,
 				D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */,
+				D960F7971C77A268007B5E74 /* courses_new.json in Resources */,
+				D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */,
 				01BD3D7C1C0E329700115D84 /* courses.json in Resources */,
-				D9235A861BE3C6D5007173C9 /* Main.storyboard in Resources */,
+				D9235A861BE3C6D5007173C9 /* other.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,18 +475,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		181FB22F2C95954D32C387CD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19E4D8CB2BB5C2AB5A17829F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A04DFFF6CB385A676AC5C2AB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9235A791BE3C6D5007173C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
+				D960F7981C77A268007B5E74 /* DataHandler.swift in Sources */,
 				98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */,
 				D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */,
+				D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */,
+				D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */,
+				D960F79A1C77A268007B5E74 /* Lecture.swift in Sources */,
 				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
 				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
+				D960F7951C77A268007B5E74 /* Course_new.swift in Sources */,
 				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,
 				01BD3D861C0EA8F600115D84 /* TutorialView.swift in Sources */,
+				D9BA66571C77A8F900FACBED /* Schedule.swift in Sources */,
+				D9BA66531C77A87100FACBED /* Time.swift in Sources */,
 				98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */,
 				D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */,
 				01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */,
@@ -421,10 +552,14 @@
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
 				D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */,
 				D69879871C519FC700123D1F /* UserProfileViewController.swift in Sources */,
+				D960F7991C77A268007B5E74 /* Lab.swift in Sources */,
 				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
 				01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */,
 				D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */,
+				D9BA66551C77A88D00FACBED /* Periodic.swift in Sources */,
+				D960F79C1C77A268007B5E74 /* PEntity.swift in Sources */,
 				D698798E1C52CF8C00123D1F /* FavouriteCourses.swift in Sources */,
+				D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */,
 				01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */,
 				01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */,
 				0163354D1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift in Sources */,
@@ -470,12 +605,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D9235A841BE3C6D5007173C9 /* Main.storyboard */ = {
+		D9235A841BE3C6D5007173C9 /* other.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D9235A851BE3C6D5007173C9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = other.storyboard;
 			sourceTree = "<group>";
 		};
 		D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */ = {
@@ -572,6 +707,7 @@
 		};
 		D9235AA91BE3C6D5007173C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9556DA509FA8CF720F700725 /* Pods-ScheduleBuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -586,6 +722,7 @@
 		};
 		D9235AAA1BE3C6D5007173C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 122A86C1B1B358A6A02B0A2E /* Pods-ScheduleBuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -17,7 +17,7 @@ class CourseViewController: UIViewController {
     @IBOutlet weak var subtitleToolBar: UIToolbar!
     @IBOutlet weak var subtitleBarItem: UIBarButtonItem!
     
-    var course : Course = Course()
+    var course : Course_new = Course_new()
     var favorite_courses : FavouriteCourses!   // CORE DATA
     
     let faveButton: UIButton = UIButton(type: UIButtonType.Custom)
@@ -172,73 +172,78 @@ class CourseViewController: UIViewController {
         textLabel.dataDetectorTypes = UIDataDetectorTypes.Link
         // If the course is offered this semester
 
-        if(course.offering != nil){
-            
-            //textLabel.numberOfLines = 0
-
-            var txt = ""
-            for p in (course.offering?.periodics)!
+        //empty lectures means not offered
+        if (course.lectures.count != 0)
+        {
+            for p in course.lectures
             {
-                txt += p.type + ": "
+                var txt = ""
                 
-                if(p.profs.count > 0)
-                {
-                    for prof in p.profs{
-
-                        let fillStars = String(count: Int(round(prof.rating)),repeatedValue: Character("★"))
-                        let unfillStars = String(count: 5 - Int(round(prof.rating)),repeatedValue: Character("☆"))
-                        
-                        let ratingText = NSAttributedString(string: prof.fullname + " " + fillStars + unfillStars + "\n",
-                            attributes: [
-                                NSLinkAttributeName: "www.ratemyprofessors.com" + prof.href,
-                            ])
-
-                        
-                        
-                        
-                        txt += prof.fullname + " " + fillStars + unfillStars + "\n"
-                        txt += "RMP : www.ratemyprofessors.com" + prof.href + "\n"
-                        
-                        
-                    }
-                }
+                txt += "Lecture: "
                 
-                else
-                {
-                        txt += "\n"
-                }
-                
-                
-                
-                if(p.times.count > 0){
-                
-                    for t in p.times{
+                //TODO: ADD PROFFS
+                if(p.time.count > 0){
+                    
+                    for t in p.time{
                         txt += t.day + ", "
                     }
                     txt = String(txt.characters.dropLast())
                     txt = String(txt.characters.dropLast())
                     
-                    txt += " " + (p.times.first?.fromTimeText)! + " - " + (p.times.first?.toTimeText)! + "\n"
+                    txt += " " + (p.time.first?.fromTimeText)! + " - " + (p.time.first?.toTimeText)! + "\n"
                     
                     txt += "\n"
                     
                 }
+
                 
+                for t in p.tutorials!
+                {
+                    txt += "Tutorial: "
+                    //TODO: ADD PROFFS
+                    if(t.time.count > 0){
+                        
+                        for td in p.time{
+                            txt += td.day + ", "
+                        }
+                        txt = String(txt.characters.dropLast())
+                        txt = String(txt.characters.dropLast())
+                        
+                        txt += " " + (t.time.first?.fromTimeText)! + " - " + (t.time.first?.toTimeText)! + "\n"
+                        
+                        txt += "\n"
+                        
+                    }
+
+                }
                 
-                
-                
-                
-                
+                for l in p.labs!
+                {
+                    txt += "Lab: "
+                    //TODO: ADD PROFFS
+                    if(l.time.count > 0){
+                        
+                        for td in p.time{
+                            txt += td.day + ", "
+                        }
+                        txt = String(txt.characters.dropLast())
+                        txt = String(txt.characters.dropLast())
+                        
+                        txt += " " + (l.time.first?.fromTimeText)! + " - " + (l.time.first?.toTimeText)! + "\n"
+                        
+                        txt += "\n"
+                        
+                    }
+                    
+                }
+                textLabel.text = txt
+                //            textLabel
+                StackView.addArrangedSubview(textLabel)
             }
-            
-            textLabel.text = txt
-            textLabel
-            StackView.addArrangedSubview(textLabel)
-            
         }
+        else
+        {
             
-        // Else the course is not offered this semester
-        else{
             //textLabel.numberOfLines = 0
             textLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24.0)
             textLabel.heightAnchor.constraintEqualToConstant(300).active = true
@@ -248,45 +253,89 @@ class CourseViewController: UIViewController {
             textLabel.sizeThatFits(textLabel.contentSize)
             textLabel.scrollEnabled = false
             StackView.addArrangedSubview(textLabel)
+            
 
         }
-        
-        
-        /*
-        if(course.offering != nil)
-        {
-            var txt = ""
-            for p in (course.offering?.periodics)!
-            {
-                txt += p.type + "\n"
-                
-                if(p.profs.count > 0)
-                {
-                    for prof in p.profs{
-                        //let r = String(prof.rating) // the actual rating number
-                        let fillStars = String(count: Int(round(prof.rating)),repeatedValue: Character("★"))
-                        let unfillStars = String(count: 5 - Int(round(prof.rating)),repeatedValue: Character("☆"))
-                        txt += prof.fullname + " " + fillStars + unfillStars + "\n"
-                        txt += "RMP : www.ratemyprofessors.com" + prof.href + "\n"
-                    }
-                }
-                
-                for t in p.times{
-                    txt += t.day + " " + t.fromTimeText + " - " + t.toTimeText + "\n"
-                }
-                
-                txt += "\n"
-            }
-            
-            txt = String(txt.characters.dropLast())
-            txt = String(txt.characters.dropLast())
-            
-            offeringDetails.text = txt
-        }
-        else{
-            offeringDetails.text = "Not offered this semester"
-        }
-        */
+//        if(course.offering != nil){
+//            
+//            //textLabel.numberOfLines = 0
+//
+//            var txt = ""
+//            for p in (course.offering?.periodics)!
+//            {
+//                txt += p.type + ": "
+//                
+//                if(p.profs.count > 0)
+//                {
+//                    for prof in p.profs{
+//
+//                        let fillStars = String(count: Int(round(prof.rating)),repeatedValue: Character("★"))
+//                        let unfillStars = String(count: 5 - Int(round(prof.rating)),repeatedValue: Character("☆"))
+//                        
+//                        let ratingText = NSAttributedString(string: prof.fullname + " " + fillStars + unfillStars + "\n",
+//                            attributes: [
+//                                NSLinkAttributeName: "www.ratemyprofessors.com" + prof.href,
+//                            ])
+//
+//                        
+//                        
+//                        
+//                        txt += prof.fullname + " " + fillStars + unfillStars + "\n"
+//                        txt += "RMP : www.ratemyprofessors.com" + prof.href + "\n"
+//                        
+//                        
+//                    }
+//                }
+////
+//                else
+//                {
+//                        txt += "\n"
+//                }
+//                
+//                
+//                
+//                if(p.times.count > 0){
+//                
+//                    for t in p.times{
+//                        txt += t.day + ", "
+//                    }
+//                    txt = String(txt.characters.dropLast())
+//                    txt = String(txt.characters.dropLast())
+//                    
+//                    txt += " " + (p.times.first?.fromTimeText)! + " - " + (p.times.first?.toTimeText)! + "\n"
+//                    
+//                    txt += "\n"
+//                    
+//                }
+//                
+//                
+//                
+//                
+//                
+//                
+//            }
+//            
+//            
+//            
+//            textLabel.text = txt
+//            textLabel
+//            StackView.addArrangedSubview(textLabel)
+//            
+//        }
+//            
+//        // Else the course is not offered this semester
+//        else{
+//            //textLabel.numberOfLines = 0
+//            textLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24.0)
+//            textLabel.heightAnchor.constraintEqualToConstant(300).active = true
+//            textLabel.textColor = UIColor.lightGrayColor()
+//            textLabel.text  = "\n\n\n\nCourse Not Offered this Semester\n\n"
+//            textLabel.textAlignment = .Center
+//            textLabel.sizeThatFits(textLabel.contentSize)
+//            textLabel.scrollEnabled = false
+//            StackView.addArrangedSubview(textLabel)
+//
+//        }
         
     }
     

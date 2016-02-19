@@ -23,7 +23,8 @@ class DepartmentsTableViewController: UITableViewController, UISearchResultsUpda
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        allDepartments = GlobalVariables.data.departments
+        allDepartments = GlobalVariables2.data.departments
+        
         filteredDepartments = allDepartments
         
         self.resultSearchController = UISearchController(searchResultsController: nil)

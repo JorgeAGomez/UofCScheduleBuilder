@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GlobalVariables.data = Data()
+        GlobalVariables2.data = DataHandler()
         
         // Change the tab bar to the official U of C Color
         MainTabBar.appearance().tintColor = UIColor(hue: 355/360, saturation: 0.92, brightness: 0.87, alpha: 1)

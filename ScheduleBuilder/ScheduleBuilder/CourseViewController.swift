@@ -46,6 +46,7 @@ class CourseViewController: UIViewController {
         //let bottomShadow = CALayer(layer: <#T##AnyObject#>)
         //bottomShadow.frame = subtitleToolBar.frame
         //bottomShadow.backgroundColor = UIColor.redColor().CGColor
+      
         subtitleToolBar.addSubview(LineView())
         
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -344,21 +345,6 @@ class CourseViewController: UIViewController {
         if(course.favourited == false){
             course.favourited = true
             faveButton.setImage(UIImage(named:"fullHeart.png")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-         if let managedObjectContext = (UIApplication.sharedApplication().delegate as?
-AppDelegate)?.managedObjectContext {
-          favorite_courses = NSEntityDescription.insertNewObjectForEntityForName("Favourite", inManagedObjectContext: managedObjectContext) as! FavouriteCourses
-          favorite_courses.coursename = course.title
-          favorite_courses.coursenumber = course.courseNumber
-          do {
-            try managedObjectContext.save()
-            print("SAVED DATAAAAAAAAA!!!!!!")
-          } catch {
-            print(error)
-            }
-          }
-
-
-            
         }
         else{
             course.favourited = false

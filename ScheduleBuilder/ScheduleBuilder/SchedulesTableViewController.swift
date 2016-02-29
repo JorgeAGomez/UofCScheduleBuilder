@@ -41,6 +41,7 @@ class SchedulesTableViewController: UITableViewController {
         
         let favouriteCourses = GlobalVariables.data.getFavourites()
         
+        
         var favoriteOfferings: [Offering] = []
         
         for favorite in favouriteCourses{
@@ -52,6 +53,11 @@ class SchedulesTableViewController: UITableViewController {
         let scheduler = Scheduler(offerings: favoriteOfferings)
         
         schedules = scheduler.getSchedules()
+        
+        let favouriteCourses2 = GlobalVariables2.data.getFavourites()
+        let scheduleBuilder = ScheduleBuilder(favouriteCourses2, 15)
+        scheduleBuilder.createValidSchedules()
+        let schedules = scheduleBuilder.validSchedules // [[Periodic_new]]
         
     }
     override func viewWillAppear(animated: Bool) {

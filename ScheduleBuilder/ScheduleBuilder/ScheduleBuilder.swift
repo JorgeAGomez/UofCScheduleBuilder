@@ -35,7 +35,13 @@ public class ScheduleBuilder
         self.validSchedulesCounter = NUMBER_OF_SCHEDULES
     }
     
-    public func getValidSchedules(courses_list: [Course_new])
+    
+    public func createValidSchedules()
+    {
+        andTree([], coursesToSchedule: self.courses, indexOfActiveCourse: 0)
+    }
+    
+    public func createValidSchedules(courses_list: [Course_new])
     {
         andTree([], coursesToSchedule: courses_list, indexOfActiveCourse: 0)
     }

@@ -27,10 +27,18 @@
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
 		98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */; };
 		D69879871C519FC700123D1F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69879861C519FC700123D1F /* UserProfileViewController.swift */; };
-		D69879891C51B7D400123D1F /* SettingUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69879881C51B7D400123D1F /* SettingUpProfileViewController.swift */; };
+		D69879891C51B7D400123D1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69879881C51B7D400123D1F /* LoginViewController.swift */; };
 		D698798C1C52BEA200123D1F /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798B1C52BEA200123D1F /* FeatureViewController.swift */; };
 		D698798E1C52CF8C00123D1F /* FavouriteCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798D1C52CF8C00123D1F /* FavouriteCourses.swift */; };
 		D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798F1C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift */; };
+		D6D72BE01C8147860016E6C9 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BDF1C8147860016E6C9 /* Firebase.framework */; };
+		D6D72BE21C8147C40016E6C9 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE11C8147C40016E6C9 /* libicucore.tbd */; };
+		D6D72BE41C8147D50016E6C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE31C8147D50016E6C9 /* libc++.tbd */; };
+		D6D72BE61C8147E10016E6C9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE51C8147E10016E6C9 /* CFNetwork.framework */; };
+		D6D72BE81C8147EA0016E6C9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE71C8147EA0016E6C9 /* Security.framework */; };
+		D6D72BEA1C8147F30016E6C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE91C8147F30016E6C9 /* SystemConfiguration.framework */; };
+		D6D72BEC1C82A46F0016E6C9 /* webAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D72BEB1C82A46F0016E6C9 /* webAuthenticationViewController.swift */; };
+		D6D72BEE1C82A9B00016E6C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D72BED1C82A9B00016E6C9 /* Constants.swift */; };
 		D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */; };
 		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
 		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
@@ -104,10 +112,18 @@
 		98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69879861C519FC700123D1F /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		D69879881C51B7D400123D1F /* SettingUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUpProfileViewController.swift; sourceTree = "<group>"; };
+		D69879881C51B7D400123D1F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D698798B1C52BEA200123D1F /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		D698798D1C52CF8C00123D1F /* FavouriteCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteCourses.swift; path = Controllers/FavouriteCourses.swift; sourceTree = "<group>"; };
 		D698798F1C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FavouriteCourses+CoreDataProperties.swift"; path = "../FavouriteCourses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6D72BDF1C8147860016E6C9 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		D6D72BE11C8147C40016E6C9 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D6D72BE31C8147D50016E6C9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D6D72BE51C8147E10016E6C9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D6D72BE71C8147EA0016E6C9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D6D72BE91C8147F30016E6C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D6D72BEB1C82A46F0016E6C9 /* webAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webAuthenticationViewController.swift; sourceTree = "<group>"; };
+		D6D72BED1C82A9B00016E6C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulesTableViewController.swift; sourceTree = "<group>"; };
 		D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -152,7 +168,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D72BEA1C8147F30016E6C9 /* SystemConfiguration.framework in Frameworks */,
+				D6D72BE81C8147EA0016E6C9 /* Security.framework in Frameworks */,
+				D6D72BE61C8147E10016E6C9 /* CFNetwork.framework in Frameworks */,
+				D6D72BE41C8147D50016E6C9 /* libc++.tbd in Frameworks */,
+				D6D72BE21C8147C40016E6C9 /* libicucore.tbd in Frameworks */,
 				68E2F4AD19EEB80E97F91857 /* Pods_ScheduleBuilder.framework in Frameworks */,
+				D6D72BE01C8147860016E6C9 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +198,11 @@
 		0C9B0FAD49BE3238430BEB6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6D72BE91C8147F30016E6C9 /* SystemConfiguration.framework */,
+				D6D72BE71C8147EA0016E6C9 /* Security.framework */,
+				D6D72BE51C8147E10016E6C9 /* CFNetwork.framework */,
+				D6D72BE31C8147D50016E6C9 /* libc++.tbd */,
+				D6D72BE11C8147C40016E6C9 /* libicucore.tbd */,
 				CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */,
 			);
 			name = Frameworks;
@@ -194,7 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				D69879861C519FC700123D1F /* UserProfileViewController.swift */,
-				D69879881C51B7D400123D1F /* SettingUpProfileViewController.swift */,
+				D69879881C51B7D400123D1F /* LoginViewController.swift */,
+				D6D72BEB1C82A46F0016E6C9 /* webAuthenticationViewController.swift */,
+				D6D72BED1C82A9B00016E6C9 /* Constants.swift */,
 			);
 			name = ProfileTab;
 			sourceTree = "<group>";
@@ -278,6 +307,7 @@
 		D9235A741BE3C6D5007173C9 = {
 			isa = PBXGroup;
 			children = (
+				D6D72BDF1C8147860016E6C9 /* Firebase.framework */,
 				D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */,
 				D9235A971BE3C6D5007173C9 /* ScheduleBuilderTests */,
 				D9235AA21BE3C6D5007173C9 /* ScheduleBuilderUITests */,
@@ -551,6 +581,7 @@
 				D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
 				D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */,
+				D6D72BEE1C82A9B00016E6C9 /* Constants.swift in Sources */,
 				D69879871C519FC700123D1F /* UserProfileViewController.swift in Sources */,
 				D960F7991C77A268007B5E74 /* Lab.swift in Sources */,
 				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
@@ -566,8 +597,9 @@
 				D698798C1C52BEA200123D1F /* FeatureViewController.swift in Sources */,
 				D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */,
 				D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */,
+				D6D72BEC1C82A46F0016E6C9 /* webAuthenticationViewController.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,
-				D69879891C51B7D400123D1F /* SettingUpProfileViewController.swift in Sources */,
+				D69879891C51B7D400123D1F /* LoginViewController.swift in Sources */,
 				D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */,
 				D9EC79F71C0E442C00A0FEF9 /* DepartmentTableViewController.swift in Sources */,
 			);
@@ -712,6 +744,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScheduleBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC599app.ScheduleBuilder;
@@ -727,6 +763,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScheduleBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC599app.ScheduleBuilder;

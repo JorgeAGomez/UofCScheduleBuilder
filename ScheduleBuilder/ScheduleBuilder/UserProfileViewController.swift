@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class UserProfileViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class UserProfileViewController: UIViewController {
   }
   
   override func viewDidAppear(animated: Bool) {
-    let favourites = GlobalVariables.data.getFavourites()
+    let favourites = GlobalVariables2.data.getFavourites()
     numberOfFavCourses.text = String(favourites.count)
     numberOfFavCourses.reloadInputViews()
     userProfileImage.layer.cornerRadius = 65.0

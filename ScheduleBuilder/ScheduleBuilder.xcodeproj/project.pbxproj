@@ -8,14 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0163354D1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0163354C1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift */; };
-		01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D6F1C0E329600115D84 /* Scheduler.swift */; };
 		01BD3D781C0E329700115D84 /* profs.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D701C0E329600115D84 /* profs.json */; };
 		01BD3D791C0E329700115D84 /* Prof.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D711C0E329600115D84 /* Prof.swift */; };
-		01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D721C0E329600115D84 /* Offering.swift */; };
-		01BD3D7B1C0E329700115D84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D731C0E329600115D84 /* Data.swift */; };
 		01BD3D7C1C0E329700115D84 /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D741C0E329600115D84 /* courses.json */; };
 		01BD3D7D1C0E329700115D84 /* courseOfferings2.json in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3D751C0E329600115D84 /* courseOfferings2.json */; };
-		01BD3D7E1C0E329700115D84 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D761C0E329700115D84 /* Course.swift */; };
 		01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D811C0EA8F600115D84 /* CourseViewController.swift */; };
 		01BD3D861C0EA8F600115D84 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D821C0EA8F600115D84 /* TutorialView.swift */; };
 		01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D831C0EA8F600115D84 /* LineView.swift */; };
@@ -62,7 +58,6 @@
 		D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7941C77A268007B5E74 /* Tutorial.swift */; };
 		D9BA66531C77A87100FACBED /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66521C77A87100FACBED /* Time.swift */; };
 		D9BA66551C77A88D00FACBED /* Periodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66541C77A88D00FACBED /* Periodic.swift */; };
-		D9BA66571C77A8F900FACBED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66561C77A8F900FACBED /* Schedule.swift */; };
 		D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BA66581C77AE7200FACBED /* Main.storyboard */; };
 		D9BA665B1C77B33800FACBED /* blah.json in Resources */ = {isa = PBXBuildFile; fileRef = D9BA665A1C77B33800FACBED /* blah.json */; };
 		D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */; };
@@ -92,14 +87,10 @@
 
 /* Begin PBXFileReference section */
 		0163354C1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailsViewController.swift; sourceTree = "<group>"; };
-		01BD3D6F1C0E329600115D84 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		01BD3D701C0E329600115D84 /* profs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profs.json; sourceTree = "<group>"; };
 		01BD3D711C0E329600115D84 /* Prof.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prof.swift; sourceTree = "<group>"; };
-		01BD3D721C0E329600115D84 /* Offering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offering.swift; sourceTree = "<group>"; };
-		01BD3D731C0E329600115D84 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		01BD3D741C0E329600115D84 /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
 		01BD3D751C0E329600115D84 /* courseOfferings2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings2.json; sourceTree = "<group>"; };
-		01BD3D761C0E329700115D84 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		01BD3D811C0EA8F600115D84 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		01BD3D821C0EA8F600115D84 /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		01BD3D831C0EA8F600115D84 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
@@ -154,7 +145,6 @@
 		D960F7941C77A268007B5E74 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		D9BA66521C77A87100FACBED /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		D9BA66541C77A88D00FACBED /* Periodic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic.swift; sourceTree = "<group>"; };
-		D9BA66561C77A8F900FACBED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D9BA66581C77AE7200FACBED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9BA665A1C77B33800FACBED /* blah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blah.json; sourceTree = "<group>"; };
 		D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = ../WelcomePageViewController.swift; sourceTree = "<group>"; };
@@ -254,11 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				D960F78A1C77A268007B5E74 /* Course_new.swift */,
-				01BD3D761C0E329700115D84 /* Course.swift */,
 				D960F78B1C77A268007B5E74 /* courseOfferings2.json */,
 				D960F78C1C77A268007B5E74 /* courses_new.json */,
 				01BD3D741C0E329600115D84 /* courses.json */,
-				01BD3D731C0E329600115D84 /* Data.swift */,
 				D960F78D1C77A268007B5E74 /* DataHandler.swift */,
 				D960F78E1C77A268007B5E74 /* Lab.swift */,
 				D960F78F1C77A268007B5E74 /* Lecture.swift */,
@@ -268,11 +256,8 @@
 				01BD3D711C0E329600115D84 /* Prof.swift */,
 				01BD3D701C0E329600115D84 /* profs.json */,
 				D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */,
-				D9BA66561C77A8F900FACBED /* Schedule.swift */,
-				01BD3D6F1C0E329600115D84 /* Scheduler.swift */,
 				D9BA66521C77A87100FACBED /* Time.swift */,
 				D960F7941C77A268007B5E74 /* Tutorial.swift */,
-				01BD3D721C0E329600115D84 /* Offering.swift */,
 				01BD3D751C0E329600115D84 /* courseOfferings2.json */,
 				D9BA665A1C77B33800FACBED /* blah.json */,
 			);
@@ -568,17 +553,12 @@
 				D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */,
 				D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */,
 				D960F79A1C77A268007B5E74 /* Lecture.swift in Sources */,
-				01BD3D7E1C0E329700115D84 /* Course.swift in Sources */,
-				01BD3D7B1C0E329700115D84 /* Data.swift in Sources */,
 				D960F7951C77A268007B5E74 /* Course_new.swift in Sources */,
-				01BD3D7A1C0E329700115D84 /* Offering.swift in Sources */,
 				01BD3D861C0EA8F600115D84 /* TutorialView.swift in Sources */,
-				D9BA66571C77A8F900FACBED /* Schedule.swift in Sources */,
 				D9BA66531C77A87100FACBED /* Time.swift in Sources */,
 				98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */,
 				D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */,
 				01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */,
-				01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */,
 				D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */,
 				D6D48BB51C87579300C547DE /* UserProfileTableViewCell.swift in Sources */,
 				98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */,

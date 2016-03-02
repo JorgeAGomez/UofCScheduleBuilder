@@ -10,7 +10,7 @@ import Foundation
 
 public class ScheduleBuilder
 {
-    var schedules: [Schedule_new]
+
     var courses:   [Course_new]             // Courses chosen by the user to make schedules out of. The favorited courses.
     
     
@@ -21,7 +21,7 @@ public class ScheduleBuilder
     
     init()
     {
-        self.schedules = []
+        
         self.courses   = []
         self.NUMBER_OF_SCHEDULES   = 15
         self.validSchedulesCounter = NUMBER_OF_SCHEDULES
@@ -29,7 +29,7 @@ public class ScheduleBuilder
     
     init(favoritedCourses: [Course_new], NUMBER_OF_SCHEDULES: Int)
     {
-        self.schedules = []
+        
         self.courses   = favoritedCourses
         self.NUMBER_OF_SCHEDULES   = NUMBER_OF_SCHEDULES
         self.validSchedulesCounter = NUMBER_OF_SCHEDULES

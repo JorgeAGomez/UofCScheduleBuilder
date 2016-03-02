@@ -18,7 +18,6 @@ public class DataHandler {
     
     public var courses = [Course_new]()
     var profs = [Prof]()
-    var offerings = [Offering]()
     var departments = [String]()
     
     

@@ -1,15 +1,15 @@
 //
-//  ScheduleView.swift
+//  ScheduleView2.swift
 //  ScheduleBuilder
 //
-//  Created by Sasha Ivanov on 2015-12-01.
-//  Copyright © 2015 Alexander Ivanov. All rights reserved.
+//  Created by Nik Ryzhenkov on 2016-03-01.
+//  Copyright © 2016 Alexander "samuri" Ivanov. All rights reserved.
 //
 
 import UIKit
 
 class ScheduleView: UIView {
-
+    
     
     let uofcColor = UIColor(hue: 353/360, saturation: 0.66, brightness: 0.88, alpha: 1.00)
     let tranparentWhite = UIColor(hue: 0, saturation: 0.1, brightness: 1.00, alpha: 1.00)
@@ -20,30 +20,10 @@ class ScheduleView: UIView {
     let dept = "CPSC"
     let num = 599
     
-    var schedule: Schedule? = nil
-    var events: [ScheduleEvent] = []
+    var schedule: [[Periodic_new]] = []
     
     var scheduleHours = CGFloat(0)
     
-    
-    func getSubtitle(courses: [Course])->String
-    {
-        var subtitle = ""
-        
-        for c in courses
-        {
-            if(subtitle == "")
-            {
-                subtitle += c.courseCode + " " + c.courseNumber
-            }
-            else
-            {
-                subtitle += ", " + c.courseCode + " " + c.courseNumber
-            }
-        }
-        
-        return subtitle
-    }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -59,44 +39,39 @@ class ScheduleView: UIView {
         var scheduleStartText = "00 AM"
         var scheduleEndText = "00 PM"
         
-//        var courseCodes: [String] = []
         
-        var subtitle = getSubtitle((schedule?.courses)!)
+        //var subtitle = getSubtitle((schedule?.courses)!)
         
-        for event in events{
-            let eventTimes = event.times
-            
-//            if(!courseCodes.contains(event.offering.courseCode + " " + event.offering.courseNumber)){
-//                
-//                courseCodes.append(event.offering.courseCode + " " + event.offering.courseNumber)
-//                
-//                if(subtitle == ""){
-//                    subtitle += event.offering.courseCode + " " + event.offering.courseNumber
-//                }
-//                    
-//                else{
-//                    subtitle += ", " + event.offering.courseCode + " " + event.offering.courseNumber
-//                }
-//            }
-            
-            
-            for time in eventTimes{
-                if (time.fromTime < scheduleStartTime){
-                    scheduleStartTime = time.fromTime
-                    scheduleStartText = time.fromTimeText
-                }
-                
-                if (time.toTime > scheduleEndTime){
-                    scheduleEndTime = time.toTime
-                    scheduleEndText = time.toTimeText
+        var subtitle = "this is a test subtitle"
+        
+        //Figure out starting and ending time of the schedule
+        for periodics in schedule
+        {
+            for p in periodics
+            {
+                for time in p.times
+                {
+                    for t in time
+                    {
+                        if (t.fromTime < scheduleStartTime)
+                        {
+                            scheduleStartTime = t.fromTime
+                            scheduleStartText = t.fromTimeText
+                        }
+                        
+                        if (t.toTime > scheduleEndTime)
+                        {
+                            scheduleEndTime = t.toTime
+                            scheduleEndText = t.toTimeText
+                        }
+                    }
                 }
             }
         }
         
+        //Need this for figuring out the wxact dimensions of the schedule
         ceil(CGFloat(scheduleStartTime-1))
-        
         scheduleHours = ceil(CGFloat(scheduleEndTime)) - ceil(CGFloat(scheduleStartTime-1))
-        
         hours = Int(scheduleHours)
         
         
@@ -135,12 +110,12 @@ class ScheduleView: UIView {
         self.addSubview(titleLabel)
         
         // Set Schedule Subtitle
-        var subtitleLabel = UILabel(frame: CGRectMake(10, 30, self.frame.width - 15, 30))
-        subtitleLabel.textAlignment = NSTextAlignment.Left
-        subtitleLabel.font = subtitleLabel.font.fontWithSize(14)
-        subtitleLabel.textColor = UIColor.whiteColor()
-        subtitleLabel.text = subtitle
-        self.addSubview(subtitleLabel)
+        //        var subtitleLabel = UILabel(frame: CGRectMake(10, 30, self.frame.width - 15, 30))
+        //        subtitleLabel.textAlignment = NSTextAlignment.Left
+        //        subtitleLabel.font = subtitleLabel.font.fontWithSize(14)
+        //        subtitleLabel.textColor = UIColor.whiteColor()
+        //        subtitleLabel.text = subtitle
+        //        self.addSubview(subtitleLabel)
         
         
         let baseX = 55
@@ -155,72 +130,112 @@ class ScheduleView: UIView {
         
         // Create Rounded Boxes
         var dayNum = 0
-        for event in events{
-            for time in event.times{
-                
-                // Get day number
-                switch time.day {
-                    
-                case "Mon":
-                    dayNum = 0
-                    break
-                case "Tue":
-                    dayNum = 1
-                    break
-                case "Wed":
-                    dayNum = 2
-                    break
-                case "Thu":
-                    dayNum = 3
-                    break
-                case "Fri":
-                    dayNum = 4
-                    break
-                case "Sat":
-                    dayNum = 5
-                    break
-                case "Sun":
-                    dayNum = 6
-                    break
-                default:
-                    dayNum = 7
-                    break
+        
+        for periodics in schedule
+        {
+            for p in periodics
+            {
+                for i in 0...2
+                {
+                    var count = p.times[i].count
+                    if count != 0
+                    {
+                        var time = p.times[i]
+                        
+                        for t in time
+                        {
+                            // Get day number
+                            switch t.day
+                            {
+                                
+                            case "Mon":
+                                dayNum = 0
+                                break
+                            case "Tue":
+                                dayNum = 1
+                                break
+                            case "Wed":
+                                dayNum = 2
+                                break
+                            case "Thu":
+                                dayNum = 3
+                                break
+                            case "Fri":
+                                dayNum = 4
+                                break
+                            case "Sat":
+                                dayNum = 5
+                                break
+                            case "Sun":
+                                dayNum = 6
+                                break
+                            default:
+                                dayNum = 7
+                                break
+                                
+                            }
+                            
+                            //exclude weekends for now...
+                            if(dayNum < 5){
+                                
+                                // calculate size
+                                var beginBoxX = CGFloat(baseX) + CGFloat(dayNum * (width + spaceX))
+                                var beginBoxY = CGFloat(baseY) + CGFloat(t.fromTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY))
+                                
+                                var widthBox = CGFloat(width)
+                                var heightBox = CGFloat(baseY) + CGFloat(t.toTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY)) - beginBoxY
+                                
+                                var courseBox = UIBezierPath(roundedRect: CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(3, 3))
+                                
+                                // draw box
+                                tranparentWhite.setFill()
+                                courseBox.fill()
+                                
+                                // look at Periodic definition to see why
+                                var type = ""
+                                switch i
+                                {
+                                case 0:
+                                    type = "Lec"
+                                    break
+                                case 1:
+                                    type = "Tut"
+                                    break
+                                case 2:
+                                    type = "Lab"
+                                    break
+                                default:
+                                    type = ""
+                                    break
+                                }
+                                
+                                
+                                // Set Course Number Label Inside of each Box
+                                var subtitleLabel = UILabel(frame:  CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox))
+                                subtitleLabel.textAlignment = NSTextAlignment.Center
+                                subtitleLabel.font = subtitleLabel.font.fontWithSize(8)
+                                subtitleLabel.textColor = uofcColor
+                                subtitleLabel.text = "\(p.courseName)  \(type)"
+                                subtitleLabel.numberOfLines = 0 //so the text wraps
+                                self.addSubview(subtitleLabel)
+                                
+                                
+                            }
+                            
+                            
+                        }
+                        
+                        
+                    }
                     
                 }
                 
-                // exclude weekends for now...
-                if(dayNum < 5){
-                    
-                    // calculate size
-                    var beginBoxX = CGFloat(baseX) + CGFloat(dayNum * (width + spaceX))
-                    var beginBoxY = CGFloat(baseY) + CGFloat(time.fromTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY))
-                    
-                    var widthBox = CGFloat(width)
-                    var heightBox = CGFloat(baseY) + CGFloat(time.toTime - scheduleStartTime)/scheduleHours * (frame.height - CGFloat(baseY)) - beginBoxY
-                    
-                    var courseBox = UIBezierPath(roundedRect: CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(3, 3))
-                    
-                    // draw box
-                    tranparentWhite.setFill()
-                    courseBox.fill()
-                    
-                    
-                    // Set Course Number Label Inside of each Box
-                    var subtitleLabel = UILabel(frame:  CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox))
-                    subtitleLabel.textAlignment = NSTextAlignment.Center
-                    subtitleLabel.font = subtitleLabel.font.fontWithSize(12)
-                    subtitleLabel.textColor = uofcColor
-                    subtitleLabel.text = event.offering.courseNumber
-                    self.addSubview(subtitleLabel)
-                    
-                    
-                }
             }
         }
         
         
     }
-
     
-
+    
+    
 }

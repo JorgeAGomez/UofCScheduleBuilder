@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        GlobalVariables.data = Data()
+        
         GlobalVariables2.data = DataHandler()
         
         // Change the tab bar to the official U of C Color

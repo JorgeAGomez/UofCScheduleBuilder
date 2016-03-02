@@ -1,111 +1,1346 @@
-[
-
-    {
-        "periodics": [
-            {
+ [
+  
+  {
+  "periodics": [
+                {
                 "matchedNames": [
-                    "None"
-                ],
+                                 "None"
+                                 ],
                 "instructor": [
-                    "Staff"
-                ],
+                               "Staff"
+                               ],
                 "type": "Lecture",
                 "section": 1,
                 "times": [
-                    {
-                        "fromTime": "11:00",
-                        "day": "Mon",
-                        "toTime": "11:50"
-                    },
-                    {
-                        "fromTime": "11:00",
-                        "day": "Wed",
-                        "toTime": "11:50"
-                    },
-                    {
-                        "fromTime": "11:00",
-                        "day": "Fri",
-                        "toTime": "11:50"
-                    }
-                ]
-            },
-            {
+                          {
+                          "fromTime": "11:00",
+                          "day": "Mon",
+                          "toTime": "11:50"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Wed",
+                          "toTime": "11:50"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Fri",
+                          "toTime": "11:50"
+                          }
+                          ]
+                },
+                {
                 "matchedNames": [
-                    "None"
-                ],
+                                 "None"
+                                 ],
                 "instructor": [
-                    "Staff"
-                ],
+                               "Staff"
+                               ],
                 "type": "Tutorial",
                 "section": 1,
                 "times": [
-                    {
-                        "fromTime": "10:00",
-                        "day": "Tue",
-                        "toTime": "10:50"
-                    }
-                ]
-            }
-
-        ],
-        "courseNumber": "313",
-        "description": "Introduction to Computability",
-        "courseCode": "CPSC",
-        "department": "Computer Science"
-    },
-     {
-     "periodics": [
-                   {
-                   "matchedNames": [
-                                    "None"
-                                    ],
-                   "instructor": [
-                                  "Staff"
-                                  ],
-                   "type": "Lecture",
-                   "section": 1,
-                   "times": [
-                             {
-                             "fromTime": "12:00",
-                             "day": "Mon",
-                             "toTime": "12:50"
-                             },
-                             {
-                             "fromTime": "12:00",
-                             "day": "Wed",
-                             "toTime": "12:50"
-                             },
-                             {
-                             "fromTime": "12:00",
-                             "day": "Fri",
-                             "toTime": "12:50"
-                             }
-                             ]
-                   },
-                   {
-                   "matchedNames": [
-                                    "None"
-                                    ],
-                   "instructor": [
-                                  "Staff"
-                                  ],
-                   "type": "Tutorial",
-                   "section": 1,
-                   "times": [
-                             {
-                             "fromTime": "11:00",
-                             "day": "Tue",
-                             "toTime": "11:50"
-                             }
-                             ]
-                   }
-                   
-                   ],
-     "courseNumber": "999",
-     "description": "Introduction to fuck you",
-     "courseCode": "MATH",
-     "department" : "Mathematics"
-     }
-    
- 
-]
+                          {
+                          "fromTime": "10:00",
+                          "day": "Tue",
+                          "toTime": "10:50"
+                          }
+                          ]
+                }
+                
+                ],
+  "courseNumber": "313",
+  "description": "Introduction to Computability",
+  "courseCode": "CPSC",
+  "department": "Computer Science"
+  },
+  
+  {
+  "periodics": [
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Mon",
+                          "toTime": "09:50"
+                          },
+                          {
+                          "fromTime": "09:00",
+                          "day": "Wed",
+                          "toTime": "09:50"
+                          },
+                          {
+                          "fromTime": "09:00",
+                          "day": "Fri",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Tue",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Tutorial",
+                "section": "1"
+                }
+                ],
+  "courseNumber": "213",
+  "description": "Honours Linear Algebra I",
+  "courseCode": "MATH",
+  "department": "Mathematics"
+  },
+  {
+  "periodics": [
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "08:00",
+                          "day": "Mon",
+                          "toTime": "08:50"
+                          },
+                          {
+                          "fromTime": "08:00",
+                          "day": "Tue",
+                          "toTime": "08:50"
+                          },
+                          {
+                          "fromTime": "08:00",
+                          "day": "Wed",
+                          "toTime": "08:50"
+                          },
+                          {
+                          "fromTime": "08:00",
+                          "day": "Fri",
+                          "toTime": "08:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "16:00",
+                          "day": "Mon",
+                          "toTime": "16:50"
+                          },
+                          {
+                          "fromTime": "16:00",
+                          "day": "Wed",
+                          "toTime": "16:50"
+                          },
+                          {
+                          "fromTime": "16:00",
+                          "day": "Thu",
+                          "toTime": "16:50"
+                          },
+                          {
+                          "fromTime": "16:00",
+                          "day": "Fri",
+                          "toTime": "16:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Mon",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Wed",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Thu",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Fri",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Tue",
+                          "toTime": "14:50"
+                          },
+                          {
+                          "fromTime": "14:00",
+                          "day": "Wed",
+                          "toTime": "14:50"
+                          },
+                          {
+                          "fromTime": "14:00",
+                          "day": "Thu",
+                          "toTime": "14:50"
+                          },
+                          {
+                          "fromTime": "14:00",
+                          "day": "Fri",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Mon",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Tue",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Wed",
+                          "toTime": "13:50"
+                          },
+                          {
+                          "fromTime": "13:00",
+                          "day": "Fri",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Tue",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Wed",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Thu",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Fri",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "15:00",
+                          "day": "Mon",
+                          "toTime": "15:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Tue",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Tue",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Wed",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Thu",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "15:00",
+                          "day": "Thu",
+                          "toTime": "15:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Fri",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Fri",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Wed",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Wed",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Thu",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Thu",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Mon",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Mon",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Tue",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Tue",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Tutorial",
+                "section": "1"
+                }
+                ],
+  "courseNumber": "249",
+  "description": "Introductory Calculus",
+  "courseCode": "MATH",
+  "department": "Mathematics"
+  },
+  {
+  "periodics": [
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "15:00",
+                          "day": "Mon",
+                          "toTime": "15:50"
+                          },
+                          {
+                          "fromTime": "15:00",
+                          "day": "Wed",
+                          "toTime": "15:50"
+                          },
+                          {
+                          "fromTime": "15:00",
+                          "day": "Fri",
+                          "toTime": "15:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Mon",
+                          "toTime": "10:50"
+                          },
+                          {
+                          "fromTime": "10:00",
+                          "day": "Wed",
+                          "toTime": "10:50"
+                          },
+                          {
+                          "fromTime": "10:00",
+                          "day": "Fri",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Mon",
+                          "toTime": "09:50"
+                          },
+                          {
+                          "fromTime": "09:00",
+                          "day": "Wed",
+                          "toTime": "09:50"
+                          },
+                          {
+                          "fromTime": "09:00",
+                          "day": "Fri",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Mon",
+                          "toTime": "11:50"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Wed",
+                          "toTime": "11:50"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Fri",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Tue",
+                          "toTime": "12:15"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Thu",
+                          "toTime": "12:15"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "12:30",
+                          "day": "Tue",
+                          "toTime": "13:45"
+                          },
+                          {
+                          "fromTime": "12:30",
+                          "day": "Thu",
+                          "toTime": "13:45"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Mon",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Mon",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "16:00",
+                          "day": "Mon",
+                          "toTime": "16:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Tue",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Tue",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "16:00",
+                          "day": "Wed",
+                          "toTime": "16:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Thu",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Thu",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Wed",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Wed",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Thu",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Thu",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "08:00",
+                          "day": "Fri",
+                          "toTime": "08:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Wed",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "15:00",
+                          "day": "Wed",
+                          "toTime": "15:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Thu",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Thu",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Wed",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Wed",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Fri",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Fri",
+                          "toTime": "11:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "09:00",
+                          "day": "Mon",
+                          "toTime": "09:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Mon",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "14:00",
+                          "day": "Mon",
+                          "toTime": "14:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "15:00",
+                          "day": "Mon",
+                          "toTime": "15:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Tutorial",
+                "section": "1"
+                }
+                ],
+  "courseNumber": "265",
+  "description": "University Calculus I",
+  "courseCode": "MATH",
+  "department": "Mathematics"
+  },
+  {
+  "periodics": [
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Mon",
+                          "toTime": "12:50"
+                          },
+                          {
+                          "fromTime": "12:00",
+                          "day": "Wed",
+                          "toTime": "12:50"
+                          },
+                          {
+                          "fromTime": "12:00",
+                          "day": "Fri",
+                          "toTime": "12:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "13:00",
+                          "day": "Mon",
+                          "toTime": "13:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Tue",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Wed",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lab",
+                "times": [
+                          {
+                          "fromTime": "10:00",
+                          "day": "Fri",
+                          "toTime": "10:50"
+                          }
+                          ],
+                "section": "1"
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Tutorial",
+                "section": "1"
+                }
+                ],
+  "courseNumber": "267",
+  "description": "University Calculus II",
+  "courseCode": "MATH",
+  "department": "Mathematics"
+  }
+  
+  ]

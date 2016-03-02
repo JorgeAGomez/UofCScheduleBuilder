@@ -31,6 +31,7 @@
 		D698798C1C52BEA200123D1F /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798B1C52BEA200123D1F /* FeatureViewController.swift */; };
 		D698798E1C52CF8C00123D1F /* FavouriteCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798D1C52CF8C00123D1F /* FavouriteCourses.swift */; };
 		D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698798F1C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift */; };
+		D6D48BB51C87579300C547DE /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D48BB41C87579300C547DE /* UserProfileTableViewCell.swift */; };
 		D6D72BE01C8147860016E6C9 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BDF1C8147860016E6C9 /* Firebase.framework */; };
 		D6D72BE21C8147C40016E6C9 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE11C8147C40016E6C9 /* libicucore.tbd */; };
 		D6D72BE41C8147D50016E6C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D72BE31C8147D50016E6C9 /* libc++.tbd */; };
@@ -116,6 +117,7 @@
 		D698798B1C52BEA200123D1F /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		D698798D1C52CF8C00123D1F /* FavouriteCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteCourses.swift; path = Controllers/FavouriteCourses.swift; sourceTree = "<group>"; };
 		D698798F1C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FavouriteCourses+CoreDataProperties.swift"; path = "../FavouriteCourses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D6D48BB41C87579300C547DE /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		D6D72BDF1C8147860016E6C9 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		D6D72BE11C8147C40016E6C9 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D6D72BE31C8147D50016E6C9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D69879861C519FC700123D1F /* UserProfileViewController.swift */,
+				D6D48BB41C87579300C547DE /* UserProfileTableViewCell.swift */,
 				D69879881C51B7D400123D1F /* LoginViewController.swift */,
 				D6D72BEB1C82A46F0016E6C9 /* webAuthenticationViewController.swift */,
 				D6D72BED1C82A9B00016E6C9 /* Constants.swift */,
@@ -577,6 +580,7 @@
 				01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */,
 				01BD3D771C0E329700115D84 /* Scheduler.swift in Sources */,
 				D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */,
+				D6D48BB51C87579300C547DE /* UserProfileTableViewCell.swift in Sources */,
 				98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */,
 				D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,

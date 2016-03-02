@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
   
-    static let authenticationURL = NSURL(string: "https://cas.ucalgary.ca/cas/login?service=https://my.ucalgary.ca/psp/paprd/?cmd=start&ca.ucalgary.authent.ucid=true")
+    static let authenticationURL = NSURL(string:"https://cas.ucalgary.ca/cas/login?service=https%3a%2f%2fd2l.ucalgary.ca%2fd2l%2fcustom%2fcas%3ftarget%3d%252fd2l%252fhome&ca.ucalgary.authent.ucid=true")
   
     
 }

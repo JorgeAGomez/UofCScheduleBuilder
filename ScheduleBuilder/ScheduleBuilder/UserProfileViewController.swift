@@ -10,19 +10,23 @@ import UIKit
 import CoreData
 import Firebase
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+  //MARK: IBOutlets
   @IBOutlet weak var userProfileImage: UIImageView!
   @IBOutlet weak var numberOfFavCourses: UILabel!
   @IBOutlet weak var userNameLabel: UILabel!
   
+  
+  //MARK: Variables
+  var info = ["School: University of Calgary","Major: Computer Science","Concentration: Human Computer Interaction","Minor: Business"]
   
 
   //var numberOfFavouriteCourses
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Profile"
-    userNameLabel.text = "Jorge Gomez"
+    userNameLabel.text = "Student Name"
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -38,6 +42,17 @@ class UserProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
   }
   
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return info.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UserProfileTableViewCell
+    
+    cell.textLabel!.text = info[indexPath.row]
+    return cell
+  }
 
 
 }

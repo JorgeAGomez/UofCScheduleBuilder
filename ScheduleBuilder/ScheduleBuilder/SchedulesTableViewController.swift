@@ -52,10 +52,10 @@ class SchedulesTableViewController: UITableViewController {
         
         let scheduler = Scheduler(offerings: favoriteOfferings)
         
-        schedules = scheduler.getSchedules()
+        //schedules = scheduler.getSchedules()
         
         let favouriteCourses2 = GlobalVariables2.data.getFavourites()
-        let scheduleBuilder = ScheduleBuilder(favouriteCourses2, 15)
+        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 15)
         scheduleBuilder.createValidSchedules()
         let schedules = scheduleBuilder.validSchedules // [[Periodic_new]]
         

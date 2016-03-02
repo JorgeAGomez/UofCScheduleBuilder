@@ -20,10 +20,30 @@ class ScheduleView: UIView {
     let dept = "CPSC"
     let num = 599
     
-    var schedule: [[Periodic_new]] = []
+    var schedule: [Periodic_new] = []
     
     var scheduleHours = CGFloat(0)
     
+    func getSubtitle()->String
+    {
+        var subtitle = ""
+        if self.schedule.count == 0
+        {
+            return ""
+        }
+        for p in self.schedule
+        {
+            if(subtitle == "")
+            {
+                subtitle += p.courseName
+            }
+            else
+            {
+                subtitle += ", " + p.courseName            }
+        }
+        
+        return subtitle
+    }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -40,14 +60,14 @@ class ScheduleView: UIView {
         var scheduleEndText = "00 PM"
         
         
-        //var subtitle = getSubtitle((schedule?.courses)!)
+        var subtitle = getSubtitle()
         
-        var subtitle = "this is a test subtitle"
+        
         
         //Figure out starting and ending time of the schedule
-        for periodics in schedule
-        {
-            for p in periodics
+//        for periodics in schedule
+//        {
+            for p in schedule
             {
                 for time in p.times
                 {
@@ -66,7 +86,7 @@ class ScheduleView: UIView {
                         }
                     }
                 }
-            }
+//            }
         }
         
         //Need this for figuring out the wxact dimensions of the schedule
@@ -109,13 +129,13 @@ class ScheduleView: UIView {
         titleLabel.text = "My Funtastic Schedule"
         self.addSubview(titleLabel)
         
-        // Set Schedule Subtitle
-        //        var subtitleLabel = UILabel(frame: CGRectMake(10, 30, self.frame.width - 15, 30))
-        //        subtitleLabel.textAlignment = NSTextAlignment.Left
-        //        subtitleLabel.font = subtitleLabel.font.fontWithSize(14)
-        //        subtitleLabel.textColor = UIColor.whiteColor()
-        //        subtitleLabel.text = subtitle
-        //        self.addSubview(subtitleLabel)
+//         Set Schedule Subtitle
+        var subtitleLabel = UILabel(frame: CGRectMake(10, 30, self.frame.width - 15, 30))
+        subtitleLabel.textAlignment = NSTextAlignment.Left
+        subtitleLabel.font = subtitleLabel.font.fontWithSize(14)
+        subtitleLabel.textColor = UIColor.whiteColor()
+        subtitleLabel.text = subtitle
+        self.addSubview(subtitleLabel)
         
         
         let baseX = 55
@@ -131,9 +151,9 @@ class ScheduleView: UIView {
         // Create Rounded Boxes
         var dayNum = 0
         
-        for periodics in schedule
-        {
-            for p in periodics
+//        for periodics in schedule
+//        {
+            for p in schedule
             {
                 for i in 0...2
                 {
@@ -209,13 +229,18 @@ class ScheduleView: UIView {
                                     break
                                 }
                                 
+                                var courn = p.courseName
+                                
+                                var courseNum = courn.componentsSeparatedByString(" ")
+                                
                                 
                                 // Set Course Number Label Inside of each Box
                                 var subtitleLabel = UILabel(frame:  CGRectMake(beginBoxX, beginBoxY, widthBox, heightBox))
                                 subtitleLabel.textAlignment = NSTextAlignment.Center
-                                subtitleLabel.font = subtitleLabel.font.fontWithSize(8)
+                                subtitleLabel.font = subtitleLabel.font.fontWithSize(10)
                                 subtitleLabel.textColor = uofcColor
-                                subtitleLabel.text = "\(p.courseName)  \(type)"
+//                                subtitleLabel.text = "\(p.courseName)  \(type)"
+                                subtitleLabel.text = "\(courseNum[1])"
                                 subtitleLabel.numberOfLines = 0 //so the text wraps
                                 self.addSubview(subtitleLabel)
                                 
@@ -231,7 +256,7 @@ class ScheduleView: UIView {
                 }
                 
             }
-        }
+//          }
         
         
     }

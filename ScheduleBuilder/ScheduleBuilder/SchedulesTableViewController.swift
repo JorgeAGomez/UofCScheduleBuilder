@@ -33,7 +33,7 @@ class SchedulesTableViewController: UITableViewController {
         
         
         let favouriteCourses2 = GlobalVariables2.data.getFavourites()
-        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 2)
+        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
         scheduleBuilder.createValidSchedules()
         schedules_new = scheduleBuilder.validSchedules // [[Periodic_new]]
         
@@ -41,7 +41,7 @@ class SchedulesTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool)
     {
         let favouriteCourses2 = GlobalVariables2.data.getFavourites()
-        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 2)
+        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
         scheduleBuilder.createValidSchedules()
         schedules_new = scheduleBuilder.validSchedules //TODO: THIS IS SO WRONG ON SO MANY LEVELS! CACHE THIS SHIT PLEASE
         tableView.reloadData()
@@ -60,7 +60,16 @@ class SchedulesTableViewController: UITableViewController {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // #warning Incomplete implementation, return the number of rows
+        if (schedules_new.count == 0){
+            noschedules.hidden = false;
+        }
+        else
+        {
+            noschedules.hidden = true;
+        }
         return schedules_new.count
         
     }
@@ -75,7 +84,7 @@ class SchedulesTableViewController: UITableViewController {
         let schedule = schedules_new[indexPath.row]
         
         
-        cell.scheduleView.schedule = schedules_new
+        cell.scheduleView.schedule = schedule
         cell.scheduleView.drawRect(CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height))
         
         

@@ -80,10 +80,9 @@ class SchedulesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
         
         // Pick a particular schedule
-        var a = indexPath.row
         let schedule = schedules_new[indexPath.row]
         
-        
+        cell.scheduleView.isBlank = false;
         cell.scheduleView.schedule = schedule
         cell.scheduleView.drawRect(CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height))
         

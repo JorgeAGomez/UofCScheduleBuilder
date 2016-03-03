@@ -10,6 +10,7 @@ import UIKit
 
 class ScheduleView: UIView {
     
+    var isBlank = true
     
     let uofcColor = UIColor(hue: 353/360, saturation: 0.66, brightness: 0.88, alpha: 1.00)
     let tranparentWhite = UIColor(hue: 0, saturation: 0.1, brightness: 1.00, alpha: 1.00)
@@ -61,6 +62,31 @@ class ScheduleView: UIView {
         
         
         var subtitle = getSubtitle()
+        
+        
+        if(isBlank){
+            
+            // Set Schedule Title
+            var titleLabel = UILabel(frame: CGRectMake(10, 5, self.frame.width - 15, 30))
+            titleLabel.textAlignment = NSTextAlignment.Left
+            titleLabel.font = titleLabel.font.fontWithSize(20)
+            titleLabel.textColor = UIColor.whiteColor()
+            titleLabel.text = "New Schedule"
+            self.addSubview(titleLabel)
+            
+            var blankLabel = UILabel(frame: CGRectMake(10, self.frame.height/2 - 15, self.frame.width - 10, 30))
+            blankLabel.textAlignment = NSTextAlignment.Center
+            blankLabel.font = titleLabel.font.fontWithSize(16)
+            blankLabel.textColor = UIColor.whiteColor()
+            blankLabel.text = "Build a new schedule from scratch"
+            self.addSubview(blankLabel)
+            
+            
+        }
+            
+        else{
+        
+        
         
         
         
@@ -256,7 +282,7 @@ class ScheduleView: UIView {
                 }
                 
             }
-//          }
+          }
         
         
     }

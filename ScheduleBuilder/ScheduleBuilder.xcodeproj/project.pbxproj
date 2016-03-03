@@ -40,7 +40,6 @@
 		D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */; };
 		D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */; };
 		D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9235A801BE3C6D5007173C9 /* AppDelegate.swift */; };
-		D9235A861BE3C6D5007173C9 /* other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A841BE3C6D5007173C9 /* other.storyboard */; };
 		D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9235A871BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld */; };
 		D9235A8B1BE3C6D5007173C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */; };
 		D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */; };
@@ -56,6 +55,9 @@
 		D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7921C77A268007B5E74 /* Periodic_new.swift */; };
 		D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */; };
 		D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7941C77A268007B5E74 /* Tutorial.swift */; };
+		D98C6E391C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E361C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift */; };
+		D98C6E3A1C87DAC800FFB2A4 /* OfferingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E371C87DAC800FFB2A4 /* OfferingTableViewCell.swift */; };
+		D98C6E3B1C87DAC800FFB2A4 /* NewScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E381C87DAC800FFB2A4 /* NewScheduleTableViewController.swift */; };
 		D9BA66531C77A87100FACBED /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66521C77A87100FACBED /* Time.swift */; };
 		D9BA66551C77A88D00FACBED /* Periodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BA66541C77A88D00FACBED /* Periodic.swift */; };
 		D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BA66581C77AE7200FACBED /* Main.storyboard */; };
@@ -122,7 +124,6 @@
 		D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		D9235A7D1BE3C6D5007173C9 /* ScheduleBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9235A801BE3C6D5007173C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9235A851BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/other.storyboard; sourceTree = "<group>"; };
 		D9235A881BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleBuilder.xcdatamodel; sourceTree = "<group>"; };
 		D9235A8A1BE3C6D5007173C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9235A8D1BE3C6D5007173C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,6 +144,9 @@
 		D960F7921C77A268007B5E74 /* Periodic_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic_new.swift; sourceTree = "<group>"; };
 		D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilder.swift; sourceTree = "<group>"; };
 		D960F7941C77A268007B5E74 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		D98C6E361C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderViewController.swift; sourceTree = "<group>"; };
+		D98C6E371C87DAC800FFB2A4 /* OfferingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingTableViewCell.swift; sourceTree = "<group>"; };
+		D98C6E381C87DAC800FFB2A4 /* NewScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleTableViewController.swift; sourceTree = "<group>"; };
 		D9BA66521C77A87100FACBED /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		D9BA66541C77A88D00FACBED /* Periodic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic.swift; sourceTree = "<group>"; };
 		D9BA66581C77AE7200FACBED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -235,6 +239,9 @@
 				D9057CAC1C0EBD900036D5D3 /* SchedulesTableViewController.swift */,
 				D9057CAD1C0EBD900036D5D3 /* ScheduleTableViewCell.swift */,
 				D9057CAE1C0EBD900036D5D3 /* ScheduleView.swift */,
+				D98C6E361C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift */,
+				D98C6E371C87DAC800FFB2A4 /* OfferingTableViewCell.swift */,
+				D98C6E381C87DAC800FFB2A4 /* NewScheduleTableViewController.swift */,
 				0163354C1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift */,
 			);
 			name = SchedulesTab;
@@ -318,7 +325,6 @@
 		D9235A7F1BE3C6D5007173C9 /* ScheduleBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				D9235A841BE3C6D5007173C9 /* other.storyboard */,
 				D9BA66581C77AE7200FACBED /* Main.storyboard */,
 				D69879851C519F9B00123D1F /* ProfileTab */,
 				D698798A1C52BE7E00123D1F /* FeatureTab */,
@@ -473,7 +479,6 @@
 				D960F7971C77A268007B5E74 /* courses_new.json in Resources */,
 				D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */,
 				01BD3D7C1C0E329700115D84 /* courses.json in Resources */,
-				D9235A861BE3C6D5007173C9 /* other.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +554,7 @@
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
 				D960F7981C77A268007B5E74 /* DataHandler.swift in Sources */,
 				98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */,
+				D98C6E391C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift in Sources */,
 				D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */,
 				D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */,
 				D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */,
@@ -565,6 +571,7 @@
 				D9057CAF1C0EBD900036D5D3 /* SchedulesTableViewController.swift in Sources */,
 				D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */,
 				D9057CB01C0EBD900036D5D3 /* ScheduleTableViewCell.swift in Sources */,
+				D98C6E3B1C87DAC800FFB2A4 /* NewScheduleTableViewController.swift in Sources */,
 				D6D72BEE1C82A9B00016E6C9 /* Constants.swift in Sources */,
 				D69879871C519FC700123D1F /* UserProfileViewController.swift in Sources */,
 				D960F7991C77A268007B5E74 /* Lab.swift in Sources */,
@@ -580,6 +587,7 @@
 				0163354D1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift in Sources */,
 				D698798C1C52BEA200123D1F /* FeatureViewController.swift in Sources */,
 				D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */,
+				D98C6E3A1C87DAC800FFB2A4 /* OfferingTableViewCell.swift in Sources */,
 				D9235A811BE3C6D5007173C9 /* AppDelegate.swift in Sources */,
 				D6D72BEC1C82A46F0016E6C9 /* webAuthenticationViewController.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,
@@ -621,14 +629,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D9235A841BE3C6D5007173C9 /* other.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9235A851BE3C6D5007173C9 /* Base */,
-			);
-			name = other.storyboard;
-			sourceTree = "<group>";
-		};
 		D9235A8C1BE3C6D5007173C9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

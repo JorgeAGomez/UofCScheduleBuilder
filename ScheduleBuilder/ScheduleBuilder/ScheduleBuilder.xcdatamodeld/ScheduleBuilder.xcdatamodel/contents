@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="Favourite" representedClassName=".FavouriteCourses" syncable="YES">
-        <attribute name="coursename" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="coursenumber" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <elements>
-        <element name="Favourite" positionX="-45" positionY="0" width="128" height="75"/>
-    </elements>
+    <elements/>
 </model>

@@ -53,27 +53,9 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+      
         courseListView.dataSource = self
-        
-        
-        let fetchRequest = NSFetchRequest(entityName: "Favourite")
-        let sortDescriptor = NSSortDescriptor(key: "coursename", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultController.delegate = self
-            do {
-                try fetchResultController.performFetch()
-                favourites_new = fetchResultController.fetchedObjects as! [Course_new]
-            } catch {
-                print(error)
-            }
-        }
         self.favourites_new  = GlobalVariables2.data.getFavourites()
-        
-        
         
         // Accordion
         
@@ -86,15 +68,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         string1 = sectionTitleArray .objectAtIndex(1) as? String
         [sectionContentDict .setValue(countryListB, forKey:string1! )]
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         // Do any additional setup after loading the view.
     }
     

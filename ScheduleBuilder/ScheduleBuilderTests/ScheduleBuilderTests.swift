@@ -12,7 +12,7 @@ import XCTest
 class ScheduleBuilderTests: XCTestCase {
     var dh: DataHandler!
     
-    var sched: [Schedule] = []
+    //var sched: [Schedule] = []
     
     override func setUp() {
         super.setUp()
@@ -31,10 +31,12 @@ class ScheduleBuilderTests: XCTestCase {
         self.dh = DataHandler()
         
         var a = ScheduleBuilder()
+        var p: [Periodic_new] = self.dh.courses[0].splitIntoPeriodics()
+        p.append(self.dh.courses[1].splitIntoPeriodics()[0])
         
-        a.getValidSchedules(self.dh.courses)
+        a.createValidSchedules(p)
         
-        let gg = a.validSchedules
+        //let gg = a.validSchedules
         XCTAssert(true)
     }
     

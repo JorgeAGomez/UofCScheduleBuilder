@@ -46,6 +46,14 @@ public class ScheduleBuilder
         andTree([], coursesToSchedule: courses_list, indexOfActiveCourse: 0)
     }
     
+    // Method identical to the one above. It simply is here to work with creating scheduels out of 
+    // existing periodics rather tha courses. Ie. custom schedule builder where user choses specific times
+    // of Lecture, Lab, tutorial to createa a schedule out of
+    public func createValidSchedules(chosen_periodics: [Periodic_new])
+    {
+        andTree([], periodicsToSchedule: chosen_periodics)
+    }
+    
     // A VERY rough implementation of an AndTree(Branch and bound search commonly found in AI).
     // Recursively explores the tree in "rounds" a round being a course.
     //                                              []
@@ -82,7 +90,7 @@ public class ScheduleBuilder
                         if isTimeConstraintMet(schedule, periodicToAdd: p)
                         {
                             var newSched = schedule
-                            newSched.append(p)     //only doing this because of soem weird compiler bug. Honestly cannot figure out what the fuck it is
+                            newSched.append(p)     //only spreading over two lines because of soem weird compiler bug. Honestly cannot figure out what the fuck it is
                             var new_indexOfActiveCourse = indexOfActiveCourse
                             new_indexOfActiveCourse += 1
                             andTree(newSched, coursesToSchedule: coursesToSchedule, indexOfActiveCourse: new_indexOfActiveCourse)
@@ -93,6 +101,37 @@ public class ScheduleBuilder
     }
     
     //TODO: write method to take periodic (complete or icomplete to add to schedule)
+    private func andTree(schedule: [Periodic_new], periodicsToSchedule: [Periodic_new])
+    {
+        if validSchedules.count == NUMBER_OF_SCHEDULES
+        {
+            return
+        }
+        else
+        {
+            if periodicsToSchedule.count == 0
+            {
+                validSchedules.append(schedule)   // class variable
+            }
+            else
+            {
+                for p in periodicsToSchedule
+                {
+                    if isTimeConstraintMet(schedule, periodicToAdd: p)
+                    {
+                        var newSched = schedule
+                        newSched.append(p)     //only spreading over two lines because of soem weird compiler bug. Honestly cannot figure out what the fuck it is
+                        var pts: [Periodic_new] = periodicsToSchedule
+                        pts.removeAtIndex(0)
+                        
+                        andTree(newSched, periodicsToSchedule: pts)
+                    }
+                }
+            }
+        }
+    }
+    
+    
     
     // Populates array of courses
     // @PARAMS:

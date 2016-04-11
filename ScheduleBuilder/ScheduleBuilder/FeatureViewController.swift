@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import PagingMenuController
 
 class FeatureViewController: UIViewController {
 
-  @IBOutlet weak var courseList2: UIImageView!
-  @IBOutlet weak var courseList1: UIImageView!
-  @IBOutlet weak var courseList6: UIImageView!
-  @IBOutlet weak var courseList5: UIImageView!
   
   override func viewDidLoad() {
       super.viewDidLoad()
       self.title = "Features"
-
-        // Do any additional setup after loading the view.
+    
+      let options = PagingMenuOptions()
+      options.selectedFont = UIFont(name: "American Typewriter", size: 20)!
+    
+      let viewController1 = self.storyboard?.instantiateViewControllerWithIdentifier("Feature1") as! Feature1ViewController
+    
   }
 
     override func didReceiveMemoryWarning() {

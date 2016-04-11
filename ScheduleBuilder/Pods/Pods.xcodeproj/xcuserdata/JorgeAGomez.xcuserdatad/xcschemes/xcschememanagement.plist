@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PagingMenuController-PagingMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PagingMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ScheduleBuilder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CA1D6D01AECA37D9E6EED0C1F42F14D1</key>
+		<key>095BE2C4A7D79981645E36E475D86B49</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB065B6938CFCD401C80B39A94A1723E</key>
+		<key>23D4B5C9CC657B68134305BFEB076270</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5BBB34170986C897E8931C1768FD6EE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7E89C09641606527DB521A9013012CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,10 +1,13 @@
 PODS:
+  - PagingMenuController (0.8.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - PagingMenuController (~> 0.8)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  PagingMenuController: 1a9ff8ad0ab9704f215706997c1a624bc951f508
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

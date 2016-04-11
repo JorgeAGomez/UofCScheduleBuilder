@@ -51,8 +51,10 @@ public class DataHandler {
         var courseNumber: String                        // 313
         var courseCode:   String                        // CPSC
         var courseDescription: String   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
-        var courseDepartment:  String = "DEPARTMENT"    //TO GET ALL THAT INFO IN ONE PLACE
+        var courseDepartment:  String    //TO GET ALL THAT INFO IN ONE PLACE
         var lectures: [Lecture] = []
+        var prereqs: String
+        var returnList = [String]()
         var descriptionHandler = DescriptionHandler()
 
         // I am not sure why this format, but that's what all tutorials suggest
@@ -66,7 +68,10 @@ public class DataHandler {
             courseNumber = actualJSON["courseNumber"].stringValue
             courseCode   = actualJSON["courseCode"].stringValue
             courseDepartment = getDepartment(courseCode)
-            courseDescription = descriptionHandler.getDescription(courseCode + courseNumber)
+            returnList = descriptionHandler.getDescription(courseCode + courseNumber)
+            courseDescription = returnList[0]
+            prereqs = returnList[1]
+            
             
             if !departments.contains(courseDepartment)
             {
@@ -74,7 +79,7 @@ public class DataHandler {
             }
             
             lectures     = getLectures(periodics)
-            courses.append(Course_new(title: courseName, courseCode: courseCode, courseNumber: courseNumber, department: courseDepartment, prereqs: "", description: courseDescription, lecture: lectures))
+            courses.append(Course_new(title: courseName, courseCode: courseCode, courseNumber: courseNumber, department: courseDepartment, prereqs: prereqs, description: courseDescription, lecture: lectures))
         }
     }
     

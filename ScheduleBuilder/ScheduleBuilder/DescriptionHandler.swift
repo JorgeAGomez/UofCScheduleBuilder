@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 public class DescriptionHandler {
-    var descriptions = [String:String]()
+    var descriptions = [String:[String]]()
     
     init() {
 
@@ -23,27 +23,31 @@ public class DescriptionHandler {
         var code: String
         var number: String
         var description: String
+        var prereqs: String
         
         for (key, actualJSON):(String, JSON) in dict {
             description = actualJSON["description"].stringValue
             number = actualJSON["number"].stringValue
             code = actualJSON["departmentCode"].stringValue
+            prereqs = actualJSON["prereqs"].stringValue
             if description.isEmpty {
-                descriptions[code + number] = " "
+                description = " "
             }
-            else {
-                descriptions[code + number] = description
+            if prereqs.isEmpty {
+                prereqs = " "
             }
+            
+            descriptions[code + number] = [description, prereqs]
         }
         
     }
     
-    public func getDescription(course: String) -> String {
+    public func getDescription(course: String) -> [String] {
         if let desc = descriptions[course] {
             return desc
         }
         else {
-            return " "
+            return [" ", " "]
         }
     }
     

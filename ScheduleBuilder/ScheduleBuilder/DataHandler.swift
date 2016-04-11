@@ -50,9 +50,10 @@ public class DataHandler {
         var courseName:   String                        // Introduction to Computability
         var courseNumber: String                        // 313
         var courseCode:   String                        // CPSC
-        var courseDescription: String = "DESCRIPTION"   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
+        var courseDescription: String   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
         var courseDepartment:  String = "DEPARTMENT"    //TO GET ALL THAT INFO IN ONE PLACE
         var lectures: [Lecture] = []
+        var descriptionHandler = DescriptionHandler()
 
         // I am not sure why this format, but that's what all tutorials suggest
         // key seems to be pretty useless and is not used
@@ -65,6 +66,7 @@ public class DataHandler {
             courseNumber = actualJSON["courseNumber"].stringValue
             courseCode   = actualJSON["courseCode"].stringValue
             courseDepartment = getDepartment(courseCode)
+            courseDescription = descriptionHandler.getDescription(courseCode + courseNumber)
             
             if !departments.contains(courseDepartment)
             {

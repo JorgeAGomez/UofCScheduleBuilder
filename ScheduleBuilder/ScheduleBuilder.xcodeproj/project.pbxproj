@@ -16,6 +16,7 @@
 		01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D831C0EA8F600115D84 /* LineView.swift */; };
 		01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D841C0EA8F600115D84 /* CoursePageView.swift */; };
 		01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3D891C0EB48500115D84 /* LectureView.swift */; };
+		5B3343B41CBC392700968B46 /* DescriptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3343B31CBC392700968B46 /* DescriptionHandler.swift */; };
 		68E2F4AD19EEB80E97F91857 /* Pods_ScheduleBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */; };
 		987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E02B31C0C5B0B00766128 /* CourseCell.swift */; };
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
@@ -98,6 +99,7 @@
 		01BD3D841C0EA8F600115D84 /* CoursePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePageView.swift; sourceTree = "<group>"; };
 		01BD3D891C0EB48500115D84 /* LectureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LectureView.swift; sourceTree = "<group>"; };
 		122A86C1B1B358A6A02B0A2E /* Pods-ScheduleBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.release.xcconfig"; sourceTree = "<group>"; };
+		5B3343B31CBC392700968B46 /* DescriptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionHandler.swift; sourceTree = "<group>"; };
 		9556DA509FA8CF720F700725 /* Pods-ScheduleBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScheduleBuilder/Pods-ScheduleBuilder.debug.xcconfig"; sourceTree = "<group>"; };
 		987E02B31C0C5B0B00766128 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseCell.swift; path = Controllers/CourseCell.swift; sourceTree = "<group>"; };
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				D960F78A1C77A268007B5E74 /* Course_new.swift */,
+				5B3343B31CBC392700968B46 /* DescriptionHandler.swift */,
 				D960F78C1C77A268007B5E74 /* courses_new.json */,
 				01BD3D741C0E329600115D84 /* courses.json */,
 				D960F78D1C77A268007B5E74 /* DataHandler.swift */,
@@ -592,6 +595,7 @@
 				D6D72BEC1C82A46F0016E6C9 /* webAuthenticationViewController.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,
 				D69879891C51B7D400123D1F /* LoginViewController.swift in Sources */,
+				5B3343B41CBC392700968B46 /* DescriptionHandler.swift in Sources */,
 				D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */,
 				D9EC79F71C0E442C00A0FEF9 /* DepartmentTableViewController.swift in Sources */,
 			);

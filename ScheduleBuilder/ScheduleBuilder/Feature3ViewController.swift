@@ -13,14 +13,16 @@ class Feature3ViewController: UIViewController, UITableViewDelegate, UITableView
   @IBOutlet weak var tableView: UITableView!
   
   
-  //NO PRE REQ COURSES //
+  //ONLINE COURSES //
   
+  let courses = []
   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

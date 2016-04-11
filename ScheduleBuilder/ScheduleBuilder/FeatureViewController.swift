@@ -25,11 +25,11 @@ class FeatureViewController: UIViewController {
       let viewController4 = self.storyboard?.instantiateViewControllerWithIdentifier("Feature4") as! Feature4ViewController
       let viewController5 = self.storyboard?.instantiateViewControllerWithIdentifier("Feature5") as! Feature5ViewController
     
-      viewController1.title = "Design"
+      viewController1.title = "Learn Softwares"
       viewController2.title = "Popular"
-      viewController3.title = "Senior(No Pre-Req)"
-      viewController4.title = "Coding"
-      viewController5.title = "No final"
+      viewController3.title = "Online"
+      viewController4.title = "Video Games"
+      viewController5.title = "Travel Abroad"
     
       let viewControllers = [viewController1, viewController2, viewController3, viewController4, viewController5]
     

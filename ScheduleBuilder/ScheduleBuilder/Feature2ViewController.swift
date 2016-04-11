@@ -6,6 +6,8 @@
 //  Copyright © 2016 Alexander Ivanov. All rights reserved.
 //
 
+// Photoshop, 
+
 import UIKit
 
 class Feature2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {

@@ -14,7 +14,7 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
   
   // DESIGN COURSES //
   
-  let courses = ["251 Media Arts: Practice & Theory I","253 Media Arts: Practice & Theory II"]
+  let courses = ["251 Media Arts: Practice & Theory I","253 Media Arts: Practice & Theory II","351 Sonic Arts","599 iOS development"]
   
   
     override func viewDidLoad() {

@@ -64,7 +64,7 @@ public class DataHandler {
             courseName   = actualJSON["description"].stringValue
             courseNumber = actualJSON["courseNumber"].stringValue
             courseCode   = actualJSON["courseCode"].stringValue
-            courseDepartment = actualJSON["department"].stringValue
+            courseDepartment = getDepartment(courseCode)
             
             if !departments.contains(courseDepartment)
             {
@@ -74,6 +74,17 @@ public class DataHandler {
             lectures     = getLectures(periodics)
             courses.append(Course_new(title: courseName, courseCode: courseCode, courseNumber: courseNumber, department: courseDepartment, prereqs: "", description: courseDescription, lecture: lectures))
         }
+    }
+    
+    private func getDepartment(code: String) -> String {
+        var courseNames: [String] = ["ACCT-Accounting", "ACSC-Actuarial Science", "ACWR-Academic Writing", "AFST-African Studies", "ALMC-Arabic Lang & Muslim Cult", "AMAT-Applied Mathematics", "ANTH-Anthropology", "ARHI-Art History", "ARKY-Archaeology", "ARST-Architectural Studies", "ART-Art", "ARTS-ARTS", "ASHA-Arts & Science Honours Ac", "ASPH-Astrophysics", "ASTR-Astronomy", "ATTH-Athletic Therapy", "BCEM-Biochemistry", "BIOL-Biology", "BMEN-Biomedical Engineering", "BSEN-Business and Environment", "BTMA-Business Technology Manag", "CEST-Central & East European S", "CHEM-Chemistry", "CHIN-Chinese", "CMCL-Communication and Culture", "CMMB-Cellular, Molec, Micro B", "CNST-Canadian Studies", "COMS-Communication & Media Stu", "COOP-Co-operative Education", "CORE-Community Rehabilitation", "CPSC-Computer Science", "DEST-Development Studies", "DNCE-Dance", "DRAM-Drama", "EALS-East Asian Language Studi", "EASC-Earth Science", "EAST-East Asian Studies", "ECOL-Ecology", "ECON-Economics", "EDER-Educational Research", "EDPS-Educational Psychology", "EDUC-Education", "EESS-Energy & Environmental Sy", "ENCH-Chemical Engineering", "ENCI-Civil Engineering", "ENCM-Computer Engineering", "ENEE-Energy and the Environmen", "ENEL-Electrical Engineering", "ENEN-Environmental Engineering", "ENER-Energy Engineering", "ENGG-Engineering", "ENGL-English", "ENGO-Geomatics Engineering", "ENME-Mechanical Engineering", "ENMF-Manufacturing Engineering", "ENMG-Energy Management", "ENPE-Petroleum Engineering", "ENSC-Environmental Science", "ENSF-Software Engineering for", "ENTI-Entrepeneurship & Innova", "EVDA-Environ Design Architectu", "EVDB-Environmental Design Bloc", "EVDL-Environmental Design Land", "EVDP-Environmental Design Plan", "EVDS-Environmental Design", "FILM-Film", "FINA-Fine Arts", "FNCE-Finance", "FREN-French", "GEOG-Geography", "GERM-German", "GLGY-Geology", "GOPH-Geophysics", "GREK-Greek", "GRST-Greek and Roman Studies", "HROD-Human Resoures & Org Dyn", "HSOC-Health and Society", "HTST-History", "IFPE-Int'l Foundations Program", "IFPX-International Foundations", "INDG-Indigenous Studies", "INTE-Internship", "INTR-International Relations", "IPHE-IPHE", "ITAL-Italian", "JPNS-Japanese", "KNES-Kinesiology", "LANG-Language", "LAST-Latin American Studies", "LATI-Latin", "LAW-Law", "LING-Linguistics", "LWSO-Law and Society", "MATH-Mathematics", "MDCH-Community Health Sciences", "MDCN-Medicine", "MDPH-Medical Physics", "MDSC-Medical Science", "MGST-Management Studies", "MHST-Museum & Heritage Studies", "MKTG-Marketing", "MRSC-Marine Science", "MUED-Musical Education", "MUPF-Musical Performance", "MUSI-Music", "NANS-Nanoscience", "NEUR-Neuroscience", "NURS-Nursing", "OPMA-Operations Management", "PHED-Physical Education", "PHIL-Philosophy", "PHYS-Physics", "PLBI-Plant Biology", "PLMA-Petroleum Land Management", "PMAT-Pure Mathematics", "POLI-Political Science", "PPOL-PPOL", "PSYC-Psychology", "QBIO-Qatar Biology", "QCHE-Qatar Chemistry", "QMAT-Qatar Mathematics", "RELS-Religious Studies", "RMIN-Risk Management and Insur", "ROST-Romance Studies", "RUSS-Russian", "RVST-Research Visiting Student", "SAST-South Asian Studies", "SCIE-Science", "SEDV-Sustainable Energy Develo", "SENG-Software Engineering", "SGMA-Strategy and Global Manag", "SOCI-Sociology", "SOWK-Social Work", "SPAN-Spanish", "STAT-Statistics", "STST-Strategic Studies", "TAP-Term Abroad Program", "TOUR-Tourism and Hospitality M", "UBST-Urban Studies", "UNEX-University Exchange", "UNIV-University", "VETM-Veterinary Medicine", "WMST-Women's Studies", "ZOOL-Zoology"]
+        for object in courseNames {
+            var split = object.characters.split("-").map(String.init)
+            if split[0] == code {
+                return split[1]
+            }
+        }
+        return code
     }
     
     

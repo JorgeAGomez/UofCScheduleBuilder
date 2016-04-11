@@ -27,7 +27,7 @@ class FeatureViewController: UIViewController {
     
       viewController1.title = "Design"
       viewController2.title = "Popular"
-      viewController3.title = "No Pre-Req"
+      viewController3.title = "Senior(No Pre-Req)"
       viewController4.title = "Coding"
       viewController5.title = "No final"
     

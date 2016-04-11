@@ -8,8 +8,13 @@
 
 import UIKit
 
-class Feature2ViewController: UIViewController {
+class Feature2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+  @IBOutlet weak var tableView: UITableView!
+  
+  // POPULAR COURSES //
+  let courses = ["303 Business in cultural context","201 Principles of microeconomics","203 Principles of macroeconomics"]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +25,16 @@ class Feature2ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+       func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return courses.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    cell.textLabel!.text = courses[indexPath.row]
+    return cell
+  }
 
 }

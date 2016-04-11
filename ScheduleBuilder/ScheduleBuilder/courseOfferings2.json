@@ -15,17 +15,44 @@
                           {
                           "fromTime": "11:00",
                           "day": "Mon",
-                          "toTime": "11:50"
+                          "toTime": "11:00"
                           },
                           {
                           "fromTime": "11:00",
                           "day": "Wed",
-                          "toTime": "11:50"
+                          "toTime": "11:00"
                           },
                           {
                           "fromTime": "11:00",
                           "day": "Fri",
-                          "toTime": "11:50"
+                          "toTime": "11:00"
+                          }
+                          ]
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Lecture",
+                "section": 2,
+                "times": [
+                          {
+                          "fromTime": "11:00",
+                          "day": "Mon",
+                          "toTime": "11:00"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Wed",
+                          "toTime": "11:00"
+                          },
+                          {
+                          "fromTime": "11:00",
+                          "day": "Fri",
+                          "toTime": "11:00"
                           }
                           ]
                 },
@@ -43,6 +70,23 @@
                           "fromTime": "10:00",
                           "day": "Tue",
                           "toTime": "10:50"
+                          }
+                          ]
+                },
+                {
+                "matchedNames": [
+                                 "None"
+                                 ],
+                "instructor": [
+                               "Staff"
+                               ],
+                "type": "Tutorial",
+                "section": 2,
+                "times": [
+                          {
+                          "fromTime": "12:00",
+                          "day": "Tue",
+                          "toTime": "12:50"
                           }
                           ]
                 }

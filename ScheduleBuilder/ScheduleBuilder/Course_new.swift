@@ -104,4 +104,35 @@ public class Course_new {
         }
         return periodics
     }
+    
+    // One off design. We need this for creation of custom schedules in the SchedulesTabViewController
+    // Essentially we are flattening the hierarchy making it so that we can translate a hierarchical data into flat
+    // table of cells
+    public func splitIntoCell() -> [CourseCellData]
+    {
+        var cells: [CourseCellData] = []
+        
+        for l in lectures
+        {
+            let cell = CourseCellData(type: "lecture", active: true, section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
+                                      time: l.time)
+            cells.append(cell)
+            
+            for tut in l.tutorials!
+            {
+                let cell = CourseCellData(type:"tutorial", active: true, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
+                cells.append(cell)
+            }
+            for lab in l.labs!
+            {
+                let cell = CourseCellData(type:"lab", active: true, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
+                                          time: lab.time)
+                cells.append(cell)
+            }
+            
+        }
+        
+        return cells
+        
+    }
 }

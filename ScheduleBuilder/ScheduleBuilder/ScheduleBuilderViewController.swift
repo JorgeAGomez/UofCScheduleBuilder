@@ -14,41 +14,43 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     
     @IBOutlet weak var scheduleView: ScheduleView!
     @IBOutlet weak var courseListView: UITableView!
-    
-    //var favourites = [Course]()
-    //var schedule: Schedule!
-    //var courses = [Course]()
+
     var fetchResultController:NSFetchedResultsController!
     
-    
+    // the working schedule that we are modifying
     var schedule_new: [Periodic_new] = []
+    // favorited courses
     var favourites_new: [Course_new] = []
     
-    var totalOfferings: [Int] = []
-    var tutOfferings: [Int] = []
-    var labOfferings: [Int] = []
-    var typeOfferings:[[String]] = []
+    // flattened favorited courses. for use in cells
+    var listOfFlattenedCourses: [[CourseCellData]] = []
+    
+    
+    var totalOfferings: [Int]   = []
+    var tutOfferings:   [Int]   = []
+    var labOfferings:   [Int]   = []
+    var typeOfferings:  [[String]] = []
     var currentLec = 0
     var currentTut = 0
     var currentLab = 0
     var currentSec = 0
     
     
-    var courseExpanded = false
+    var courseExpanded  = false
     var lectureExpanded = false
     //var expandedCourse: Course
-    var courseLectureOfferings: [Periodic] = []
+    var courseLectureOfferings: [Periodic]   = []
     //var expandedLecture: Offering
     var lectureTutorialOfferings: [Periodic] = []
     
     
     // Accordion
-    var sectionTitleArray : NSMutableArray = NSMutableArray()
+    var sectionTitleArray  : NSMutableArray = NSMutableArray()
     var sectionContentDict : NSMutableDictionary = NSMutableDictionary()
-    var arrayForBool : NSMutableArray = NSMutableArray()
+    var arrayForBool       : NSMutableArray = NSMutableArray()
     
     var expandedIndex = -1
-    
+    // Accordion
     
     
     override func viewDidLoad() {
@@ -57,26 +59,17 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         courseListView.dataSource = self
         self.favourites_new  = GlobalVariables2.data.getFavourites()
         
-        // Accordion
-        
-        arrayForBool = ["0","0"]
-        sectionTitleArray = ["Pool A","Pool B"]
-        let countryListA : NSArray = ["New Zealand","Australia","Bangladesh","Sri Lanka"]
-        var string1 = sectionTitleArray .objectAtIndex(0) as? String
-        [sectionContentDict .setValue(countryListA, forKey:string1! )]
-        let countryListB : NSArray = ["India","South Africa","UAE","Pakistan"]
-        string1 = sectionTitleArray .objectAtIndex(1) as? String
-        [sectionContentDict .setValue(countryListB, forKey:string1! )]
 
+        // flatten each course in favorites and add them into array
+        for favCourse in self.favourites_new
+        {
+            listOfFlattenedCourses.append(favCourse.splitIntoCell())
+        }
   
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     override func viewWillAppear(animated: Bool) {
         
         
@@ -97,11 +90,15 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         courseListView.reloadData()
     }
     
-    // every favourite is expandable ( is a section )
+    // Corresponds to the number of favorited courses.
+    // Each Section will contain Labs,Lectures, and tutorials corresponding to the
+    // particular favorited course
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return favourites_new.count
     }
     
+    
+    // This function tells tableView how many rows to display per each section
     // every lecture, tutorial, and lab is a row in a particular section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -151,7 +148,163 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         return 0
     }
     
-    // Section Title (different courses)
+    // Load a particular cell. We are given a section number (i.e. a course) and a row number (i.e. could be lecture, tutorial, or lab)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let cellIdentifier = "offeringCell"
+        let cell = courseListView.dequeueReusableCellWithIdentifier(cellIdentifier) as! OfferingTableViewCell
+        
+        
+        
+        /**********************************************************************************/
+        // This doesn't really work... a better solultion is needed on the backend - sasha
+        /**********************************************************************************/
+        // ensure the row is within bounds (safety net)
+        if(indexPath.section < totalOfferings.count && indexPath.row < totalOfferings[indexPath.section]){
+            
+            // could be dangerous... perhaps backend must change more?
+            let type = typeOfferings[indexPath.section][indexPath.row]
+            let course = favourites_new[indexPath.section] //[Course_new]
+            cell.course = course
+            
+            
+            if(indexPath.section != currentSec){
+                currentSec = indexPath.section
+                currentLec = 0
+                currentTut = 0
+                currentLab = 0
+            }
+            
+            // Professor data needs to be present or a variable under lecture!
+            
+            // using type, we determine if a cell is lecture, tutorial, or lab...
+            switch(type){
+                
+            case "l":
+                cell.offeringType.text = "Lec: " + String(course.lectures[currentLec].number)
+                
+                cell.type = "lecture"
+                
+                
+                //cell.profName.text = "?????????????????"    // currently unavailable
+                //cell.profRating.text = "*****"              // currently unavailable
+                currentLec++
+                currentTut = 0
+                currentLab = 0
+                
+                break
+                
+            case "t":
+                cell.offeringType.text = "Tut: " + String(currentTut + 1)
+                cell.type = "tutorial"
+                currentTut++
+                break
+                
+            case "b":
+                cell.offeringType.text = "Lab: " + String(currentLab + 1)
+                cell.type = "lab"
+                currentLab++
+                break
+                
+            default:
+                
+                cell.offeringType.text = "This Shouldn't Exist!"
+                break
+                
+            }
+            
+            
+            
+            
+            
+            
+            //cell.offeringType.text = "Lecture: " + String(lecture.number)
+            
+            //cell.profName.text = " "
+            //cell.profRating.text = " "
+            
+            // DONT DELETE YET - Sasha...
+            /*if(offering!.periodics[indexPath.row].type == "Lecture"){
+            cell.offeringType.text = offering!.periodics[indexPath.row].type + " " + String(indexPath.row + 1)
+            }*/
+            /*
+            else{
+            cell.offeringType.text = offering!.periodics[indexPath.row].type
+            }
+            */
+            
+            // NEED TO ADD SUPPORT TO SHOW PROF RATINGS + PROF NAMES
+            /*if(offering!.periodics[indexPath.row].profs.count > 0 && indexPath.row <  offering!.periodics[indexPath.row].profs.count){
+            cell.profName.text = offering!.periodics[indexPath.row].profs[indexPath.row].fullname
+            
+            }*/
+            
+            
+            
+            //cell.offeringTime.text = offering!.periodics[indexPath.row].times
+            
+            /*
+            if(offering!.periodics[indexPath.row].times.count > 0){
+            
+            var txt = ""
+            
+            for t in offering!.periodics[indexPath.row].times{
+            txt += t.day + ", "
+            }
+            
+            txt = String(txt.characters.dropLast())
+            txt = String(txt.characters.dropLast())
+            
+            txt += " " + (offering!.periodics[indexPath.row].times.first?.fromTimeText)! + " - " + (offering!.periodics[indexPath.row].times.first?.toTimeText)!
+            
+            cell.offeringTime.text = txt
+            
+            
+            cell.schedule = ScheduleEvent(offering: offering!, type: offering!.periodics[indexPath.row].type, times: offering!.periodics[indexPath.row].times)
+            
+            
+            
+            let scheduleViewCheck = scheduleView.events.indexOf {
+            $0.offering.title == cell.scheduleEvent.offering.title && $0.type == cell.scheduleEvent.type
+            }
+            
+            
+            if(scheduleViewCheck != nil){
+            cell.accessoryType = .Checkmark
+            }
+            
+            
+            }
+            */
+            
+            /*
+            if(scheduleView.schedule?.courses.contains(<#T##predicate: (Course) throws -> Bool##(Course) throws -> Bool#>)){
+            cell.accessoryType = .Checkmark
+            }
+            */
+            
+            
+        }
+        
+        /*if(indexPath.section == expandedIndex){
+        cell.courseName.text = favourites[indexPath.row].title
+        cell.backgroundColor = UIColor .greenColor()
+        }*/
+        
+        // determine whether to grey out this cell
+        var a = indexPath.section
+        var b = indexPath.row
+        if !self.listOfFlattenedCourses[indexPath.section][indexPath.row].active
+        {
+            cell.userInteractionEnabled = false
+            cell.textLabel!.enabled = false
+            cell.detailTextLabel!.enabled = false
+        }
+        return cell
+    }
+
+    
+    // Section Title (different co.urses)
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return favourites_new[section].courseCode + " " +  favourites_new[section].courseNumber + " " + favourites_new[section].title
@@ -211,149 +364,23 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         
     }
     
-    // Load a particular cell. We are given a section number (i.e. a course) and a row number (i.e. could be lecture, tutorial, or lab)
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
-        let cellIdentifier = "offeringCell"
-        let cell = courseListView.dequeueReusableCellWithIdentifier(cellIdentifier) as! OfferingTableViewCell
-        
-        
-        
-        /**********************************************************************************/
-        // This doesn't really work... a better solultion is needed on the backend - sasha
-        /**********************************************************************************/
-        // ensure the row is within bounds (safety net)
-        if(indexPath.section < totalOfferings.count && indexPath.row < totalOfferings[indexPath.section]){
-            
-            // could be dangerous... perhaps backend must change more?
-            let type = typeOfferings[indexPath.section][indexPath.row]
-            let course = favourites_new[indexPath.section]
-            
-            if(indexPath.section != currentSec){
-                currentSec = indexPath.section
-                currentLec = 0
-                currentTut = 0
-                currentLab = 0
-            }
-            
-            // Professor data needs to be present or a variable under lecture!
-            
-            // using type, we determine if a cell is lecture, tutorial, or lab...
-            switch(type){
-            
-            case "l":
-                cell.offeringType.text = "Lec: " + String(course.lectures[currentLec].number)
-                //cell.profName.text = "?????????????????"    // currently unavailable
-                //cell.profRating.text = "*****"              // currently unavailable
-                currentLec++
-                currentTut = 0
-                currentLab = 0
-                break
-            
-            case "t":
-                cell.offeringType.text = "Tut: " + String(currentTut + 1)
-                currentTut++
-                break
-                
-            case "b":
-                cell.offeringType.text = "Lab: " + String(currentLab + 1)
-                currentLab++
-                break
-                
-            default:
-                
-                cell.offeringType.text = "This Shouldn't Exist!"
-                break
-                
-            }
-            
-            
-                
-            
-            
-            
-            //cell.offeringType.text = "Lecture: " + String(lecture.number)
-            
-            //cell.profName.text = " "
-            //cell.profRating.text = " "
-            
-            // DONT DELETE YET - Sasha...
-            /*if(offering!.periodics[indexPath.row].type == "Lecture"){
-                cell.offeringType.text = offering!.periodics[indexPath.row].type + " " + String(indexPath.row + 1)
-            }*/
-            /*
-            else{
-                cell.offeringType.text = offering!.periodics[indexPath.row].type
-            }
-            */
-            
-            // NEED TO ADD SUPPORT TO SHOW PROF RATINGS + PROF NAMES
-            /*if(offering!.periodics[indexPath.row].profs.count > 0 && indexPath.row <  offering!.periodics[indexPath.row].profs.count){
-                cell.profName.text = offering!.periodics[indexPath.row].profs[indexPath.row].fullname
-
-            }*/
-            
-            
-            
-            //cell.offeringTime.text = offering!.periodics[indexPath.row].times
-            
-            /*
-            if(offering!.periodics[indexPath.row].times.count > 0){
-                
-                var txt = ""
-                
-                for t in offering!.periodics[indexPath.row].times{
-                    txt += t.day + ", "
-                }
-                
-                txt = String(txt.characters.dropLast())
-                txt = String(txt.characters.dropLast())
-                
-                txt += " " + (offering!.periodics[indexPath.row].times.first?.fromTimeText)! + " - " + (offering!.periodics[indexPath.row].times.first?.toTimeText)!
-                
-                cell.offeringTime.text = txt
-                
-                
-                cell.schedule = ScheduleEvent(offering: offering!, type: offering!.periodics[indexPath.row].type, times: offering!.periodics[indexPath.row].times)
-                
-                
-                
-                let scheduleViewCheck = scheduleView.events.indexOf {
-                    $0.offering.title == cell.scheduleEvent.offering.title && $0.type == cell.scheduleEvent.type
-                }
-
-                
-                if(scheduleViewCheck != nil){
-                    cell.accessoryType = .Checkmark
-                }
-                
-                
-            }
-            */
-            
-            /*
-            if(scheduleView.schedule?.courses.contains(<#T##predicate: (Course) throws -> Bool##(Course) throws -> Bool#>)){
-                cell.accessoryType = .Checkmark
-            }
-            */
-            
-            
-        }
-        
-        /*if(indexPath.section == expandedIndex){
-            cell.courseName.text = favourites[indexPath.row].title
-            cell.backgroundColor = UIColor .greenColor()
-        }*/
-        
-        return cell
-    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? OfferingTableViewCell{
+            
+            // If cell is already checked, uncheck it and update greyedout cells
             if cell.accessoryType == .Checkmark
             {
+                // Uncheck cell
                 cell.accessoryType = .None
+                
+                // update the list of cells to make sure only the correct cells are greyed out
+                
+                ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
+                // initiate redrawing of the schedule
+                
+                
                 
                 /*
                 let index = scheduleView.schedule.indexOf {
@@ -377,13 +404,15 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             else
             {
                 cell.accessoryType = .Checkmark
+                greyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row)
+                
                 /*
                 scheduleView.events.append(cell.scheduleEvent)
                 
                 if(!scheduleView.events.isEmpty){
                     scheduleView.isBlank = false
                 }
-                
+                 
                 scheduleView.setNeedsDisplay()
                 */
                 
@@ -391,7 +420,44 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         }
     }
     
+    // Every time we select anyone cell certain other cells will have to be greyed out
+    // this function oversees the logic involved in greying out the right cells
+    func greyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int)
+    {
+        for ccd in self.listOfFlattenedCourses[courseIndex]
+        {
+            if ccd.section == lectureNum+1
+            {
+                ccd.active = false
+            }
+            else
+            {
+                ccd.active = true
+            }
+        }
+    }
     
+    // Every time we select anyone cell certain other cells will have to be greyed out
+    // this function oversees the logic involved in ungreying out the right cells
+    func ungreyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int, type: String)
+    {
+        for ccd in self.listOfFlattenedCourses[courseIndex]
+        {
+            
+            if ccd.section == lectureNum && type != "lecture"
+            {
+                if ccd.type == type
+                {
+                    ccd.active = true
+                }
+                
+            }
+            else
+            {
+                ccd.active = true
+            }
+        }
+    }
     
 
     

@@ -35,8 +35,9 @@ class ScheduleBuilderTests: XCTestCase {
         p.append(self.dh.courses[1].splitIntoPeriodics()[0])
         
         a.createValidSchedules(p)
+
+        let csd = self.dh.courses[0].splitIntoCell()
         
-        //let gg = a.validSchedules
         XCTAssert(true)
     }
     

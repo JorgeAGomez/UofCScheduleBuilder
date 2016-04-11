@@ -10,7 +10,7 @@ import UIKit
 
 class SchedulesTableViewController: UITableViewController {
     
-    
+    // Will contain all schedules for the selected courses
     var schedules_new: [[Periodic_new]] = []
     
     
@@ -53,7 +53,7 @@ class SchedulesTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
+
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -93,6 +93,7 @@ class SchedulesTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        // User has chosen a schedule and now wants to see details
         if segue.identifier == "scheduleDetails"
         {
             let scheduleDetailsController = segue.destinationViewController as! ScheduleDetailsViewController
@@ -104,6 +105,8 @@ class SchedulesTableViewController: UITableViewController {
             }
             
         }
+
+        
     }
     
     

@@ -27,7 +27,7 @@ public class DataHandler {
         //        let timeAtPress = NSDate()
         //        let profsJSON = readJSON("courseOfferings2", fileType: "json")
         
-        let crs = readJSON("courseOfferings2", fileType: "json")
+        let crs = readJSON("courseOfferings", fileType: "json")
         processCourses(crs)
         
         //        let coursesGeneralInfo = readJSON("courses", fileType: "json")
@@ -142,8 +142,8 @@ public class DataHandler {
                 {
                     times.append(Time(dict: actualJSON2))
                 }
-                let lectureSection = 1
-                let (tutorials, labs) = getLabsOrTutsForLectureWithSection(periodics,sectionNumber: 1)
+                let lectureSection = actualJSON["section"].intValue
+                let (tutorials, labs) = getLabsOrTutsForLectureWithSection(periodics, sectionNumber: lectureSection)
                 lectures.append(Lecture(number: lectureSection, time: times, tutorials: tutorials, labs: labs))
                 
             }

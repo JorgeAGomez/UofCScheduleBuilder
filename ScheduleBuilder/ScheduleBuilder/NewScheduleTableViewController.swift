@@ -91,7 +91,6 @@ class NewScheduleTableViewController: UITableViewController {
             if let selectedCourseCell = sender as? ScheduleTableViewCell{
                 let indexPath = tableView.indexPathForCell(selectedCourseCell)!
                 
-                
                 if indexPath.row == 0{
                 }
                 else{

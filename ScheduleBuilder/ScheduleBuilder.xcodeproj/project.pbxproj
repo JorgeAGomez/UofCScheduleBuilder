@@ -74,6 +74,9 @@
 		D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */; };
 		D9EC79F71C0E442C00A0FEF9 /* DepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F61C0E442C00A0FEF9 /* DepartmentTableViewController.swift */; };
 		D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */; };
+		D9F8AFE71CBC5913006CADAC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */; };
+		D9F8AFE91CBC5D4B006CADAC /* SettingsDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */; };
+		D9F8AFEB1CBC5D84006CADAC /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,9 @@
 		D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		D9EC79F61C0E442C00A0FEF9 /* DepartmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewController.swift; sourceTree = "<group>"; };
 		D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailsCell.swift; sourceTree = "<group>"; };
+		D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +231,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D69879851C519F9B00123D1F /* ProfileTab */ = {
+		D69879851C519F9B00123D1F /* SettingsTab */ = {
 			isa = PBXGroup;
 			children = (
 				D69879861C519FC700123D1F /* UserProfileViewController.swift */,
@@ -233,8 +239,11 @@
 				D69879881C51B7D400123D1F /* LoginViewController.swift */,
 				D6D72BEB1C82A46F0016E6C9 /* webAuthenticationViewController.swift */,
 				D6D72BED1C82A9B00016E6C9 /* Constants.swift */,
+				D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */,
+				D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */,
+				D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */,
 			);
-			name = ProfileTab;
+			name = SettingsTab;
 			sourceTree = "<group>";
 		};
 		D698798A1C52BE7E00123D1F /* FeatureTab */ = {
@@ -344,7 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				D9BA66581C77AE7200FACBED /* Main.storyboard */,
-				D69879851C519F9B00123D1F /* ProfileTab */,
+				D69879851C519F9B00123D1F /* SettingsTab */,
 				D698798A1C52BE7E00123D1F /* FeatureTab */,
 				D9057CB31C0EC2550036D5D3 /* Data */,
 				D9057CB51C0EC3030036D5D3 /* CoursesTab */,
@@ -568,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F8AFE91CBC5D4B006CADAC /* SettingsDetailsCell.swift in Sources */,
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
 				D960F7981C77A268007B5E74 /* DataHandler.swift in Sources */,
 				D674098E1CBC551A001AA344 /* Feature4ViewController.swift in Sources */,
@@ -617,6 +627,7 @@
 				D69879891C51B7D400123D1F /* LoginViewController.swift in Sources */,
 				5B3343B41CBC392700968B46 /* DescriptionHandler.swift in Sources */,
 				D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */,
+				D9F8AFE71CBC5913006CADAC /* SettingsTableViewController.swift in Sources */,
 				D9EC79F71C0E442C00A0FEF9 /* DepartmentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

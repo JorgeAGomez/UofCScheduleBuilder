@@ -77,6 +77,8 @@
 		D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */; };
 		D9F8AFE71CBC5913006CADAC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */; };
 		D9F8AFE91CBC5D4B006CADAC /* SettingsDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */; };
+		D9F8AFF71CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFF61CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift */; };
+		D9F8AFF91CBC85E3006CADAC /* SettingsDepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFF81CBC85E3006CADAC /* SettingsDepartmentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,8 @@
 		D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailsCell.swift; sourceTree = "<group>"; };
+		D9F8AFF61CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDepartmentsTableViewController.swift; sourceTree = "<group>"; };
+		D9F8AFF81CBC85E3006CADAC /* SettingsDepartmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDepartmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,8 @@
 				D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */,
 				D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */,
 				D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */,
+				D9F8AFF61CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift */,
+				D9F8AFF81CBC85E3006CADAC /* SettingsDepartmentCell.swift */,
 			);
 			name = SettingsTab;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				D960F79C1C77A268007B5E74 /* PEntity.swift in Sources */,
 				D698798E1C52CF8C00123D1F /* FavouriteCourses.swift in Sources */,
 				D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */,
+				D9F8AFF91CBC85E3006CADAC /* SettingsDepartmentCell.swift in Sources */,
 				D6242D9C1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift in Sources */,
 				01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */,
 				01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */,
@@ -625,6 +632,7 @@
 				D67409901CBC5525001AA344 /* Feature5ViewController.swift in Sources */,
 				D6D72BEC1C82A46F0016E6C9 /* webAuthenticationViewController.swift in Sources */,
 				987E02B41C0C5B0B00766128 /* CourseCell.swift in Sources */,
+				D9F8AFF71CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift in Sources */,
 				D69879891C51B7D400123D1F /* LoginViewController.swift in Sources */,
 				5B3343B41CBC392700968B46 /* DescriptionHandler.swift in Sources */,
 				D69879911C52D40C00123D1F /* FavouriteCourses+CoreDataProperties.swift in Sources */,

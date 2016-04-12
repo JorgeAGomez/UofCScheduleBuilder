@@ -67,9 +67,11 @@ class SettingsTableViewController: UITableViewController {
         }
         
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as! SettingsSwitchCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as! SettingsSwitchTableViewCell
+          
+              cell.cellLabel!.text = rowContent[indexPath.row] as! String
             
-            cell.cellLabel?.text = rowContent[indexPath.row] as! String
+          
 
             
             return cell

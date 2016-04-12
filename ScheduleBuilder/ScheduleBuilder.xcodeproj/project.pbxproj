@@ -24,6 +24,7 @@
 		98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */; };
 		ACE51F881CBB56FA002DDE6A /* courseOfferings.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE51F871CBB56FA002DDE6A /* courseOfferings.json */; };
 		ACFD0E8E1C9E4A0400F8D5C3 /* CourseCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD0E8D1C9E4A0400F8D5C3 /* CourseCellData.swift */; };
+		D6242D9C1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */; };
 		D67409881CBC54EB001AA344 /* Feature1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67409871CBC54EB001AA344 /* Feature1ViewController.swift */; };
 		D674098A1CBC5506001AA344 /* Feature2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67409891CBC5506001AA344 /* Feature2ViewController.swift */; };
 		D674098C1CBC5510001AA344 /* Feature3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D674098B1CBC5510001AA344 /* Feature3ViewController.swift */; };
@@ -76,7 +77,6 @@
 		D9EC79F91C0E4A0900A0FEF9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */; };
 		D9F8AFE71CBC5913006CADAC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */; };
 		D9F8AFE91CBC5D4B006CADAC /* SettingsDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */; };
-		D9F8AFEB1CBC5D84006CADAC /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +116,7 @@
 		ACE51F871CBB56FA002DDE6A /* courseOfferings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings.json; sourceTree = "<group>"; };
 		ACFD0E8D1C9E4A0400F8D5C3 /* CourseCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCellData.swift; sourceTree = "<group>"; };
 		CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		D67409871CBC54EB001AA344 /* Feature1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature1ViewController.swift; sourceTree = "<group>"; };
 		D67409891CBC5506001AA344 /* Feature2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature2ViewController.swift; sourceTree = "<group>"; };
 		D674098B1CBC5510001AA344 /* Feature3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature3ViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +175,6 @@
 		D9EC79F81C0E4A0900A0FEF9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailsCell.swift; sourceTree = "<group>"; };
-		D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +241,7 @@
 				D6D72BED1C82A9B00016E6C9 /* Constants.swift */,
 				D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */,
 				D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */,
-				D9F8AFEA1CBC5D84006CADAC /* SettingsSwitchCell.swift */,
+				D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */,
 			);
 			name = SettingsTab;
 			sourceTree = "<group>";
@@ -614,6 +614,7 @@
 				D960F79C1C77A268007B5E74 /* PEntity.swift in Sources */,
 				D698798E1C52CF8C00123D1F /* FavouriteCourses.swift in Sources */,
 				D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */,
+				D6242D9C1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift in Sources */,
 				01BD3D881C0EA8F600115D84 /* CoursePageView.swift in Sources */,
 				01BD3D8A1C0EB48500115D84 /* LectureView.swift in Sources */,
 				0163354D1C0F6F90005D2A68 /* ScheduleDetailsViewController.swift in Sources */,

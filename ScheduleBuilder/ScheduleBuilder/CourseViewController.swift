@@ -114,66 +114,122 @@ class CourseViewController: UIViewController {
     func setupOfferingDetails()
     {
         
-        StackView.addArrangedSubview(makeSpace(5))
+        StackView.addArrangedSubview(makeSpace(8))
         
         // Add Course Description Label
-        let courseDescriptionLabel = UILabel()
-        courseDescriptionLabel.numberOfLines = 0
-        courseDescriptionLabel.font = UIFont.systemFontOfSize(14)
         
-        let courseDescriptionStyle = NSMutableParagraphStyle()
-        courseDescriptionStyle.alignment = NSTextAlignment.Justified
-        
-        let courseDescriptionText = NSAttributedString(string: course.description,
-            attributes: [
-                NSParagraphStyleAttributeName: courseDescriptionStyle,
-                NSBaselineOffsetAttributeName: NSNumber(float: 0)
-            ])
-        
-        courseDescriptionLabel.attributedText = courseDescriptionText
-        
-        StackView.addArrangedSubview(courseDescriptionLabel)
-        
-        // Add a Line with Spacing
-        StackView.addArrangedSubview(makeSpace(5))
-        StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
-        StackView.addArrangedSubview(makeSpace(5))
-        
-        // Add Course Prerequisite Label
-        let prereqLabel = UILabel()
-        prereqLabel.numberOfLines = 0
-        prereqLabel.font = UIFont.systemFontOfSize(14)
+        //let courseDescriptionTitle = UILabel()
+        //courseDescriptionTitle.numberOfLines = 0
+        //courseDescriptionTitle.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
+        //courseDescriptionTitle.text = "Description"
+        //StackView.addArrangedSubview(courseDescriptionTitle)
 
-        let prereqStyle = NSMutableParagraphStyle()
-        prereqStyle.alignment = NSTextAlignment.Justified
         
-        let prereqText = NSAttributedString(string: "Prerequisites: " + course.prereqs,
-            attributes: [
-                NSParagraphStyleAttributeName: prereqStyle,
-                NSBaselineOffsetAttributeName: NSNumber(float: 0)
-            ])
+        if(course.description.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty){
+            
+            
+            
+            let courseDescriptionLabel = UILabel()
+            courseDescriptionLabel.numberOfLines = 0
+            courseDescriptionLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightLight)
+            
+            let courseDescriptionStyle = NSMutableParagraphStyle()
+            courseDescriptionStyle.alignment = NSTextAlignment.Left
+            
+            let courseDescriptionText = NSAttributedString(string: course.description,
+                                                           attributes: [
+                                                            NSParagraphStyleAttributeName: courseDescriptionStyle,
+                                                            NSBaselineOffsetAttributeName: NSNumber(float: 0)
+                ])
+            
+            courseDescriptionLabel.attributedText = courseDescriptionText
+            
+            StackView.addArrangedSubview(courseDescriptionLabel)
+            
+            // Add a Line with Spacing
+            StackView.addArrangedSubview(makeSpace(8))
+            //StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
+            //StackView.addArrangedSubview(makeSpace(5))
+            
+            
+        }
+            
+        // Add Course Prerequisite Labels
         
-        prereqLabel.attributedText = prereqText
-        StackView.addArrangedSubview(prereqLabel)
+        if (!course.prereqs.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty){
+            let prereqTitle = UILabel()
+            prereqTitle.numberOfLines = 0
+            prereqTitle.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
+            prereqTitle.text = "Prerequisites"
+            StackView.addArrangedSubview(prereqTitle)
+            StackView.addArrangedSubview(makeSpace(2))
+            
+            
+            let prereqLabel = UILabel()
+            prereqLabel.numberOfLines = 0
+            prereqLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightLight)
+            
+            let prereqStyle = NSMutableParagraphStyle()
+            prereqStyle.alignment = NSTextAlignment.Left
+            
+            let prereqText = NSAttributedString(string: course.prereqs,
+                attributes: [
+                    NSParagraphStyleAttributeName: prereqStyle,
+                    NSBaselineOffsetAttributeName: NSNumber(float: 0)
+                ])
+            
+            prereqLabel.attributedText = prereqText
+            StackView.addArrangedSubview(prereqLabel)
+            StackView.addArrangedSubview(makeSpace(8))
+
+        }
         
+        else{
+            let prereqTitle = UILabel()
+            prereqTitle.numberOfLines = 0
+            prereqTitle.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
+            //prereqTitle.textColor = UIColor.redColor()
+            prereqTitle.text = "No Prerequisites"
+            StackView.addArrangedSubview(prereqTitle)
+            StackView.addArrangedSubview(makeSpace(2))
+        }
         
         // Add a Line with Spacing
-        StackView.addArrangedSubview(makeSpace(5))
-        StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
-        StackView.addArrangedSubview(makeSpace(5))
+        //StackView.addArrangedSubview(makeSpace(5))
+        //StackView.addArrangedSubview(makeLine(StackView.frame.width, h: 1))
+        //StackView.addArrangedSubview(makeSpace(5))
         
         
         let textLabel = UITextView()
         textLabel.widthAnchor.constraintEqualToConstant(self.view.frame.width).active = true
         textLabel.heightAnchor.constraintEqualToConstant(self.view.frame.height).active = true
         textLabel.textAlignment = .Left
-        textLabel.font = UIFont.systemFontOfSize(14)
+        textLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
         textLabel.editable = false
         textLabel.dataDetectorTypes = UIDataDetectorTypes.Link
         // If the course is offered this semester
+        
+        if (course.lectures.count != 0){
+            for l in course.lectures{
+                let offeringView:OfferingView = OfferingView(frame: CGRect(x: 0, y: 0, width: StackView.frame.width, height: 400))
+                offeringView.drawRect(CGRect(x: 0, y: 0, width: StackView.frame.width, height: 400))
+                
+                let heightConstraint = NSLayoutConstraint(item: offeringView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 400)
+                offeringView.addConstraint(heightConstraint)
+                
+                let widthConstraint = NSLayoutConstraint(item: offeringView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: StackView.frame.width)
+                offeringView.addConstraint(widthConstraint)
+                
+                offeringView.lecture = l
 
+                StackView.addArrangedSubview(offeringView)
+                
+            }
+        }
+        
+        
         //empty lectures means not offered
-        if (course.lectures.count != 0)
+        /*if (course.lectures.count != 0)
         {
             for p in course.lectures
             {
@@ -192,8 +248,6 @@ class CourseViewController: UIViewController {
                     
                     txt += " " + (p.time.first?.fromTimeText)! + " - " + (p.time.first?.toTimeText)! + "\n"
                     
-                    txt += "\n"
-                    
                 }
 
                 
@@ -210,8 +264,6 @@ class CourseViewController: UIViewController {
                         txt = String(txt.characters.dropLast())
                         
                         txt += " " + (t.time.first?.fromTimeText)! + " - " + (t.time.first?.toTimeText)! + "\n"
-                        
-                        txt += "\n"
                         
                     }
 
@@ -231,8 +283,6 @@ class CourseViewController: UIViewController {
                         
                         txt += " " + (l.time.first?.fromTimeText)! + " - " + (l.time.first?.toTimeText)! + "\n"
                         
-                        txt += "\n"
-                        
                     }
                     
                 }
@@ -240,12 +290,25 @@ class CourseViewController: UIViewController {
                 //            textLabel
                 StackView.addArrangedSubview(textLabel)
             }
+        }*/
+        
+        
+        UIView()
+        
+        if(course.lectures.count != 0){
+            for l in course.lectures
+            {
+                //StackView.addSubview(<#T##view: UIView##UIView#>)
+            }
+
         }
+        
+        
         else
         {
             
             //textLabel.numberOfLines = 0
-            textLabel.font = UIFont(name: "HelveticaNeue-Light", size: 24.0)
+            textLabel.font = UIFont.systemFontOfSize(24, weight: UIFontWeightLight)
             textLabel.heightAnchor.constraintEqualToConstant(300).active = true
             textLabel.textColor = UIColor.lightGrayColor()
             textLabel.text  = "\n\n\n\nCourse Not Offered this Semester\n\n"

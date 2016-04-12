@@ -30,11 +30,14 @@ class Feature3ViewController: UIViewController, UITableViewDelegate, UITableView
     }
   
        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 1
+      return courses.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    
+    cell.textLabel!.text = courses[indexPath.row] as? String
+    
     return cell
   }
     

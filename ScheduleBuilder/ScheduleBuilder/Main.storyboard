@@ -1387,11 +1387,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wOF-LQ-aZ7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UbY-MP-rF0" customClass="CoursePageView" customModule="ScheduleBuilder" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lm-ds-gfD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="66"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="VR4-pM-tph"/>
                                 </constraints>
@@ -1404,19 +1404,19 @@
                                 </items>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDs-dd-0zU">
-                                <rect key="frame" x="0.0" y="130" width="600" height="421"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDs-dd-0zU">
+                                <rect key="frame" x="0.0" y="131" width="375" height="488"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-IV-x2V">
-                                        <rect key="frame" x="5" y="0.0" width="590" height="5"/>
+                                        <rect key="frame" x="5" y="0.0" width="365" height="5"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="XlF-IV-x2V" firstAttribute="top" secondItem="RDs-dd-0zU" secondAttribute="top" id="3pa-Xm-Ene"/>
                                     <constraint firstItem="XlF-IV-x2V" firstAttribute="centerX" secondItem="RDs-dd-0zU" secondAttribute="centerX" id="Kv2-nu-kCI"/>
-                                    <constraint firstAttribute="trailing" secondItem="XlF-IV-x2V" secondAttribute="trailing" constant="5" id="Rjc-VT-BpZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="XlF-IV-x2V" secondAttribute="trailing" constant="8" id="Rjc-VT-BpZ"/>
                                     <constraint firstAttribute="bottom" secondItem="XlF-IV-x2V" secondAttribute="bottom" constant="483" id="eSt-Gl-JKG"/>
-                                    <constraint firstItem="XlF-IV-x2V" firstAttribute="leading" secondItem="RDs-dd-0zU" secondAttribute="leading" constant="5" id="j0r-0C-P1H"/>
+                                    <constraint firstItem="XlF-IV-x2V" firstAttribute="leading" secondItem="RDs-dd-0zU" secondAttribute="leading" constant="8" id="j0r-0C-P1H"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1437,8 +1437,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="ScrollView" destination="RDs-dd-0zU" id="hsP-2P-Wx2"/>
                         <outlet property="StackView" destination="XlF-IV-x2V" id="HH4-zX-nW0"/>
@@ -1933,7 +1931,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="M3x-a8-G9D"/>
-        <segue reference="XnA-on-9q8"/>
+        <segue reference="amN-7O-kt7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.87058823529999996" green="0.070588235289999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

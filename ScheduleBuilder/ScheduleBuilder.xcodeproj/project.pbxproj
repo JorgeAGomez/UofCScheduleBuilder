@@ -70,6 +70,7 @@
 		D9BA66591C77AE7200FACBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BA66581C77AE7200FACBED /* Main.storyboard */; };
 		D9BA665B1C77B33800FACBED /* blah.json in Resources */ = {isa = PBXBuildFile; fileRef = D9BA665A1C77B33800FACBED /* blah.json */; };
 		D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */; };
+		D9D666821CBCB06300123A5E /* OfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D666811CBCB06300123A5E /* OfferingView.swift */; };
 		D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */; };
 		D9EC79F31C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */; };
 		D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */; };
@@ -170,6 +171,7 @@
 		D9BA66581C77AE7200FACBED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D9BA665A1C77B33800FACBED /* blah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blah.json; sourceTree = "<group>"; };
 		D9CC10621C27EAB200E23F60 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomePageViewController.swift; path = ../WelcomePageViewController.swift; sourceTree = "<group>"; };
+		D9D666811CBCB06300123A5E /* OfferingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingView.swift; sourceTree = "<group>"; };
 		D9EC79F01C0E3C0500A0FEF9 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		D9EC79F21C0E3F8C00A0FEF9 /* DepartmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentsTableViewController.swift; sourceTree = "<group>"; };
 		D9EC79F41C0E41D700A0FEF9 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				01BD3D891C0EB48500115D84 /* LectureView.swift */,
 				01BD3D831C0EA8F600115D84 /* LineView.swift */,
 				01BD3D821C0EA8F600115D84 /* TutorialView.swift */,
+				D9D666811CBCB06300123A5E /* OfferingView.swift */,
 			);
 			name = CoursesTab;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				D69879871C519FC700123D1F /* UserProfileViewController.swift in Sources */,
 				D960F7991C77A268007B5E74 /* Lab.swift in Sources */,
 				01BD3D791C0E329700115D84 /* Prof.swift in Sources */,
+				D9D666821CBCB06300123A5E /* OfferingView.swift in Sources */,
 				01BD3D851C0EA8F600115D84 /* CourseViewController.swift in Sources */,
 				D9235A891BE3C6D5007173C9 /* ScheduleBuilder.xcdatamodeld in Sources */,
 				D9BA66551C77A88D00FACBED /* Periodic.swift in Sources */,

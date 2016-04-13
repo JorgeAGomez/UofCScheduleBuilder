@@ -20,11 +20,12 @@ class SettingsTableViewController: UITableViewController {
 
         self.title = "Settings"
         
+        let semester = "Fall 2015"
         let major = "Computer Science"
         let minor = "Art"
         let masters = "Masters"
         
-        rowContent = ["Major: " + major,"Minor: " + minor,masters]
+        rowContent = ["Semester: " + semester, "Major: " + major,"Minor: " + minor,masters]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,7 +55,7 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        if(indexPath.row != 2){
+        if(indexPath.row != rowContent.count - 1){
         
             let cell = tableView.dequeueReusableCellWithIdentifier("detailsCell", forIndexPath: indexPath) as! SettingsDetailsCell
             

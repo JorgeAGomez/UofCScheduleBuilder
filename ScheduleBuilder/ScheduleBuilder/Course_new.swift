@@ -2,7 +2,7 @@
 //  Course.swift
 //  schedulerTest
 //
-//  Created by Fadi Botros on 2015-11-22.
+//  Created by Nikita Ryzhenkov.
 //  Copyright © 2016 Nikita "The Iceman" Ryzhenkov. All rights reserved.
 //
 
@@ -103,7 +103,7 @@ public class Course_new {
                 }
             }
             
-
+            
         }
         return periodics
     }
@@ -138,4 +138,64 @@ public class Course_new {
         return cells
         
     }
+    
+    // One off design. We need this for creation of custom schedules in the SchedulesTabViewController
+    // Essentially we are flattening the hierarchy making it so that we can translate a hierarchical data into flat
+    // table of cells
+    // FOR USE WHEN SCHEDULE ISN'T EMPTY. Hack if I ever saw one
+    public func splitIntoCell(periodic: Periodic_new) -> [CourseCellData]
+    {
+        var cells: [CourseCellData] = []
+        
+        for l in lectures
+        {
+            var active = true
+            
+            //check if the Cell is the same as periodic
+            if periodic.lectureNumber != l.number {
+                active = false
+            }
+            
+            let cell = CourseCellData(type: "lecture", active: active, section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
+                                      time: l.time)
+            cells.append(cell)
+            
+            for tut in l.tutorials!
+            {
+                if compareTimes(tut.time, t2: periodic.times[1]){
+                    active = true
+                }
+                
+                let cell = CourseCellData(type:"tutorial", active: active, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
+                cells.append(cell)
+            }
+            
+            for lab in l.labs!
+            {
+                if compareTimes(lab.time, t2: periodic.times[2]){
+                    active = true
+                }
+                
+                let cell = CourseCellData(type:"lab", active: active, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
+                                          time: lab.time)
+                cells.append(cell)
+            }
+            
+        }
+        
+        return cells
+        
+    }
+    
+    // I just wish a freaking scraper would work. Some poeple I swear exist to challange me and create work for me but not in a good way.
+    private func compareTimes(t1: [Time], t2: [Time]) -> Bool
+    {
+        for i in 0...t1.count-1 {
+            if t1[i].day != t2[i].day || t1[i].fromTime != t2[i].fromTime || t1[i].toTime != t2[i].toTime {
+                return false
+            }
+        }
+        return true
+    }
+    
 }

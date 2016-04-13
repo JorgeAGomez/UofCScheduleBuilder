@@ -46,7 +46,7 @@ class ScheduleDetailsViewController: UIViewController {
             
             if periodic.times[2].count != 0
             {
-                bodytxt += "Lab (l0\(periodic.tutorialNumber!)): " + "\n"
+                bodytxt += "Lab (l0\(periodic.labNumber!)): " + "\n"
                 for t in periodic.times[2]
                 {
                     bodytxt += t.day + " " + t.fromTimeText + " - " + t.toTimeText + "\n"

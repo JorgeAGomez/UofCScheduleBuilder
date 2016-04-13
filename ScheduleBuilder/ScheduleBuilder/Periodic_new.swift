@@ -10,11 +10,13 @@ import Foundation
 
 public struct Periodic_new
 {
-    let times:          [[Time]]   // [0] - lecture, [1] - tutorial, [2] - lab
-    let labNumber:      Int?
-    let courseName:     String
-    let lectureNumber:  Int
-    let tutorialNumber: Int?
+    var times:          [[Time]]   // [0] - lecture, [1] - tutorial, [2] - lab
+    var labNumber:      Int?
+    var courseName:     String
+    var lectureNumber:  Int
+    var tutorialNumber: Int?
+    
+    var toDraworNot: [Bool]       //  [0] - lecture, [1] - tutorial, [2] - lab
     
     init(times: [[Time]], courseName: String, lectureNum: Int, tutorialNum: Int?, labNum: Int?)
     {
@@ -23,6 +25,8 @@ public struct Periodic_new
         self.courseName = courseName
         self.lectureNumber = lectureNum
         self.tutorialNumber = tutorialNum
+        
+        self.toDraworNot = [true,true,true]
     }
-
+    
 }

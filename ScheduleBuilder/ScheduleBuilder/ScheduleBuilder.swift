@@ -141,7 +141,7 @@ public class ScheduleBuilder
     // @RETURN:
     //   true:  @periodicToAdd fits into the @schedule
     //   false: @periodicToAdd does not fit into the @schedule
-    private func isTimeConstraintMet(schedule: [Periodic_new], periodicToAdd: Periodic_new) -> Bool
+    public func isTimeConstraintMet(schedule: [Periodic_new], periodicToAdd: Periodic_new) -> Bool
     {
         for p in schedule
         {

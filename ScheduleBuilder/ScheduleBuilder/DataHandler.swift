@@ -26,12 +26,23 @@ public class DataHandler {
         
         //        let timeAtPress = NSDate()
         //        let profsJSON = readJSON("courseOfferings2", fileType: "json")
-        
-        let crs = readJSON("courseOfferings", fileType: "json")
-        processCourses(crs)
+
+        let url = "http://storage.googleapis.com/375abcf778234bc9aa1d43cd69058a10/940a0099-e147-4913-b559-81a889293b25/courseOfferings.json"
+        let file = download(url)
+        processCourses(file)
+
         
         //        let coursesGeneralInfo = readJSON("courses", fileType: "json")
         
+    }
+    
+    private func download(string: String) -> JSON {
+        if let url = NSURL(string: string) {
+            if let data = try? NSData(contentsOfURL: url, options: []) {
+                return JSON(data: data)
+            }
+        }
+        return nil
     }
     
     // Populates array of courses

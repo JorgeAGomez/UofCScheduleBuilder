@@ -34,7 +34,7 @@ public class DescriptionHandler {
                 description = " "
             }
             if prereqs.isEmpty {
-                prereqs = " "
+                prereqs = "None"
             }
             
             descriptions[code + number] = [description, prereqs]

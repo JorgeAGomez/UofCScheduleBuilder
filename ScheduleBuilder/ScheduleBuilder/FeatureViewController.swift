@@ -14,7 +14,7 @@ class FeatureViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-      self.title = "Featured Courses"
+      self.title = "Featured"
     
       let options = PagingMenuOptions()
       options.selectedFont = UIFont(name: "American Typewriter", size: 20)!

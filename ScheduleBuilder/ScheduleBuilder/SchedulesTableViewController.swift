@@ -13,9 +13,16 @@ class SchedulesTableViewController: UITableViewController {
     // Will contain all schedules for the selected courses
     var schedules_new: [[Periodic_new]] = []
     
+    var savedSchedules: [[Periodic_new]] = []
+    
     @IBAction func cancelSchedule(segue:UIStoryboardSegue) {
         
     }
+    
+    @IBAction func saveSchedule(segue:UIStoryboardSegue) {
+        
+    }
+    
     
     @IBOutlet weak var noschedules: UILabel!
     
@@ -35,18 +42,19 @@ class SchedulesTableViewController: UITableViewController {
         //tableView.rowHeight = UITableViewAutomaticDimension
         
         
-        let favouriteCourses2 = GlobalVariables2.data.getFavourites()
-        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
-        scheduleBuilder.createValidSchedules()
-        schedules_new = scheduleBuilder.validSchedules // [[Periodic_new]]
+        //let favouriteCourses2 = GlobalVariables2.data.getFavourites()
+        //let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
+        //scheduleBuilder.createValidSchedules()
+        //schedules_new = scheduleBuilder.validSchedules // [[Periodic_new]]
+        
         
     }
     override func viewWillAppear(animated: Bool)
     {
-        let favouriteCourses2 = GlobalVariables2.data.getFavourites()
-        let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
-        scheduleBuilder.createValidSchedules()
-        schedules_new = scheduleBuilder.validSchedules //TODO: THIS IS SO WRONG ON SO MANY LEVELS! CACHE THIS SHIT PLEASE
+        //let favouriteCourses2 = GlobalVariables2.data.getFavourites()
+        //let scheduleBuilder = ScheduleBuilder(favoritedCourses: favouriteCourses2, NUMBER_OF_SCHEDULES: 4)
+        //scheduleBuilder.createValidSchedules()
+        //schedules_new = scheduleBuilder.validSchedules //TODO: THIS IS SO WRONG ON SO MANY LEVELS! CACHE THIS SHIT PLEASE
         tableView.reloadData()
     }
     
@@ -66,14 +74,14 @@ class SchedulesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        if (schedules_new.count == 0){
+        if (savedSchedules.count == 0){
             noschedules.hidden = false;
         }
         else
         {
             noschedules.hidden = true;
         }
-        return schedules_new.count
+        return savedSchedules.count
         
     }
     
@@ -83,7 +91,7 @@ class SchedulesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
         
         // Pick a particular schedule
-        let schedule = schedules_new[indexPath.row]
+        let schedule = savedSchedules[indexPath.row]
         
         cell.scheduleView.isBlank = false;
         cell.scheduleView.schedule = schedule
@@ -103,7 +111,7 @@ class SchedulesTableViewController: UITableViewController {
             
             if let selectedCourseCell = sender as? ScheduleTableViewCell{
                 let indexPath = tableView.indexPathForCell(selectedCourseCell)!
-                let selectedSchedule = schedules_new[indexPath.row]
+                let selectedSchedule = savedSchedules[indexPath.row]
                 scheduleDetailsController.schedule = selectedSchedule
             }
             

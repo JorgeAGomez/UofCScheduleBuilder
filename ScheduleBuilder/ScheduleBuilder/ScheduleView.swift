@@ -66,6 +66,14 @@ class ScheduleView: UIView {
         
         if(isBlank){
             
+            // Create Rounded Background Box
+            let backgroundBox = UIBezierPath(roundedRect: CGRectMake(0, 0, self.frame.width, self.frame.height), byRoundingCorners:.AllCorners, cornerRadii: CGSizeMake(8, 8))
+            
+            // Set Background Box Color & Draw
+            uofcColor.setFill()
+            backgroundBox.fill()
+            
+            
             // Set Schedule Title
             var titleLabel = UILabel(frame: CGRectMake(10, 5, self.frame.width - 15, 30))
             titleLabel.textAlignment = NSTextAlignment.Left

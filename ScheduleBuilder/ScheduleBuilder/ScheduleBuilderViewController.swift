@@ -72,6 +72,12 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             listOfFlattenedCourses.append(favCourse.splitIntoCell())
         }
         
+        
+        let SaveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "saveSchedule")
+        navigationItem.rightBarButtonItem = SaveButton
+        
+
+        
         // Do any additional setup after loading the view.
     }
     
@@ -421,5 +427,35 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             schedule_new.append(periodic)
         }
     }
+    
+    
+    func saveSchedule() {
+        
+        performSegueWithIdentifier("saveSchedule", sender: self)
+        
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        // User has chosen a schedule and now wants to see details
+        if segue.identifier == "saveSchedule"
+        {
+            let schedulesTableViewController = segue.destinationViewController as! SchedulesTableViewController
+            
+            if let scheduleBuilderViewController = sender as? ScheduleBuilderViewController{
+                
+                schedulesTableViewController.savedSchedules.append(scheduleBuilderViewController.schedule_new)
+            }
+            
+        }
+        
+        
+    }
+
+    
+    
+    
     
 }

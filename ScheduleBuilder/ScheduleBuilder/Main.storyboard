@@ -1065,11 +1065,13 @@
                     <connections>
                         <outlet property="courseListView" destination="tLx-0r-UN3" id="Es2-gN-Sy4"/>
                         <outlet property="scheduleView" destination="KHI-mv-sJd" id="R9F-1m-ywb"/>
+                        <segue destination="CsE-Dy-mMo" kind="unwind" identifier="saveSchedule" unwindAction="saveSchedule:" id="PEX-dZ-J2I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EQ-Q2-xxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CsE-Dy-mMo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6723.5" y="309.5"/>
+            <point key="canvasLocation" x="4973.5" y="1072.5"/>
         </scene>
         <!--Builder Offering View Controller-->
         <scene sceneID="2Yx-rc-Ynx">
@@ -1803,11 +1805,11 @@
             </objects>
             <point key="canvasLocation" x="4729.5" y="2598.5"/>
         </scene>
-        <!--Features-->
+        <!--Featured-->
         <scene sceneID="X1C-tZ-mOO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R2X-Nr-XJO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Features" image="Star@1x" id="Slm-fA-CLh"/>
+                    <tabBarItem key="tabBarItem" title="Featured" image="Star@1x" id="Slm-fA-CLh"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YqV-Ty-dqF">
@@ -1931,7 +1933,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="M3x-a8-G9D"/>
-        <segue reference="amN-7O-kt7"/>
+        <segue reference="XnA-on-9q8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.87058823529999996" green="0.070588235289999995" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

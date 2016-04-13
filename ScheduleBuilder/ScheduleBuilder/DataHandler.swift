@@ -25,8 +25,8 @@ public class DataHandler {
     {
         
         //        let timeAtPress = NSDate()
-        //        let profsJSON = readJSON("courseOfferings2", fileType: "json")
-
+//        let j = readJSON("test_offering", fileType: "json")
+        //readJSON("test_offering", fileType: "json")
         let url = "http://storage.googleapis.com/375abcf778234bc9aa1d43cd69058a10/042db825-e9db-46fb-9040-d20d4e56c4d8/courseOfferings.json"
         let file = download(url)
         processCourses(file)
@@ -64,6 +64,8 @@ public class DataHandler {
         var courseDescription: String   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
         var courseDepartment:  String    //TO GET ALL THAT INFO IN ONE PLACE
         var num: String
+        var num_USEFUCKINGTHISONE: Int?
+        var num_real : Int
         var section: String
         var lectures: [Lecture] = []
         var prereqs: String
@@ -81,6 +83,10 @@ public class DataHandler {
             courseNumber = actualJSON["courseNumber"].stringValue
             courseCode   = actualJSON["courseCode"].stringValue
             num = actualJSON["name"].stringValue
+            if num.hasPrefix("0") {
+                num_USEFUCKINGTHISONE = Int(String(num.characters.dropFirst()))
+            }
+            if num_USEFUCKINGTHISONE != nil {num_real = Int(num_USEFUCKINGTHISONE!)}
             section = actualJSON["group"].stringValue
             courseDepartment = getDepartment(courseCode)
             returnList = descriptionHandler.getDescription(courseCode + courseNumber)
@@ -141,11 +147,13 @@ public class DataHandler {
                     }
                     if type == "Tutorial"
                     {
-                        tutorials.append(Tutorial(number: 1, time: times))
+                        var num = actualJSON["name"].intValue
+                        tutorials.append(Tutorial(number: num, time: times))
                     }
                     else
                     {
-                        labs.append(Lab(number: 1, time: times))
+                        var num = actualJSON["name"].intValue
+                        labs.append(Lab(number: num, time: times))
                     }
                 }
             }

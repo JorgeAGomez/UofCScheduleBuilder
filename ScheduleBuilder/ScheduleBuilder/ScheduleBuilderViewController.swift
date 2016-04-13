@@ -131,6 +131,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         
     }
     
+    
     // Load a particular cell. We are given a section number (i.e. a course) and a row number (i.e. could be lecture, tutorial, or lab)
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
@@ -155,9 +156,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         var b = indexPath.row
         if !cell.active
         {
-            cell.userInteractionEnabled = false
-            cell.textLabel!.enabled = false
-            //cell.detailTextLabel!.enabled = false
+            cell.textLabel!.textColor = UIColor.redColor()
         }
         return cell
     }
@@ -236,50 +235,16 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
                 cell.accessoryType = .None
                 
                 // update the list of cells to make sure only the correct cells are greyed out
-                //ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
+//                ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
                 
                 replacePeriodicWithCellData_REMOVE(indexPath.section, type: cell.type)
-                
-                // initiate redrawing of the schedule
-                //                scheduleView.schedule = schedule_new
-                //                scheduleView.setNeedsDisplay()
-                
-                
-                /*
-                 let index = scheduleView.schedule.indexOf {
-                 $0.courseName == cell.course.lectures && $0.type == cell.scheduleEvent.type
-                 }
-                 
-                 if (index != nil){
-                 scheduleView.events.removeAtIndex(index!)
-                 
-                 if(scheduleView.events.isEmpty){
-                 scheduleView.isBlank = true
-                 }
-                 
-                 
-                 scheduleView.setNeedsDisplay()
-                 }*/
-                
-                
                 
             }
             else
             {
                 cell.accessoryType = .Checkmark
                 replacePeriodicWithCellData_ADD(indexPath.section, type: cell.type, typeNum: cell.num, times: cell.times)
-                //greyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
-                //                scheduleView.schedule = schedule_new
-                //                scheduleView.setNeedsDisplay()
-                /*
-                 scheduleView.events.append(cell.scheduleEvent)
-                 
-                 if(!scheduleView.events.isEmpty){
-                 scheduleView.isBlank = false
-                 }
-                 
-                 scheduleView.setNeedsDisplay()
-                 */
+                greyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
                 
             }
             //reload table
@@ -373,10 +338,6 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     // user unclicked a selection. so we replace it with phony undrawable data.
     private func replacePeriodicWithCellData_REMOVE(indexCourse: Int, type: String)
     {
-        let days = ["Mon","Tue","Wed","Thu","Fri"]
-        let time_t = Time(fromTimeStr: "00:00", toTimeStr: "00:00", day: days[indexCourse])
-        let time_l = Time(fromTimeStr: "02:00", toTimeStr: "02:00", day: days[indexCourse])
-        let time_L = Time(fromTimeStr: "01:00", toTimeStr: "01:00", day: days[indexCourse])
         // grab appropriate course from schedule. Maybe be partially completed at any point time
         var p = schedule_new[indexCourse]
         if type == "lecture" {
@@ -418,10 +379,6 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     {
         let days = ["Mon","Tue","Wed","Thu","Fri"]
         for i in 0...self.favourites_new.count-1 {
-            //            let time_t = Time(fromTimeStr: "00:00", toTimeStr: "00:00", day: days[i])
-            //            let time_l = Time(fromTimeStr: "02:00", toTimeStr: "02:00", day: days[i])
-            //            let time_L = Time(fromTimeStr: "01:00", toTimeStr: "01:00", day: days[i])
-            //let phony_time = [[time_L],[time_t], [time_l]]
             let phony_time: [[Time]] = [[],[],[]]
             let periodic = Periodic_new(times: phony_time, courseName: self.favourites_new[i].courseCode+" "+self.favourites_new[i].courseNumber, lectureNum: 1812, tutorialNum: 1813, labNum: 1814)
             schedule_new.append(periodic)

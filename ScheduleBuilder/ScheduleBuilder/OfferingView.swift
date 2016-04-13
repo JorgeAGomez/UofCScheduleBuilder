@@ -128,7 +128,7 @@ class OfferingView: UIView {
             }
         }
         
-        var labOffset:CGFloat = 0
+        var labOffset:CGFloat = tutOffset
 
         
         if(lecture?.labs != nil){

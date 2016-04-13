@@ -27,7 +27,7 @@ public class DataHandler {
         //        let timeAtPress = NSDate()
         //        let profsJSON = readJSON("courseOfferings2", fileType: "json")
 
-        let url = "http://storage.googleapis.com/375abcf778234bc9aa1d43cd69058a10/940a0099-e147-4913-b559-81a889293b25/courseOfferings.json"
+        let url = "http://storage.googleapis.com/375abcf778234bc9aa1d43cd69058a10/042db825-e9db-46fb-9040-d20d4e56c4d8/courseOfferings.json"
         let file = download(url)
         processCourses(file)
 
@@ -63,6 +63,8 @@ public class DataHandler {
         var courseCode:   String                        // CPSC
         var courseDescription: String   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
         var courseDepartment:  String    //TO GET ALL THAT INFO IN ONE PLACE
+        var num: String
+        var section: String
         var lectures: [Lecture] = []
         var prereqs: String
         var returnList = [String]()
@@ -78,6 +80,8 @@ public class DataHandler {
             courseName   = actualJSON["description"].stringValue
             courseNumber = actualJSON["courseNumber"].stringValue
             courseCode   = actualJSON["courseCode"].stringValue
+            num = actualJSON["name"].stringValue
+            section = actualJSON["group"].stringValue
             courseDepartment = getDepartment(courseCode)
             returnList = descriptionHandler.getDescription(courseCode + courseNumber)
             courseDescription = returnList[0]
@@ -90,7 +94,7 @@ public class DataHandler {
             }
             
             lectures     = getLectures(periodics)
-            courses.append(Course_new(title: courseName, courseCode: courseCode, courseNumber: courseNumber, department: courseDepartment, prereqs: prereqs, description: courseDescription, lecture: lectures))
+            courses.append(Course_new(title: courseName, courseCode: courseCode, courseNumber: courseNumber, department: courseDepartment, prereqs: prereqs, description: courseDescription, lecture: lectures, name: num, section: section))
         }
     }
     

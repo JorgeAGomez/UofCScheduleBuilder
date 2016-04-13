@@ -25,8 +25,9 @@ public class Course_new {
     var prereqs:      String = ""      // consent of department
     var description:  String = ""      // New areas in Computer Science. This course will...
     var favourited:   Bool = false
-    var section:      Int  = 0         // section 3
+    var section:      Int?  = nil        // section 3
     var topic:        Int? = nil       // .83 (as in 599.83)
+    var name:         String = ""      // 01
     var lectures:     [Lecture]        // Each lecture = each section.
     
     init()
@@ -34,7 +35,7 @@ public class Course_new {
         lectures = []
     }
     
-    init(title: String, courseCode: String, courseNumber: String, department: String, prereqs: String, description: String,lecture: [Lecture])
+    init(title: String, courseCode: String, courseNumber: String, department: String, prereqs: String, description: String,lecture: [Lecture], name: String, section: String)
     {
         self.title = title
         self.courseCode = courseCode
@@ -43,6 +44,8 @@ public class Course_new {
         self.prereqs = prereqs
         self.description = description
         self.lectures = lecture
+        self.name = name
+        self.section = Int(section)
     }
     
     // Populates array of courses

@@ -13,6 +13,9 @@ class SchedulesTableViewController: UITableViewController {
     // Will contain all schedules for the selected courses
     var schedules_new: [[Periodic_new]] = []
     
+    @IBAction func cancelSchedule(segue:UIStoryboardSegue) {
+        
+    }
     
     @IBOutlet weak var noschedules: UILabel!
     

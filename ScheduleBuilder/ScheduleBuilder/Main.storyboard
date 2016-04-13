@@ -897,9 +897,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Schedule" id="9go-Us-gD5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ofH-ve-l4i">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="VVD-lk-DGY">
                             <connections>
-                                <segue destination="HgB-0h-McQ" kind="unwind" identifier="unwindToSchedulesTab" unwindAction="unwindToSchedulesTab:" id="p9Q-aw-iHJ"/>
+                                <segue destination="HgB-0h-McQ" kind="unwind" unwindAction="cancelSchedule:" id="zkY-uI-Vb0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1705,7 +1705,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-96-vuH">
                                             <rect key="frame" x="16" y="9" width="318" height="26"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1735,7 +1735,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCx-mz-gQz">
                                             <rect key="frame" x="16" y="9" width="294" height="26"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1786,7 +1786,7 @@
                                             <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

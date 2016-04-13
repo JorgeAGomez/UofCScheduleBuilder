@@ -125,7 +125,7 @@ class CourseViewController: UIViewController {
         //StackView.addArrangedSubview(courseDescriptionTitle)
 
         
-        if(course.description.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty){
+        if(!course.description.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty){
             
             
             
@@ -209,20 +209,48 @@ class CourseViewController: UIViewController {
         textLabel.dataDetectorTypes = UIDataDetectorTypes.Link
         // If the course is offered this semester
         
+        let secHeight = 30              // should be same as in OfferingView
+        let spaceHeight = 10            // should be same as in OfferingView
+        
         if (course.lectures.count != 0){
             for l in course.lectures{
-                let offeringView:OfferingView = OfferingView(frame: CGRect(x: 0, y: 0, width: StackView.frame.width, height: 400))
-                offeringView.drawRect(CGRect(x: 0, y: 0, width: StackView.frame.width, height: 400))
                 
-                let heightConstraint = NSLayoutConstraint(item: offeringView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 400)
+                var boxH = (secHeight+spaceHeight)*2
+                
+                if (l.tutorials != nil){
+                    boxH += (l.tutorials?.count)!*(secHeight+spaceHeight)
+                }
+
+                if (l.labs != nil){
+                    boxH += (l.labs?.count)!*(secHeight+spaceHeight)
+                }
+                
+                
+                let offeringView:OfferingView = OfferingView(frame: CGRect(x: 0, y: 0, width: StackView.frame.width, height: CGFloat(boxH)))
+                offeringView.drawRect(CGRect(x: 0, y: 0, width: StackView.frame.width, height: CGFloat(boxH)))
+                
+                
+                let heightConstraint = NSLayoutConstraint(item: offeringView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: CGFloat(boxH))
                 offeringView.addConstraint(heightConstraint)
+                
                 
                 let widthConstraint = NSLayoutConstraint(item: offeringView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: StackView.frame.width)
                 offeringView.addConstraint(widthConstraint)
                 
                 offeringView.lecture = l
 
+                
+                let hideButton = UIButton(type: UIButtonType.System) as UIButton
+                hideButton.frame = CGRectMake(10, offeringView.frame.height-CGFloat(Double(secHeight)+Double(spaceHeight)*1.8), offeringView.frame.width, CGFloat(secHeight+spaceHeight))
+                hideButton.backgroundColor = UIColor.clearColor()
+                hideButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+                hideButton.setTitle("Hide Tutorials & Labs", forState: UIControlState.Normal)
+                //hideButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+                
+                offeringView.addSubview(hideButton)
+                
                 StackView.addArrangedSubview(offeringView)
+                StackView.addArrangedSubview(makeSpace(5))
                 
             }
         }

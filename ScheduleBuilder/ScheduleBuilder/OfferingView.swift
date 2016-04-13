@@ -80,18 +80,24 @@ class OfferingView: UIView {
             subSections += (lecture.labs?.count)!
         }
         
-        let midBox = UIBezierPath(rect: CGRectMake(0, topBox.bounds.height, self.frame.width, secHeight*CGFloat(subSections)))
+        let midBox = UIBezierPath(rect: CGRectMake(0, topBox.bounds.height, self.frame.width, (secHeight+spaceHeight)*CGFloat(subSections)))
         backgroundBoxColour.setFill()
         midBox.fill()
         
         // Create Tutorial & Lab Text
         
+        var tutOffset:CGFloat = 0
+        
         if(lecture?.tutorials != nil){
             
-            var tutText = ""
-            var tutTime = ""
+            
             
             for tut in lecture.tutorials!{
+                
+                var tutText = ""
+                var tutTime = ""
+                
+                
                 tutText = "Tutorial " + String(tut.number)
                 
                 for t in tut.time {
@@ -103,31 +109,36 @@ class OfferingView: UIView {
                     tutTime += (tut.time.first?.toTimeText)!
                 }
                 
-                let tutLabel = UILabel(frame: CGRectMake(10, CGFloat(tut.number)*(secHeight+spaceHeight) , self.frame.width - 15, secHeight))
+                let tutLabel = UILabel(frame: CGRectMake(10, CGFloat(tutOffset*(secHeight+spaceHeight)) + (secHeight+spaceHeight) , self.frame.width - 15, secHeight))
                 tutLabel.textAlignment = NSTextAlignment.Left
                 tutLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
                 tutLabel.text = tutText
                 tutLabel.textColor = UIColor.blackColor()
                 self.addSubview(tutLabel)
                 
-                let tutTimeLabel = UILabel(frame: CGRectMake(10, tutLabel.bounds.height/1.8 + CGFloat(tut.number)*(secHeight+spaceHeight), self.frame.width - 15, secHeight))
+                let tutTimeLabel = UILabel(frame: CGRectMake(10, tutLabel.bounds.height/1.8 + CGFloat(tutOffset*(secHeight+spaceHeight)) + (secHeight+spaceHeight), self.frame.width - 15, secHeight))
                 tutTimeLabel.textAlignment = NSTextAlignment.Left
                 tutTimeLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightLight)
                 tutTimeLabel.text = tutTime
                 tutTimeLabel.textColor = UIColor.blackColor()
                 self.addSubview(tutTimeLabel)
                 
+                tutOffset += 1
                 
             }
         }
         
+        var labOffset:CGFloat = 0
+
+        
         if(lecture?.labs != nil){
             
-            var labText = ""
-            var labTime = ""
-            
             for lab in lecture.labs!{
-                labText = "Tutorial " + String(lab.number)
+                
+                var labText = ""
+                var labTime = ""
+                
+                labText = "Lab " + String(lab.number)
                 
                 for t in lab.time {
                     labTime += t.day + " "
@@ -138,19 +149,22 @@ class OfferingView: UIView {
                     labTime += (lab.time.first?.toTimeText)!
                 }
                 
-                let labLabel = UILabel(frame: CGRectMake(10, CGFloat(lab.number)*(secHeight+spaceHeight) , self.frame.width - 15, secHeight))
+                let labLabel = UILabel(frame: CGRectMake(10, CGFloat(labOffset*(secHeight+spaceHeight)) + (secHeight+spaceHeight) , self.frame.width - 15, secHeight))
                 labLabel.textAlignment = NSTextAlignment.Left
                 labLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
                 labLabel.text = labText
                 labLabel.textColor = UIColor.blackColor()
                 self.addSubview(labLabel)
                 
-                let labTimeLabel = UILabel(frame: CGRectMake(10, labLabel.bounds.height/1.8 + CGFloat(lab.number)*(secHeight+spaceHeight), self.frame.width - 15, secHeight))
+                let labTimeLabel = UILabel(frame: CGRectMake(10, labLabel.bounds.height/1.8 + CGFloat(labOffset*(secHeight+spaceHeight)) + (secHeight+spaceHeight), self.frame.width - 15, secHeight))
                 labTimeLabel.textAlignment = NSTextAlignment.Left
                 labTimeLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightLight)
                 labTimeLabel.text = labTime
                 labTimeLabel.textColor = UIColor.blackColor()
                 self.addSubview(labTimeLabel)
+                
+                labOffset += 1
+                
             }
         }
 
@@ -159,10 +173,26 @@ class OfferingView: UIView {
         
         
         // Create Bottom Background Box
-
-        let btmBox = UIBezierPath(roundedRect: CGRectMake(0, topBox.bounds.height + midBox.bounds.height, self.frame.width, secHeight), byRoundingCorners: [.BottomLeft, .BottomRight], cornerRadii: CGSizeMake(8, 8))
+        
+        let btmBox = UIBezierPath(roundedRect: CGRectMake(0, topBox.bounds.height + midBox.bounds.height, self.frame.width, secHeight+spaceHeight), byRoundingCorners: [.BottomLeft, .BottomRight], cornerRadii: CGSizeMake(8, 8))
         backgroundBoxColour.setFill()
         btmBox.fill()
+        
+        //let hideLabel = UILabel(frame: CGRectMake(10, topBox.bounds.height + midBox.bounds.height, self.frame.width, secHeight+spaceHeight))
+        //hideLabel.textAlignment = NSTextAlignment.Left
+        //hideLabel.font = UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)
+        //hideLabel.text = "Hide Tutorials & Labs"
+        //hideLabel.textColor = UIColor.redColor()
+        //self.addSubview(hideLabel)
+        /*
+        let hideButton = UIButton(type: UIButtonType.System) as UIButton
+        hideButton.frame = CGRectMake(10, topBox.bounds.height + midBox.bounds.height, self.frame.width, secHeight+spaceHeight)
+        //hideButton.backgroundColor = UIColor.greenColor()
+        hideButton.setTitle("Hide Tutorials & Labs", forState: UIControlState.Normal)
+        //hideButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        self.addSubview(hideButton)
+*/
         
     }
     

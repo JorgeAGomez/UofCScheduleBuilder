@@ -10,6 +10,9 @@ import UIKit
 
 class NewScheduleTableViewController: UITableViewController {
 
+    
+    
+    
     //var schedules: [Schedule] = []
     
     var schedules_new: [[Periodic_new]] = []
@@ -104,6 +107,9 @@ class NewScheduleTableViewController: UITableViewController {
             
         }
     }
+    
+    
+    
     
 
 }

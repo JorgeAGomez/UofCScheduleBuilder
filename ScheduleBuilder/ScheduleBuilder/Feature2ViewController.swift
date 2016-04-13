@@ -15,7 +15,7 @@ class Feature2ViewController: UIViewController, UITableViewDataSource, UITableVi
   @IBOutlet weak var tableView: UITableView!
   
   // POPULAR COURSES //
-  let courses = ["303 Business in cultural context","201 Principles of microeconomics","203 Principles of macroeconomics"]
+  let courses = ["ANTH 303 - Business in cultural context","ECON 201 - Principles of microeconomics","ECON 203 - Principles of macroeconomics"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class Feature2ViewController: UIViewController, UITableViewDataSource, UITableVi
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
     cell.textLabel!.text = courses[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
     return cell
   }
 

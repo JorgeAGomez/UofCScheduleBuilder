@@ -7,6 +7,7 @@ target 'ScheduleBuilder' do
   
   pod 'SwiftyJSON', '~> 2.3'
   pod 'PagingMenuController', '~> 0.8'
+  #pod 'Spring', '~> 1.0'
   
 end
 

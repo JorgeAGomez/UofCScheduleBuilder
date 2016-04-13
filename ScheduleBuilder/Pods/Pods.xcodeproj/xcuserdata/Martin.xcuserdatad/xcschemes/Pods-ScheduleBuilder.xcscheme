@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3F5CC4661744B5BFC77B58C9'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = '83667E563570267934620BF0'
+               BlueprintName = 'Pods-ScheduleBuilder'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'Pods_ScheduleBuilder.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

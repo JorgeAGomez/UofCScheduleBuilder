@@ -12,10 +12,12 @@ class pTime:
 		self.toTime = toTime
 
 class periodic:
-	def __init__(self, pType, instructor):
+	def __init__(self, pType, instructor, group, name):
 		self.pType = pType
 		self.instructor = instructor
 		self.pTimes = []
+		self.group = group
+		self.name = name
 
 	def appendPTime(self, day, fromTime, toTime):
 		p = pTime(day,fromTime, toTime)
@@ -81,7 +83,9 @@ def extractOfferings(filename):
 
 			pType = p.get("type")
 			times = p.findall('time')
-			pdic = periodic(pType,instructor)
+			group = p.get("group")
+			name = p.get("name")
+			pdic = periodic(pType,instructor, group, name)
 
 			for t in times:
 				day = t.get('day')
@@ -116,6 +120,8 @@ def saveToJSON(offerings, filename):
 			pDict = {}
 			pDict["type"] = p.pType
 			pDict["instructor"] = p.instructor
+			pDict["group"] = p.group
+			pDict["name"] = p.name
 
 			timesList = []
 			for t in p.pTimes:

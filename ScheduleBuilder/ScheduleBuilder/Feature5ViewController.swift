@@ -12,7 +12,9 @@ class Feature5ViewController: UIViewController, UITableViewDelegate, UITableView
 
   @IBOutlet weak var tableView: UITableView!
   
-  //NO FINAL COURSES // 
+  //TRAVEL ABROAD COURSES // 
+  
+  let courses = ["SPAN 407 - Critical Thinking"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,14 @@ class Feature5ViewController: UIViewController, UITableViewDelegate, UITableView
     }
   
        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 1
+      return courses.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    
+    cell.textLabel!.text = courses[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
     return cell
   }
 

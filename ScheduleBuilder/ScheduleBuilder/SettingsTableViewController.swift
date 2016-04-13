@@ -20,12 +20,11 @@ class SettingsTableViewController: UITableViewController {
 
         self.title = "Settings"
         
-        var major = "Computer Science"
-        var minor = "Art"
-        var masters = "Masters"
+        let major = "Computer Science"
+        let minor = "Art"
+        let masters = "Masters"
         
         rowContent = ["Major: " + major,"Minor: " + minor,masters]
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,7 +58,7 @@ class SettingsTableViewController: UITableViewController {
         
             let cell = tableView.dequeueReusableCellWithIdentifier("detailsCell", forIndexPath: indexPath) as! SettingsDetailsCell
             
-            cell.cellLabel?.text = rowContent[indexPath.row] as! String
+            cell.cellLabel?.text = rowContent[indexPath.row] as? String
             
         
             return cell
@@ -69,65 +68,10 @@ class SettingsTableViewController: UITableViewController {
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as! SettingsSwitchTableViewCell
           
-              cell.cellLabel!.text = rowContent[indexPath.row] as! String
-            
+              cell.cellLabel!.text = rowContent[indexPath.row] as? String
           
-
-            
             return cell
-
-            
         }
-    
-    
-        // Configure the cell...
-
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

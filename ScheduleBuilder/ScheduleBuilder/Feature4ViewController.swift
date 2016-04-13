@@ -14,7 +14,7 @@ class Feature4ViewController: UIViewController, UITableViewDataSource, UITableVi
   
   //VIDEO GAMES COURSES//
   
-   let courses = ["311 History of video games","453 Computer Graphics","585 Games programming"]
+   let courses = ["ART 311 - History of video games","CPSC 453 - Computer Graphics","CPSC 585 - Games programming"]
   
   
     override func viewDidLoad() {
@@ -35,7 +35,8 @@ class Feature4ViewController: UIViewController, UITableViewDataSource, UITableVi
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
-    cell.textLabel!.text = courses[indexPath.row] as? String
+    cell.textLabel!.text = courses[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
     return cell
   }
 

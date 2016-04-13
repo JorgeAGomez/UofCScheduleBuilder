@@ -14,7 +14,7 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
   
   // DESIGN COURSES //
   
-  let courses = ["251 Media Arts: Practice & Theory I","253 Media Arts: Practice & Theory II","351 Sonic Arts","599 iOS development"]
+  let courses = ["ART 251 - Media Arts: Practice & Theory I","ART 253 - Media Arts: Practice & Theory II","ART 351 - Sonic Arts","CPSC 599 - iOS development"]
   
   
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
     cell.textLabel!.text = courses[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
     return cell
   }
     

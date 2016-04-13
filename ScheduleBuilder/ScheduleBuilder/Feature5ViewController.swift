@@ -14,7 +14,7 @@ class Feature5ViewController: UIViewController, UITableViewDelegate, UITableView
   
   //TRAVEL ABROAD COURSES // 
   
-  let courses = []
+  let courses = ["SPAN 407 - Critical Thinking"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,8 @@ class Feature5ViewController: UIViewController, UITableViewDelegate, UITableView
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
-    cell.textLabel!.text = courses[indexPath.row] as? String
+    cell.textLabel!.text = courses[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
     return cell
   }
 

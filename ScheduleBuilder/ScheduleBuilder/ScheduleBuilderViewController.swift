@@ -148,6 +148,16 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             cell.active = self.listOfFlattenedCourses[indexPath.section][indexPath.row].active
             cell.offeringType.text = cell.type + " " //+ cell.lectureNum
             cell.times = self.listOfFlattenedCourses[indexPath.section][indexPath.row].time
+            var text =  cell.type + " "
+            for t in cell.times {
+                text += " \(t.day)"
+            }
+            for t in cell.times {
+                text += " - \(t.fromTimeText) + \(t.toTimeText)"
+            }
+            
+            cell.offeringType.text = cell.type + " " + String(cell.num) // num is lect/tut/lab number. for lec it is the same as lectureNum
+            
         }
         
         

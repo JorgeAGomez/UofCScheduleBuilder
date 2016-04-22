@@ -135,7 +135,7 @@ public class DataHandler {
         for (key, actualJSON):(String, JSON) in periodics
         {
             
-            if actualJSON["section"].intValue == sectionNumber
+            if actualJSON["group"].intValue == sectionNumber
             {
                 var type = actualJSON["type"].stringValue
                 if type == "Tutorial" || type == "Lab"
@@ -183,7 +183,7 @@ public class DataHandler {
                 {
                     times.append(Time(dict: actualJSON2))
                 }
-                let lectureSection = actualJSON["section"].intValue
+                let lectureSection = actualJSON["group"].intValue
                 let (tutorials, labs) = getLabsOrTutsForLectureWithSection(periodics, sectionNumber: lectureSection)
                 lectures.append(Lecture(number: lectureSection, time: times, tutorials: tutorials, labs: labs))
                 

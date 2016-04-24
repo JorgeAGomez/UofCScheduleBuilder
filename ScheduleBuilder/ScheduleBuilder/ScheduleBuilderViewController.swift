@@ -276,19 +276,19 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             if cell.accessoryType == .Checkmark
             {
                 // Uncheck cell
-                cell.accessoryType = .None
+                //cell.accessoryType = .None
                 
                 // update the list of cells to make sure only the correct cells are greyed out
-//                ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
+                //ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
                 
                 replacePeriodicWithCellData_REMOVE(indexPath.section, type: cell.type)
                 
             }
             else
             {
-                cell.accessoryType = .Checkmark
+                //cell.accessoryType = .Checkmark
                 replacePeriodicWithCellData_ADD(indexPath.section, type: cell.type, typeNum: cell.num, times: cell.times)
-                greyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
+                greyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: cell.lectureNum, type: cell.type, typeNum: cell.num)
                 
             }
             //reload table
@@ -298,7 +298,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     
     // Every time we select anyone cell certain other cells will have to be greyed out
     // this function oversees the logic involved in greying out the right cells
-    private func greyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int, type: String)
+    private func greyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int, type: String, typeNum: Int)
     {
         //if the row clicked is not a lecture make sure to mark the lecture as chosen
         if (type != "lecture")
@@ -308,15 +308,52 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
                 if ccd.type == "lecture"
                 {
                     ccd.active = true
+                    //ccd.chosen = true
+                }
+                
+                if ccd.type != "lecture" && ccd.typeNumber == typeNum
+                {
+                    ccd.chosen = true
+                }
+                
+                if ccd.type != "lecture" && ccd.typeNumber != typeNum {
+                    ccd.chosen = false
+                    ccd.active = false
                 }
                 
                 //grey out all other Lectures and their labs/tuts
-                if ccd.type == type || ccd.section != lectureNum
+                if ccd.section != lectureNum
                 {
                     ccd.active = false
+                    ccd.chosen = false
                 }
             }
             
+        }
+        else
+        {
+            for ccd in self.listOfFlattenedCourses[courseIndex]
+            {
+                // make the now clicked lecture cell as active(interactible) as well as selected
+                if ccd.type == "lecture" && ccd.typeNumber == lectureNum
+                {
+                    ccd.active = true
+                    ccd.chosen = true
+                }
+                // now make sure that all labs/tuts of this lecture are not greyed out, BUT preserve that which is already selected
+                if ccd.section == lectureNum
+                {
+                    ccd.active == true
+                }
+                
+                //grey out all other Lectures and their labs/tuts
+                if ccd.section != lectureNum
+                {
+                    ccd.active = false
+                    ccd.chosen = false
+                }
+            }
+        
         }
         
     }
@@ -349,7 +386,9 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     {
         // grab appropriate course from schedule. Maybe be partially completed at any point time
         var p = schedule_new[indexCourse]
-        if type == "lecture" {
+        
+        if type == "lecture"
+        {
             p.times[0] = times
             p.lectureNumber = typeNum
         }
@@ -363,7 +402,8 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             p.times[2] = times
             p.labNumber = typeNum
         }
-        else{
+        else
+        {
             // something is very, very wrong
         }
         // remove new periodic from the schedule, check if it fits with the rest if it does draw

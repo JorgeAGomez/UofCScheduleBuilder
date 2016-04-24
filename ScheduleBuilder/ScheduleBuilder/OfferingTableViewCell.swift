@@ -20,6 +20,7 @@ class OfferingTableViewCell: UITableViewCell {
     var lectureNum : Int!
     var num: Int! //for lecture it is section number, for lab and tutorial its num associated with each
     var active: Bool! //false -> greyed out
+    var chosen: Bool! // clicked or not
     var times: [Time]! // storing here for convenience
     
     override func awakeFromNib() {

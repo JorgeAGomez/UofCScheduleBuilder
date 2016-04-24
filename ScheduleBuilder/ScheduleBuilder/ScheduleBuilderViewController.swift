@@ -14,6 +14,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     
     @IBOutlet weak var scheduleView: ScheduleView!
     @IBOutlet weak var courseListView: UITableView!
+    var selectedSchedule: [Periodic_new]!
     
     var schedBuilder: ScheduleBuilder = ScheduleBuilder()
     var fetchResultController:NSFetchedResultsController!
@@ -69,7 +70,13 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         // flatten each course in favorites and add them into array
         for favCourse in self.favourites_new
         {
-            listOfFlattenedCourses.append(favCourse.splitIntoCell())
+            if schedule_new.count > 0 {
+                var index = getIndexOfPeriodicInSchedule(schedule_new, courseTitle: favCourse.courseCode + " " + favCourse.courseNumber)
+                listOfFlattenedCourses.append(favCourse.splitIntoCell(schedule_new[index]))
+            }
+            else{
+                listOfFlattenedCourses.append(favCourse.splitIntoCell())
+            }
         }
         
         
@@ -146,8 +153,10 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
             cell.lectureNum = self.listOfFlattenedCourses[indexPath.section][indexPath.row].section
             cell.num = self.listOfFlattenedCourses[indexPath.section][indexPath.row].typeNumber
             cell.active = self.listOfFlattenedCourses[indexPath.section][indexPath.row].active
+            cell.chosen = self.listOfFlattenedCourses[indexPath.section][indexPath.row].chosen
             cell.offeringType.text = cell.type + " " //+ cell.lectureNum
             cell.times = self.listOfFlattenedCourses[indexPath.section][indexPath.row].time
+            
             
             // Writing text to the cells indicating type and time
             var text =  cell.type + " "
@@ -171,9 +180,27 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         // determine whether to grey out this cell
         var a = indexPath.section
         var b = indexPath.row
+        if (cell.chosen != nil)
+        {
+            if(cell.chosen! == true)
+            {
+                cell.accessoryType = .Checkmark
+            }
+            else{
+                cell.accessoryType = .None
+            }
+        }
         if !cell.active
         {
-            cell.textLabel!.textColor = UIColor.redColor()
+            cell.userInteractionEnabled = false
+            cell.backgroundColor = UIColor.darkGrayColor()
+            //cell.textLabel!.textColor = UIColor.redColor()
+        }
+        else
+        {
+            cell.textLabel!.textColor = UIColor.blackColor()
+            cell.backgroundColor = UIColor.whiteColor()
+            cell.userInteractionEnabled = true
         }
         return cell
     }
@@ -388,7 +415,12 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         
     }
     
+    // often time cells need to be autoc-clicked/chosen/marked. first when we load view with existing schedule
+    // and after every time we make a selection or deselection
+    private func autochooser()
+    {
     
+    }
     // If the schedule is empty we hill populate it ourselves with phony data as a placeholder so that we can print shit
     // notice the times and days.
     // we generate one phony Periodic_new for each favorited course
@@ -407,6 +439,20 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
         
         performSegueWithIdentifier("saveSchedule", sender: self)
         
+    }
+    
+    private func getIndexOfPeriodicInSchedule(schedule: [Periodic_new], courseTitle: String) -> Int
+    {
+        var index = 0
+        
+        for p in schedule {
+            if(p.courseName == courseTitle)
+            {
+                return index
+            }
+            index += 1
+        }
+        return -1
     }
     
     

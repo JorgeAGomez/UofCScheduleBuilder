@@ -114,21 +114,24 @@ public class Course_new {
     public func splitIntoCell() -> [CourseCellData]
     {
         var cells: [CourseCellData] = []
+        var active = true
+        var chosen = false
         
         for l in lectures
         {
-            let cell = CourseCellData(type: "lecture", active: true, section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
+            
+            let cell = CourseCellData(type: "lecture", active: true, chosen: false, section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
                                       time: l.time)
             cells.append(cell)
             
             for tut in l.tutorials!
             {
-                let cell = CourseCellData(type:"tutorial", active: true, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
+                let cell = CourseCellData(type:"tutorial", active: true, chosen: false, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
                 cells.append(cell)
             }
             for lab in l.labs!
             {
-                let cell = CourseCellData(type:"lab", active: true, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
+                let cell = CourseCellData(type:"lab", active: true, chosen: false, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
                                           time: lab.time)
                 cells.append(cell)
             }
@@ -150,33 +153,57 @@ public class Course_new {
         for l in lectures
         {
             var active = true
+            var chosen = false
             
             //check if the Cell is the same as periodic
             if periodic.lectureNumber != l.number {
                 active = false
+                
             }
+            else{ chosen = true}
             
-            let cell = CourseCellData(type: "lecture", active: active, section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
+            let cell = CourseCellData(type: "lecture", active: active, chosen: chosen,section: l.number, typeNumber: l.number, course: self.courseCode+" "+self.courseNumber,
                                       time: l.time)
             cells.append(cell)
             
             for tut in l.tutorials!
             {
-                if compareTimes(tut.time, t2: periodic.times[1]){
+//                if compareTimes(tut.time, t2: periodic.times[1]){
+//                    active = true
+//                    chosen = true
+//                }
+                if tut.number == periodic.tutorialNumber
+                {
                     active = true
+                    chosen = true
+                }
+                else
+                {
+                    active = false
+                    chosen = false
                 }
                 
-                let cell = CourseCellData(type:"tutorial", active: active, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
+                let cell = CourseCellData(type:"tutorial", active: active, chosen: chosen, section: l.number, typeNumber: tut.number, course: self.courseCode+" "+self.courseNumber, time: tut.time)
                 cells.append(cell)
             }
             
             for lab in l.labs!
             {
-                if compareTimes(lab.time, t2: periodic.times[2]){
+//                if compareTimes(lab.time, t2: periodic.times[2]){
+//                    active = true
+//                    chosen = true
+//                }
+                if lab.number == periodic.labNumber {
                     active = true
+                    chosen = true
+                }
+                else
+                {
+                    active = false
+                    chosen = false
                 }
                 
-                let cell = CourseCellData(type:"lab", active: active, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
+                let cell = CourseCellData(type:"lab", active: active, chosen: chosen, section: l.number, typeNumber: lab.number ,course: self.courseCode+" "+self.courseNumber,
                                           time: lab.time)
                 cells.append(cell)
             }
@@ -187,7 +214,7 @@ public class Course_new {
         
     }
     
-    // I just wish a freaking scraper would work. Some poeple I swear exist to challange me and create work for me but not in a good way.
+    // BAD REDO. USE SECTIONS TO COMPARE
     private func compareTimes(t1: [Time], t2: [Time]) -> Bool
     {
         for i in 0...t1.count-1 {

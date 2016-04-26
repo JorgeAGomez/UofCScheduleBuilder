@@ -214,6 +214,16 @@ public class DataHandler {
         }
     }
     
+    
+    public func unsetFavourite(fav: Course_new){
+        for c in self.courses{
+            if(c.courseCode == fav.courseCode && c.courseNumber == fav.courseNumber)
+            {
+                c.favourited = false;
+            }
+        }
+    }
+    
     //TODO: ADD COMMENTS
     public func getAllCoursesFromDepartment(department: String) -> [Course_new]
     {

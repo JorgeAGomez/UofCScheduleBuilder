@@ -22,7 +22,6 @@
 		98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */; };
 		98D830E01C0E78D800FC1D63 /* FavouritesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */; };
 		98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */; };
-		AC29BD601CBED266005FFD80 /* test_offering.json in Resources */ = {isa = PBXBuildFile; fileRef = AC29BD5F1CBED266005FFD80 /* test_offering.json */; };
 		ACE51F881CBB56FA002DDE6A /* courseOfferings.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE51F871CBB56FA002DDE6A /* courseOfferings.json */; };
 		ACFD0E8E1C9E4A0400F8D5C3 /* CourseCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD0E8D1C9E4A0400F8D5C3 /* CourseCellData.swift */; };
 		D6242D9C1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */; };
@@ -117,7 +116,6 @@
 		98D830DD1C0E78D800FC1D63 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		98D830DE1C0E78D800FC1D63 /* FavouritesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableCell.swift; sourceTree = "<group>"; };
 		98D830E31C0EE6C300FC1D63 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
-		AC29BD5F1CBED266005FFD80 /* test_offering.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_offering.json; sourceTree = "<group>"; };
 		ACE51F871CBB56FA002DDE6A /* courseOfferings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseOfferings.json; sourceTree = "<group>"; };
 		ACFD0E8D1C9E4A0400F8D5C3 /* CourseCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCellData.swift; sourceTree = "<group>"; };
 		CAEBD7C7C5C34DE3D53A717F /* Pods_ScheduleBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,7 +284,6 @@
 		D9057CB31C0EC2550036D5D3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AC29BD5F1CBED266005FFD80 /* test_offering.json */,
 				D960F78A1C77A268007B5E74 /* Course_new.swift */,
 				5B3343B31CBC392700968B46 /* DescriptionHandler.swift */,
 				D960F78C1C77A268007B5E74 /* courses_new.json */,
@@ -510,7 +507,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE51F881CBB56FA002DDE6A /* courseOfferings.json in Resources */,
-				AC29BD601CBED266005FFD80 /* test_offering.json in Resources */,
 				01BD3D781C0E329700115D84 /* profs.json in Resources */,
 				D9235A8E1BE3C6D5007173C9 /* LaunchScreen.storyboard in Resources */,
 				D9BA665B1C77B33800FACBED /* blah.json in Resources */,

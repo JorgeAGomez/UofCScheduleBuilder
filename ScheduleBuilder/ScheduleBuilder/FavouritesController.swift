@@ -80,7 +80,25 @@ class FavouritesController: UITableViewController, NSFetchedResultsControllerDel
                 let selectedFavourite = favourites[indexPath.row]
                 courseViewController.course = selectedFavourite
             }
-       }     
-            
+       }
+        
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            GlobalVariables2.data.unsetFavourite(favourites[indexPath.row])
+            favourites = GlobalVariables2.data.getFavourites()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            //tableView.reloadData()
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "Unfavourite"
+    }
+    
 }

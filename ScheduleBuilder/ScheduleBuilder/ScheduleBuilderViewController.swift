@@ -279,7 +279,7 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
                 //cell.accessoryType = .None
                 
                 // update the list of cells to make sure only the correct cells are greyed out
-                //ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: indexPath.row, type: cell.type)
+                ungreyMeLikeOneOfYourFrenchGirls(indexPath.section, lectureNum: cell.lectureNum, type: cell.type, typeNum: cell.num)
                 
                 replacePeriodicWithCellData_REMOVE(indexPath.section, type: cell.type)
                 
@@ -360,24 +360,137 @@ class ScheduleBuilderViewController: UIViewController, NSFetchedResultsControlle
     
     // Every time we select anyone cell certain other cells will have to be greyed out
     // this function oversees the logic involved in ungreying out the right cells
-    private func ungreyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int, type: String)
+    private func ungreyMeLikeOneOfYourFrenchGirls(courseIndex: Int, lectureNum: Int, type: String, typeNum: Int)
     {
+        // check if any lab/tut is selected for this lecture
+        var tutSelected = false
+        var labSelected = false
+        var lecSelected = false
+        
         for ccd in self.listOfFlattenedCourses[courseIndex]
         {
-            
-            if ccd.section == lectureNum && type != "lecture"
+            if ccd.type == "tutorial" && ccd.chosen == true
             {
-                if ccd.type == type
+                tutSelected = true
+            }
+            if ccd.type == "lab" && ccd.chosen == true
+            {
+                labSelected = true
+            }
+            if ccd.type == "lecture" && ccd.chosen == true
+            {
+                lecSelected = true
+            }
+        }
+
+        if type == "lecture"
+        {
+            
+            for ccd in self.listOfFlattenedCourses[courseIndex]
+            {
+                // uncheck yourself if you are a lecture that was clicked
+                if ccd.type == "lecture" && ccd.typeNumber == typeNum
                 {
                     ccd.active = true
+                    ccd.chosen = false
+                }
+                else
+                {
+                    //if no lab nor tutorial was selected, meaning that only lecture was selected, ungrey every other lecture and all within them
+                    if !(tutSelected || labSelected)
+                    {
+                        ccd.active = true
+                        ccd.chosen = false
+                    }
+                    else // tutorial or lab or both were selected. If tut was selected we don't ungrey tuts, same with labs.
+                    {
+                        // technically speakng there is no need for ungreying the already ungreyed cells. This is strictly as a failsafe
+                        // frankly I wrote it without thinking but it works and doesnt' really add to time complexity so there.
+                        
+                        // if no tut ws selected
+                        if !tutSelected
+                        {
+                            if ccd.type == "tutorial"
+                            {
+                                ccd.active = true
+                                ccd.chosen = false
+                            }
+                        }
+                        
+                        // if no lab ws selected
+                        if !labSelected
+                        {
+                            if ccd.type == "lab"
+                            {
+                                ccd.active = true
+                                ccd.chosen = false
+                            }
+                        }
+
+
+                    }
+  
                 }
                 
             }
-            else
+
+        }
+        else
+        {
+            // it isn't a lecture
+            for ccd in self.listOfFlattenedCourses[courseIndex]
             {
-                ccd.active = true
+                // lecture is currently selected
+                if lecSelected {
+                    // unselect and make all of the same type available in that section
+                    if ccd.section == lectureNum && ccd.type == type
+                    {
+                        ccd.active = true
+                        ccd.chosen = false
+                    }
+                }
+                else // lecture is currently not selected
+                {
+                    if type == "lab"
+                    {
+                        // lab was the only thing selected. unselec everything. strictly speaking don't need but hey
+                        if !tutSelected
+                        {
+                            ccd.active = true
+                            ccd.chosen = false
+                        }
+                        else // in addition to lab tutorial was also chosen. Only ungrey labs in this section
+                        {
+                            if ccd.type == "lab" && ccd.section == lectureNum
+                            {
+                                ccd.active = true
+                                ccd.chosen = false
+                            }
+                        }
+                    }
+                    if type == "tutorial"
+                    {
+                        // tut was the only thing selected. unselec everything. strictly speaking don't need but hey
+                        if !labSelected
+                        {
+                            ccd.active = true
+                            ccd.chosen = false
+                        }
+                        else // in addition to lab tutorial was also chosen. Only ungrey labs in this section
+                        {
+                            if ccd.type == "tutorial" && ccd.section == lectureNum
+                            {
+                                ccd.active = true
+                                ccd.chosen = false
+                            }
+                        }
+
+                    }
+                }
+                
             }
         }
+
     }
     
     // users clicks on a cell to add it to their schedule

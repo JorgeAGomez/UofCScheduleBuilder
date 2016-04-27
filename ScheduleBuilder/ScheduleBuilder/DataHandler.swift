@@ -24,19 +24,13 @@ public class DataHandler {
     //this loads Fall 2016 by default, need to use changeSemester to load a different semester
     init()
     {
-        
-        //        let timeAtPress = NSDate()
-//        let j = readJSON("test_offering", fileType: "json")
-        //readJSON("test_offering", fileType: "json")
+
         courses = [Course_new]()
         let url = "http://storage.googleapis.com/375abcf778234bc9aa1d43cd69058a10/ec20d68c-a401-4a3b-96fe-1cd8e7ee6ed3/2167.json"
         let file = download(url)
         processCourses(file)
         switchSemester(getSemesters()[1])
-
-        
-        //        let coursesGeneralInfo = readJSON("courses", fileType: "json")
-        
+     
     }
     
     private func download(string: String) -> JSON {

@@ -53,20 +53,32 @@ class SettingsDepartmentsTableViewController: UITableViewController {
     }
     
     
-    
+    var selectedCell:SettingsDepartmentCell!
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? SettingsDepartmentCell{
             
-            // If cell is already checked, uncheck it
-            if cell.accessoryType == .Checkmark
-            {
-                cell.accessoryType = .None
+            if selectedCell != nil{
+                
+                if cell == selectedCell{
+                    cell.accessoryType = .None
+                }
+                    
+                else{
+                    selectedCell.accessoryType = .None
+                    cell.accessoryType = .Checkmark
+                    selectedCell = cell
+                }
             }
-            else
-            {
+                
+            else{
                 cell.accessoryType = .Checkmark
+                selectedCell = cell
             }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
         }
     }
     

@@ -14,8 +14,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
         self.tableView.tableFooterView = UIView()
 
         self.title = "Settings"
@@ -54,25 +53,28 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
-        if(indexPath.row != rowContent.count - 1){
-        
-            let cell = tableView.dequeueReusableCellWithIdentifier("detailsCell", forIndexPath: indexPath) as! SettingsDetailsCell
-            
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("semesterCell", forIndexPath: indexPath) as! SettingsSemestersCell
             cell.cellLabel?.text = rowContent[indexPath.row] as? String
+            return cell
             
-        
-            return cell
-    
-        }
-        
-        else {
+        case 3:
             let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as! SettingsSwitchTableViewCell
-          
-              cell.cellLabel!.text = rowContent[indexPath.row] as? String
-          
+            cell.cellLabel?.text = rowContent[indexPath.row] as? String
             return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier("departmentCell", forIndexPath: indexPath) as! SettingsDetailsCell
+            cell.cellLabel?.text = rowContent[indexPath.row] as? String
+            return cell
+            
         }
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 
 }

@@ -62,6 +62,8 @@
 		D960F79D1C77A268007B5E74 /* Periodic_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7921C77A268007B5E74 /* Periodic_new.swift */; };
 		D960F79E1C77A268007B5E74 /* ScheduleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */; };
 		D960F79F1C77A268007B5E74 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = D960F7941C77A268007B5E74 /* Tutorial.swift */; };
+		D989DCDD1CD02A79005C58AD /* SettingsSemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989DCDC1CD02A79005C58AD /* SettingsSemestersTableViewController.swift */; };
+		D989DCDF1CD034EB005C58AD /* SettingsSemestersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D989DCDE1CD034EB005C58AD /* SettingsSemestersCell.swift */; };
 		D98C6E391C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E361C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift */; };
 		D98C6E3A1C87DAC800FFB2A4 /* OfferingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E371C87DAC800FFB2A4 /* OfferingTableViewCell.swift */; };
 		D98C6E3B1C87DAC800FFB2A4 /* NewScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98C6E381C87DAC800FFB2A4 /* NewScheduleTableViewController.swift */; };
@@ -163,6 +165,8 @@
 		D960F7921C77A268007B5E74 /* Periodic_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periodic_new.swift; sourceTree = "<group>"; };
 		D960F7931C77A268007B5E74 /* ScheduleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilder.swift; sourceTree = "<group>"; };
 		D960F7941C77A268007B5E74 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		D989DCDC1CD02A79005C58AD /* SettingsSemestersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSemestersTableViewController.swift; sourceTree = "<group>"; };
+		D989DCDE1CD034EB005C58AD /* SettingsSemestersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSemestersCell.swift; sourceTree = "<group>"; };
 		D98C6E361C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBuilderViewController.swift; sourceTree = "<group>"; };
 		D98C6E371C87DAC800FFB2A4 /* OfferingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingTableViewCell.swift; sourceTree = "<group>"; };
 		D98C6E381C87DAC800FFB2A4 /* NewScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -247,8 +251,10 @@
 				D6D72BED1C82A9B00016E6C9 /* Constants.swift */,
 				D9F8AFE61CBC5913006CADAC /* SettingsTableViewController.swift */,
 				D9F8AFE81CBC5D4B006CADAC /* SettingsDetailsCell.swift */,
+				D989DCDE1CD034EB005C58AD /* SettingsSemestersCell.swift */,
 				D6242D9B1CBC73C5009B86AC /* SettingsSwitchTableViewCell.swift */,
 				D9F8AFF61CBC8473006CADAC /* SettingsDepartmentsTableViewController.swift */,
+				D989DCDC1CD02A79005C58AD /* SettingsSemestersTableViewController.swift */,
 				D9F8AFF81CBC85E3006CADAC /* SettingsDepartmentCell.swift */,
 			);
 			name = SettingsTab;
@@ -590,6 +596,7 @@
 				D9EC79F11C0E3C0500A0FEF9 /* MainTabBar.swift in Sources */,
 				D960F7981C77A268007B5E74 /* DataHandler.swift in Sources */,
 				D674098E1CBC551A001AA344 /* Feature4ViewController.swift in Sources */,
+				D989DCDF1CD034EB005C58AD /* SettingsSemestersCell.swift in Sources */,
 				98D830E41C0EE6C300FC1D63 /* TabsViewController.swift in Sources */,
 				D98C6E391C87DAC800FFB2A4 /* ScheduleBuilderViewController.swift in Sources */,
 				D9CC10631C27EAB200E23F60 /* WelcomePageViewController.swift in Sources */,
@@ -601,6 +608,7 @@
 				D9BA66531C77A87100FACBED /* Time.swift in Sources */,
 				98D830DF1C0E78D800FC1D63 /* FavouritesController.swift in Sources */,
 				D9EC79F51C0E41D700A0FEF9 /* DepartmentTableViewCell.swift in Sources */,
+				D989DCDD1CD02A79005C58AD /* SettingsSemestersTableViewController.swift in Sources */,
 				01BD3D871C0EA8F600115D84 /* LineView.swift in Sources */,
 				ACFD0E8E1C9E4A0400F8D5C3 /* CourseCellData.swift in Sources */,
 				D9057CB11C0EBD900036D5D3 /* ScheduleView.swift in Sources */,

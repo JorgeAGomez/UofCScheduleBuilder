@@ -61,7 +61,7 @@ public class DataHandler {
         var courseDescription: String   //TODO: WRITE A JOIN PYTHON SCRUPT TO JOIN TO JSON FILES
         var courseDepartment:  String    //TO GET ALL THAT INFO IN ONE PLACE
         var num: String
-        var num_USEFUCKINGTHISONE: Int?
+        var num_CONVERTED_ATP: Int?
         var num_real : Int
         var section: String
         var lectures: [Lecture] = []
@@ -81,9 +81,9 @@ public class DataHandler {
             courseCode   = actualJSON["courseCode"].stringValue
             num = actualJSON["name"].stringValue
             if num.hasPrefix("0") {
-                num_USEFUCKINGTHISONE = Int(String(num.characters.dropFirst()))
+                num_CONVERTED_ATP = Int(String(num.characters.dropFirst()))
             }
-            if num_USEFUCKINGTHISONE != nil {num_real = Int(num_USEFUCKINGTHISONE!)}
+            if num_CONVERTED_ATP != nil {num_real = Int(num_CONVERTED_ATP!)}
             section = actualJSON["group"].stringValue
             courseDepartment = getDepartment(courseCode)
             returnList = descriptionHandler.getDescription(courseCode + courseNumber)

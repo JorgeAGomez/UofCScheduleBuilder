@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScheduleBuilder/DataHandler.swift"
-            timestampString = "482213744.624335"
+            timestampString = "483479921.519816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getDepartment(_:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "processCourses(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

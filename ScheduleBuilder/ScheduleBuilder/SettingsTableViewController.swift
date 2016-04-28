@@ -8,23 +8,28 @@
 
 import UIKit
 
-var rowContent = []
 
 class SettingsTableViewController: UITableViewController {
 
+    var semester = "Fall 2016"
+    var major = "Computer Science"
+    var minor = "Art"
+    var masters = "Masters"
+    
+    
+    var rowContent:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.tableView.tableFooterView = UIView()
 
         self.title = "Settings"
         
-        let semester = "Fall 2015"
-        let major = "Computer Science"
-        let minor = "Art"
-        let masters = "Masters"
-        
         rowContent = ["Semester: " + semester, "Major: " + major,"Minor: " + minor,masters]
+        
+        self.tableView.reloadData()
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

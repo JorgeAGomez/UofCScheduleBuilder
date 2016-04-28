@@ -10,10 +10,13 @@ import UIKit
 
 class SettingsSemestersTableViewController: UITableViewController {
 
-    let semesters = ["Fall 2015", "Winter 2016", "Spring 2016", "Summer 2016", "Fall 2016"]
+    var semesters = ["Fall 2015", "Winter 2016", "Spring 2016", "Summer 2016", "Fall 2016"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        semesters = GlobalVariables2.data.getSemesters()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,12 +70,14 @@ class SettingsSemestersTableViewController: UITableViewController {
                     selectedCell.accessoryType = .None
                     cell.accessoryType = .Checkmark
                     selectedCell = cell
+                    GlobalVariables2.data.switchSemester(semesters[indexPath.row])
                 }
             }
                 
             else{
                 cell.accessoryType = .Checkmark
                 selectedCell = cell
+                GlobalVariables2.data.switchSemester(semesters[indexPath.row])
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -119,14 +124,23 @@ class SettingsSemestersTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let settingsTableViewController = segue.destinationViewController as? SettingsTableViewController{
+            
+            settingsTableViewController.semester = selectedCell.textLabel!.text!
+            
+        }
+        
+        
+        
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
-     */
+    
     
 }

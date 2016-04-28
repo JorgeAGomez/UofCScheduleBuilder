@@ -40,4 +40,9 @@ class Feature4ViewController: UIViewController, UITableViewDataSource, UITableVi
     return cell
   }
 
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 }

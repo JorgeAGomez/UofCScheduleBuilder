@@ -15,7 +15,8 @@ class SettingsSemestersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.title = "Switch Semester"
+
         semesters = GlobalVariables2.data.getSemesters()
         
         // Uncomment the following line to preserve selection between presentations
@@ -86,8 +87,6 @@ class SettingsSemestersTableViewController: UITableViewController {
         
         
     }
-    
-    
     
     /*
      // Override to support conditional editing of the table view.

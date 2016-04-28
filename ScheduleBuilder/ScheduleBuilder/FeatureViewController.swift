@@ -25,8 +25,8 @@ class FeatureViewController: UIViewController {
       let viewController4 = self.storyboard?.instantiateViewControllerWithIdentifier("Feature4") as! Feature4ViewController
       let viewController5 = self.storyboard?.instantiateViewControllerWithIdentifier("Feature5") as! Feature5ViewController
     
-      viewController1.title = "Learn Softwares"
-      viewController2.title = "Popular"
+      viewController1.title = "Learn Software"
+      viewController2.title = "Voted by Students"
       viewController3.title = "Online"
       viewController4.title = "Video Games"
       viewController5.title = "Travel Abroad"

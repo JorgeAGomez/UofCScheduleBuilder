@@ -14,8 +14,18 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
   
   // DESIGN COURSES //
   
-  let courses = ["ART 251 - Media Arts: Practice & Theory I","ART 253 - Media Arts: Practice & Theory II","ART 351 - Sonic Arts","CPSC 599 - iOS development"]
-  
+    let courses = ["ART 251 - Media Arts: Practice & Theory I","ART 253 - Media Arts: Practice & Theory II","ART 351 - Sonic Arts","CPSC 599 - iOS development"]
+    
+    
+    // ********************************************************************************************************* //
+    // this is where we need to add an array for courses instead of the string array above
+    // this would need to be done in Feature1ViewController, Feature2ViewController ... Feature5ViewController
+    // after a override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) method would be added to
+    // pass the course into the coursepage view controller. Similar to how the FavouritesController does it!
+    
+    //let courses:[Course_new] = [GlobalVariables2.data.courses]
+    // ********************************************************************************************************* //
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +49,10 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
     cell.accessoryType = .DisclosureIndicator
     return cell
   }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
   
     

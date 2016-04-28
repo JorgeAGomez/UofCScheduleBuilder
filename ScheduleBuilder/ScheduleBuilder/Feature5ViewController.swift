@@ -39,4 +39,9 @@ class Feature5ViewController: UIViewController, UITableViewDelegate, UITableView
     return cell
   }
 
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 }

@@ -39,5 +39,9 @@ class Feature2ViewController: UIViewController, UITableViewDataSource, UITableVi
     cell.accessoryType = .DisclosureIndicator
     return cell
   }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
 }

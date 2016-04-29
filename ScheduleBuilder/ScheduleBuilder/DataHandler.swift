@@ -254,6 +254,15 @@ public class DataHandler {
         }
     }
 
-    
+    //takes course name and course number as string arguments returns the matching Course_new object. Returns nil if no matcing course is found
+    public func getCourse(name: String, num: String) -> Course_new? {
+        let mergeString = name + " " + num
+        for course in courses {
+            if course.getName() == mergeString {
+                return course
+            }
+        }
+        return nil
+    }
     
 }

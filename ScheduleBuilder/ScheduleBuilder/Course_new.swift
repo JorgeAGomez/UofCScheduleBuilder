@@ -225,6 +225,10 @@ public class Course_new {
         return true
     }
     
+    public func getName() -> String {
+        return courseCode + " " + courseNumber
+    }
+    
 
     
 }

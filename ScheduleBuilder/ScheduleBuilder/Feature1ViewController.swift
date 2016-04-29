@@ -13,21 +13,21 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
   @IBOutlet weak var tableView: UITableView!
   
   // DESIGN COURSES //
-  
-    let courses = ["ART 251 - Media Arts: Practice & Theory I","ART 253 - Media Arts: Practice & Theory II","ART 351 - Sonic Arts","CPSC 599 - iOS development"]
-    
-    
-    // ********************************************************************************************************* //
-    // this is where we need to add an array for courses instead of the string array above
-    // this would need to be done in Feature1ViewController, Feature2ViewController ... Feature5ViewController
-    // after a override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) method would be added to
-    // pass the course into the coursepage view controller. Similar to how the FavouritesController does it!
-    
-    //let courses:[Course_new] = [GlobalVariables2.data.courses]
-    // ********************************************************************************************************* //
 
+    // Featured Courses
+    let featuredCourses:[Array<String>] = [["ART","251"],["ART","253"],["MUSI","351"],["CPSC","599"],["ART","334"],["ART","311"],["ART","503"],["CPSC","583"],["ART","313"],["ART","315"],["ART","317"],["ART","321"],["ART","331"],["ART","336"]]
+    
+    var courses:[Course_new] = []
   
     override func viewDidLoad() {
+        
+        for feat in featuredCourses{
+            if(GlobalVariables2.data.getCourse(feat[0], num: feat[1]) != nil){
+                courses.append(GlobalVariables2.data.getCourse(feat[0], num: feat[1])!)
+            }
+        }
+        
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -42,16 +42,31 @@ class Feature1ViewController: UIViewController, UITableViewDelegate, UITableView
       return courses.count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
-    cell.textLabel!.text = courses[indexPath.row]
+    cell.textLabel!.text = courses[indexPath.row].getName() + "  " + courses[indexPath.row].title
     cell.accessoryType = .DisclosureIndicator
     return cell
   }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "feature1detail"{
+            let courseViewController = segue.destinationViewController as! CourseViewController
+            
+            if let selectedFavouritesCell = sender as? UITableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedFavouritesCell)!
+                let selectedFeature = courses[indexPath.row]
+                courseViewController.course = selectedFeature
+            }
+        }
+        
     }
     
   

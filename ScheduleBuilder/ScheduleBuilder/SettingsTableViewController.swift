@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
 
         self.title = "Settings"
         
-        rowContent = ["Semester: " + semester, "Major: " + major,"Minor: " + minor,masters]
+        rowContent = ["Switch Semester", "Major: " + major,"Minor: " + minor,masters]
         
         self.tableView.reloadData()
 
